@@ -1,0 +1,6 @@
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\bin\Debug\BusinessLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\bin\Debug\BusinessLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\BusinessLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\BusinessLibrary.pdb

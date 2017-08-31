@@ -1,0 +1,6 @@
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\bin\Debug\Entity.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\bin\Debug\Entity.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\EntityLibrary.csprojResolveAssemblyReference.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\Entity.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\Entity.pdb
