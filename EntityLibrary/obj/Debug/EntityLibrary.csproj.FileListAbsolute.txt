@@ -4,3 +4,10 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\EntityLibrary.csp
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\Entity.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Entity\obj\Debug\Entity.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibrary.dll.CodeAnalysisLog.xml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibrary.dll.lastcodeanalysissucceeded

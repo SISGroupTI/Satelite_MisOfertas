@@ -12,3 +12,19 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Satelite Mis Ofertas\obj\Debug\Vie
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Satelite Mis Ofertas\obj\Debug\View.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Satelite Mis Ofertas\obj\Debug\Satelite Mis Ofertas.exe
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\Satelite Mis Ofertas\obj\Debug\Satelite Mis Ofertas.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\View.exe
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\View.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\LoginWindow.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\LoginWindow.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\App.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View_MarkupCompile.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.g.resources
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.Properties.Resources.resources
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.csproj.GenerateResource.Cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.exe
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\PrincipalWindow.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View_MarkupCompile.lref
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\PrincipalWindow.baml

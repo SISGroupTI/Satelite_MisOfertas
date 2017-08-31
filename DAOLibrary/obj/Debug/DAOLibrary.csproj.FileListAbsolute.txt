@@ -4,3 +4,10 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\DAOLibra
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\BusinessLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\BusinessLibrary\obj\Debug\BusinessLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.CodeAnalysisLog.xml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.lastcodeanalysissucceeded

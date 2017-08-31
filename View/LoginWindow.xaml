@@ -1,0 +1,48 @@
+﻿<Window x:Class="View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Login MisOfertas" Height="450" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="244*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Ingreso" Margin="50,0,50,20" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="White" FontWeight="Bold" FontSize="14">
+            <StackPanel Margin="10">
+                <TextBox x:Name="txtUsuario" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Margin="60,20,60,0" VerticalContentAlignment="Stretch">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                            <Style.Resources>
+                                <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                    <VisualBrush.Visual>
+                                        <Label Content="Nombre de Usuario" Foreground="Black" />
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Style.Resources>
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                </Trigger>
+                                <Trigger Property="Text" Value="{x:Null}">
+                                    <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter Property="Background" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <PasswordBox x:Name="txtContrasena" VerticalAlignment="Center" Margin="60,20,60,0"/>
+                <Button x:Name="btnIngresar" Content="Ingresar" Margin="219,20,60,0" Height="28" Click="btnIngresar_Click"/>
+
+            </StackPanel>
+
+        </GroupBox>
+        <Image Margin="160,27,160,0" RenderTransformOrigin="-0.007,-0.017" Source="img/MisOfertas-Letras.png" Height="150" Width="150"/>
+    </Grid>
+</Window>

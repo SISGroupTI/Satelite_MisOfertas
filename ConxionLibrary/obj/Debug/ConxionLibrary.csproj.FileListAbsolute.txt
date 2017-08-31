@@ -1,6 +1,7 @@
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.pdb
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.CodeAnalysisLog.xml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.lastcodeanalysissucceeded
