@@ -28,3 +28,8 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View.csprojResolveA
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\PrincipalWindow.g.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\View_MarkupCompile.lref
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\PrincipalWindow.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\MahApps.Metro.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\System.Windows.Interactivity.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\MahApps.Metro.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\MahApps.Metro.xml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\App.baml
