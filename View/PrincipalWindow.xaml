@@ -4,25 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Sistema MisOfertas" Height="600" Width="800"  WindowStartupLocation="CenterScreen">
+        Title="Sistema MisOfertas" Height="750" Width="1000"  WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80*"/>
-            <ColumnDefinition Width="561*"/>
-            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="465*"/>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="243*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="509*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="242*"/>
+            <RowDefinition Height="49*"/>
         </Grid.RowDefinitions>
         <Image Margin="10" Source="img/Imagen-ms SinLogo.png"/>
-        <DockPanel Grid.Column="1" Margin="0">
+        <DockPanel Grid.Column="1" Margin="0" Grid.ColumnSpan="2">
             <Menu IsMainMenu="True" DockPanel.Dock="Top" VerticalAlignment="Center">
-                <MenuItem Header="_File" >
+                <MenuItem x:Name="menu_inicio" Header="Inicio" Margin="30,0" FontSize="16" >
                     <MenuItem Header="Save">
                     </MenuItem>
                     <MenuItem Header="Save As.." />
@@ -40,8 +45,213 @@
                         <MenuItem Header="Ice Cream" />
                     </MenuItem>
                 </MenuItem>
+                <MenuItem x:Name="menu_oferta" Header="_Ofertas" Margin="0,0,30,0" Click="menu_oferta_Click"/>
+                <MenuItem x:Name="menu_descuento" Header="_Descuentos" Margin="0,0,30,0">
+
+                </MenuItem>
+                <MenuItem Header="Mantenedores" Margin="0,0,30,0">
+                    <MenuItem Header="Usuarios">
+
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Productos">
+
+                    </MenuItem>
+                    <MenuItem Header="Ofertas">
+
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Empresas">
+
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Locales">
+
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Reportes" Margin="0,0,30,0">
+
+                </MenuItem>
+                <MenuItem Header="Archivos" Margin="0,0,20,0">
+
+                </MenuItem>
             </Menu>
         </DockPanel>
-
+        <GroupBox Header="Panel de Control" Margin="10,41,10,8" Grid.Row="1" Grid.ColumnSpan="3" Controls:ControlsHelper.ContentCharacterCasing="Normal" Background="#FFCFCFCF">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="227*"/>
+                    <ColumnDefinition Width="235*"/>
+                    <ColumnDefinition Width="235*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="129*"/>
+                        <RowDefinition Height="37*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,2" Grid.Row="1" Background="#FFCFCFCF">
+                        <TextBlock Foreground="#303030" FontSize="18" Margin="42,6,43,6">Nuevo Producto</TextBlock>
+                    </StackPanel>
+                    <Grid Height="126" Width="215">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="97*"/>
+                            <ColumnDefinition Width="114*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="1" Margin="10" Grid.Row="1" Source="img/product-ic.png"/>
+                        <Grid Grid.Column="2" Margin="10" Grid.Row="1" Background="#FF00C5FF" OpacityMask="Black">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="68*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="11*"/>
+                                <RowDefinition Height="59*"/>
+                                <RowDefinition Height="30*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Column="1" Margin="5" Grid.Row="1" Background="White">
+                                <TextBlock Foreground="Black" TextAlignment="Center" FontSize="30" Text="{Binding LastLecture, StringFormat=\{0:N0\}}" Margin="0,5" Height="39" />
+                            </StackPanel>
+                            <Label Content="Productos" Grid.Row="2" FontWeight="Bold" Grid.Column="1" Margin="1,0,0,0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="129*"/>
+                        <RowDefinition Height="37*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,2" Grid.Row="1" Background="#FFCFCFCF">
+                        <TextBlock Foreground="#303030" FontSize="18" Margin="75,6,76,6" Text="Ver Más"/>
+                    </StackPanel>
+                    <Grid Height="126" Width="215">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="98*"/>
+                            <ColumnDefinition Width="113*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="1" Margin="10" Grid.Row="1" Source="img/user-ic.png"/>
+                        <Grid Grid.Column="2" Margin="10" Grid.Row="1" Background="Red">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="68*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="11*"/>
+                                <RowDefinition Height="59*"/>
+                                <RowDefinition Height="30*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Column="1" Margin="5" Grid.Row="1" Background="White">
+                                <TextBlock Foreground="Black" TextAlignment="Center" FontSize="30" Text="{Binding LastLecture, StringFormat=\{0:N0\}}" Margin="0,5" Height="39" />
+                            </StackPanel>
+                            <Label Content="Consumidores" Grid.Row="2" FontWeight="Bold" Grid.ColumnSpan="3"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="129*"/>
+                        <RowDefinition Height="37*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,2" Grid.Row="1" Background="#FFCFCFCF">
+                        <TextBlock Foreground="#303030" TextAlignment="Center" FontSize="18" Margin="30,6" Text="Nueva Oferta"/>
+                    </StackPanel>
+                    <Grid Height="126" Width="215">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="40*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="95*"/>
+                            <ColumnDefinition Width="116*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="1" Margin="10" Grid.Row="1" Source="img/oferta-ic.png"/>
+                        <Grid Grid.Column="2" Margin="10,10,13,10" Grid.Row="1" Background="#FF51FF00">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="68*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="11*"/>
+                                <RowDefinition Height="59*"/>
+                                <RowDefinition Height="30*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Column="1" Margin="5" Grid.Row="1" Background="White">
+                                <TextBlock Foreground="Black" TextAlignment="Center" FontSize="30" Text="{Binding LastLecture, StringFormat=\{0:N0\}}" Margin="0,5" Height="39" />
+                            </StackPanel>
+                            <Label Content="Ofertas" Grid.Row="2" FontWeight="Bold" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <Label Content="Usuario:" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="53"/>
+        <Label Content="Nombre Usurio" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="91"/>
+        <Label Name="lblTimer" Grid.Column="3" HorizontalAlignment="Left" Margin="126,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="85"/>
+        <Grid Grid.ColumnSpan="3" Margin="10,3,10,0" Grid.Row="3">
+            <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Left">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Salesman" Labels="{Binding Labels}"></lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Sold Apps" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+        </Grid>
+        <Label Content="Ofertas más visitadas en" Margin="252,10,11,10" Grid.Row="2" FontSize="18" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <DatePicker Grid.Column="2" Margin="10,10,30,10" Grid.Row="2"/>
+        <Grid Grid.Column="3" Margin="10,41,10,10" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="220*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="5">
+                <TextBlock TextWrapping="Wrap" Text="Rubros más visitados" TextAlignment="Left"/>
+            </StackPanel>
+            <ListView Margin="20,10,10,10" Grid.Row="1" BorderThickness="0,1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="3" Margin="10,10,10,0" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="192*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="5">
+                <Label Content="Ofertas más visitadas"/>
+            </StackPanel>
+            <ListView Margin="10" Grid.Row="1" BorderThickness="0,1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </Controls:MetroWindow>

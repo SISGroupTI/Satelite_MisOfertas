@@ -28,7 +28,7 @@ namespace View
         {
             PrincipalWindow principalWindow = new PrincipalWindow();
             principalWindow.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/imagen-ms%20sinlogo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/3-star-rating.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/add-ic.png")]
 
 

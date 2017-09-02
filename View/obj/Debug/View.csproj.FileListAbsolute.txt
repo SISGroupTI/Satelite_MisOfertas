@@ -33,3 +33,12 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\System.Windows.Inte
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\MahApps.Metro.pdb
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\MahApps.Metro.xml
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\App.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\View.exe.config
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.Wpf.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.xml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.Wpf.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.Wpf.xml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuOfertasWindow.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuOfertasWindow.baml
