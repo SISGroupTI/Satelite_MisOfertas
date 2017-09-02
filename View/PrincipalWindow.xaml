@@ -25,58 +25,7 @@
             <RowDefinition Height="49*"/>
         </Grid.RowDefinitions>
         <Image Margin="10" Source="img/Imagen-ms SinLogo.png"/>
-        <DockPanel Grid.Column="1" Margin="0" Grid.ColumnSpan="2">
-            <Menu IsMainMenu="True" DockPanel.Dock="Top" VerticalAlignment="Center">
-                <MenuItem x:Name="menu_inicio" Header="Inicio" Margin="30,0" FontSize="16" >
-                    <MenuItem Header="Save">
-                    </MenuItem>
-                    <MenuItem Header="Save As.." />
-                    <MenuItem Header="Exit" InputGestureText="Ctrl+E">
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem Header="Excellent" IsCheckable="True" IsChecked="True" />
-                    <MenuItem Header="Rubbish" IsCheckable="True" />
-                    <MenuItem Header="Dig Deeper" InputGestureText="Ctrl+D">
-                        <MenuItem Header="Enlightenment?" IsCheckable="True" />
-                        <MenuItem Header="Disappointment" IsCheckable="True" />
-                    </MenuItem>
-                    <MenuItem Header="Look Deeper" InputGestureText="Ctrl+D">
-                        <MenuItem Header="Plain" />
-                        <MenuItem Header="Ice Cream" />
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem x:Name="menu_oferta" Header="_Ofertas" Margin="0,0,30,0" Click="menu_oferta_Click"/>
-                <MenuItem x:Name="menu_descuento" Header="_Descuentos" Margin="0,0,30,0">
-
-                </MenuItem>
-                <MenuItem Header="Mantenedores" Margin="0,0,30,0">
-                    <MenuItem Header="Usuarios">
-
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Productos">
-
-                    </MenuItem>
-                    <MenuItem Header="Ofertas">
-
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Empresas">
-
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Locales">
-
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Reportes" Margin="0,0,30,0">
-
-                </MenuItem>
-                <MenuItem Header="Archivos" Margin="0,0,20,0">
-
-                </MenuItem>
-            </Menu>
-        </DockPanel>
+        <local:MenuControl Grid.Column="1" Grid.ColumnSpan="2"/>
         <GroupBox Header="Panel de Control" Margin="10,41,10,8" Grid.Row="1" Grid.ColumnSpan="3" Controls:ControlsHelper.ContentCharacterCasing="Normal" Background="#FFCFCFCF">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>

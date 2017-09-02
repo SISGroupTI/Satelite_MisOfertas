@@ -14,15 +14,14 @@ using System.Windows.Shapes;
 namespace View
 {
     /// <summary>
-    /// Lógica de interacción para MenuOfertasWindow.xaml
+    /// Lógica de interacción para MenuDescuentoWindow.xaml
     /// </summary>
-    public partial class MenuOfertasWindow : Window
+    public partial class MenuDescuentoWindow : Window
     {
-        public MenuOfertasWindow()
+        public MenuDescuentoWindow()
         {
             InitializeComponent();
         }
-
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();

@@ -42,3 +42,8 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.Wpf.pdb
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\LiveCharts.Wpf.xml
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuOfertasWindow.g.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuOfertasWindow.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuDescuentoWindow.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuDescuentoWindow.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuControl.baml

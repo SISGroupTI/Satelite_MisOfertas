@@ -169,13 +169,7 @@ namespace View
             Application.Current.Shutdown();
             base.OnClosing(e);
         }
-
-        private void menu_oferta_Click(object sender, RoutedEventArgs e)
-        {
-            MenuOfertasWindow  menuOfertasWindow = new MenuOfertasWindow();
-            menuOfertasWindow.Show();
-            this.Hide();
-        }
+        
     }
         
 }

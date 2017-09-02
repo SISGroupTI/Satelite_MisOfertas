@@ -83,6 +83,12 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuControl.xaml.cs">
+      <DependentUpon>MenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDescuentoWindow.xaml.cs">
+      <DependentUpon>MenuDescuentoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuOfertasWindow.xaml.cs">
       <DependentUpon>MenuOfertasWindow.xaml</DependentUpon>
     </Compile>
@@ -115,6 +121,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuDescuentoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
