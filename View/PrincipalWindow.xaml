@@ -47,12 +47,18 @@
                         <MenuItem Header="Registrar" x:Name="registrar_empresa" Click="registrar_empresa_Click">
 
                         </MenuItem>
-                        <MenuItem Header="Modificar" x:Name="modificar_empresa">
+                        <MenuItem Header="Modificar" x:Name="modificar_empresa" Click="modificar_empresa_Click">
                            
                         </MenuItem>
                     </MenuItem>
                     <Separator/>
                     <MenuItem Header="Locales">
+                        <MenuItem Header="Registrar Local" x:Name="registrar_local" Click="registrar_local_Click">
+                            
+                        </MenuItem>
+                        <MenuItem Header="Modificar Local" x:Name="Mmodificar_local" Click="Mmodificar_local_Click">
+                            
+                        </MenuItem>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" IsEnabled="False">

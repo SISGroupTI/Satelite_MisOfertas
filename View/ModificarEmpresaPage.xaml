@@ -1,0 +1,63 @@
+﻿<Page x:Class="View.ModificarEmpresaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:View"
+      mc:Ignorable="d" 
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="549" d:DesignWidth="1000"
+      Title="ModificarEmpresaPage" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="265*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="69*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="10" Source="img/bussinec-ic.png"/>
+        <Label Content="Administrador de Empresas" Margin="10,15,105,10" FontSize="36" Grid.ColumnSpan="4" Grid.Column="1"/>
+        <Label Content="Modificar Registro" Margin="10,0,305,0" FontSize="22" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="1"/>
+        <DataGrid Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Local N°" Binding="{Binding NumeroLocal}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Direccion" Binding="{Binding Direccion}" Width="490"></DataGridTextColumn>
+                <DataGridTextColumn Header="Eliminar" Width="80"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnModificarEmpresa" Content="Modificar Empresa" Margin="90,10,30,32" Background="#FFCFCFCF" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="27" Click="btnModificarEmpresa_Click"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,0,190,0" BorderBrush="Black" Height="265" VerticalAlignment="Top">
+            <Grid Width="460" Height="270" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="83*"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="88*"/>
+                    <RowDefinition Height="49*"/>
+                </Grid.RowDefinitions>
+                <local:CamposEmpresaControl Margin="0,0,0,5"/>
+                <Separator Margin="0,78,0,0"/>
+                <Button Content="" Margin="10,5,410,5" Grid.Row="1"
+                        Style="{DynamicResource MetroCircleButtonStyle}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/add-ic.png"/>
+                    </Button.Background>
+                </Button>
+                <TextBlock HorizontalAlignment="Left" Margin="65,10,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Añadir Locales" Width="90" FontSize="14"/>
+                <local:CamposLocalControl Margin="0,4,0,0" Grid.Row="2"/>
+                <Button Content="Añadir" Margin="190,5,195,0" Grid.Row="3" Background="#FFCFCFCF" Height="27" VerticalAlignment="Top"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

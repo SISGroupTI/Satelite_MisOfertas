@@ -32,6 +32,9 @@ namespace View
         MenuOfertaPage menuOfertaPage;
         MenuDescuentoPage MenuDescuentoPage;
         RegistrarEmpresaPage registrarEmpresaPage;
+        ModificarEmpresaPage modificarEmpresaPage;
+        RegistrarLocalPage registrarLocalPage;
+        ModificarLocalPage modificarLocalPage;
         public PrincipalWindow()
         {
             InitializeComponent();
@@ -41,7 +44,7 @@ namespace View
 
         private void initFristPage()
         {
-            frame.NavigationService.Navigate(principalPage);
+            setNavigationService(principalPage);
         }
 
         private void menu_oferta_Click(object sender, RoutedEventArgs e)
@@ -50,7 +53,7 @@ namespace View
             {
                 menuOfertaPage = new MenuOfertaPage();
             }
-            frame.NavigationService.Navigate(menuOfertaPage);
+            setNavigationService(menuOfertaPage);
         }
 
         private void menu_inicio_Click(object sender, RoutedEventArgs e)
@@ -64,13 +67,35 @@ namespace View
             {
                 MenuDescuentoPage = new MenuDescuentoPage();
             }
-            frame.NavigationService.Navigate(MenuDescuentoPage);
+            setNavigationService(MenuDescuentoPage);
         }
 
         private void registrar_empresa_Click(object sender, RoutedEventArgs e)
         {
             if (registrarEmpresaPage == null) { this.registrarEmpresaPage = new RegistrarEmpresaPage(); }
-            frame.NavigationService.Navigate(registrarEmpresaPage);
+            setNavigationService(registrarEmpresaPage);
+        }
+
+        private void modificar_empresa_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarEmpresaPage == null) { this.modificarEmpresaPage = new ModificarEmpresaPage(); }
+            setNavigationService(modificarEmpresaPage);
+        }
+        private void setNavigationService(Page page)
+        {
+            frame.NavigationService.Navigate(page);
+        }
+
+        private void registrar_local_Click(object sender, RoutedEventArgs e)
+        {
+            if (registrarLocalPage==null) { registrarLocalPage = new RegistrarLocalPage(); }
+            setNavigationService(registrarLocalPage);
+        }
+
+        private void Mmodificar_local_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarLocalPage == null) { modificarLocalPage = new ModificarLocalPage(); }
+            setNavigationService(modificarLocalPage);
         }
     }
 
