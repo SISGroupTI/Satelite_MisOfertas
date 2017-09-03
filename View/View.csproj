@@ -84,8 +84,17 @@
     <Compile Include="CamposLocalControl.xaml.cs">
       <DependentUpon>CamposLocalControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarEmpresaWindow.xaml.cs">
-      <DependentUpon>RegistrarEmpresaWindow.xaml</DependentUpon>
+    <Compile Include="MenuDescuentoPage.xaml.cs">
+      <DependentUpon>MenuDescuentoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuOfertaPage.xaml.cs">
+      <DependentUpon>MenuOfertaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalPage.xaml.cs">
+      <DependentUpon>PrincipalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEmpresaPage.xaml.cs">
+      <DependentUpon>RegistrarEmpresaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserOptionControl.xaml.cs">
       <DependentUpon>UserOptionControl.xaml</DependentUpon>
@@ -94,15 +103,6 @@
   <ItemGroup>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenuControl.xaml.cs">
-      <DependentUpon>MenuControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenuDescuentoWindow.xaml.cs">
-      <DependentUpon>MenuDescuentoWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MenuOfertasWindow.xaml.cs">
-      <DependentUpon>MenuOfertasWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrincipalWindow.xaml.cs">
       <DependentUpon>PrincipalWindow.xaml</DependentUpon>
@@ -144,15 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuControl.xaml">
+    <Page Include="MenuDescuentoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuDescuentoWindow.xaml">
+    <Page Include="MenuOfertaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuOfertasWindow.xaml">
+    <Page Include="PrincipalPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,7 +160,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegistrarEmpresaWindow.xaml">
+    <Page Include="RegistrarEmpresaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

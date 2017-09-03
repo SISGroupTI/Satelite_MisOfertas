@@ -1,5 +1,4 @@
-﻿using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,24 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace View
 {
     /// <summary>
-    /// Lógica de interacción para MenuDescuentoWindow.xaml
+    /// Lógica de interacción para RegistrarEmpresaPage.xaml
     /// </summary>
-    public partial class MenuDescuentoWindow : MetroWindow
+    public partial class RegistrarEmpresaPage : Page
     {
-        public MenuDescuentoWindow()
+        public RegistrarEmpresaPage()
         {
             InitializeComponent();
         }
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
-            base.OnClosing(e);
-        }
-
     }
 }
