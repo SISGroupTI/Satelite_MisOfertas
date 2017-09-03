@@ -32,15 +32,18 @@
 
                 </MenuItem>
                 <MenuItem x:Name="menu_mantenedores" Header="Mantenedores" Margin="0,0,30,0">
-                    <MenuItem Header="Usuarios">
-                    </MenuItem>
-                    <Separator/>
                     <MenuItem Header="Productos">
                     </MenuItem>
                     <MenuItem Header="Ofertas">
                     </MenuItem>
                     <Separator/>
                     <MenuItem Header="Empresas">
+                        <MenuItem Header="Registrar" x:Name="registrar_empresa" Click="registrar_empresa_Click">
+                            
+                        </MenuItem>
+                        <MenuItem Header="Modificar" x:Name="modificar_empresa">
+
+                        </MenuItem>
                     </MenuItem>
                     <Separator/>
                     <MenuItem Header="Locales">

@@ -78,6 +78,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CamposEmpresaControl.xaml.cs">
+      <DependentUpon>CamposEmpresaControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CamposLocalControl.xaml.cs">
+      <DependentUpon>CamposLocalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEmpresaWindow.xaml.cs">
+      <DependentUpon>RegistrarEmpresaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserOptionControl.xaml.cs">
+      <DependentUpon>UserOptionControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginWindow.xaml.cs">
@@ -120,6 +132,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CamposEmpresaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CamposLocalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +157,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrincipalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrarEmpresaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserOptionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

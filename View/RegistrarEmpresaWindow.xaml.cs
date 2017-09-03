@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace View
 {
     /// <summary>
-    /// Lógica de interacción para MenuOfertasWindow.xaml
+    /// Lógica de interacción para RegistrarEmpresaWindow.xaml
     /// </summary>
-    public partial class MenuOfertasWindow : MetroWindow
+    public partial class RegistrarEmpresaWindow : MetroWindow
     {
-        public MenuOfertasWindow()
+        public RegistrarEmpresaWindow()
         {
             InitializeComponent();
         }
-
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
-            base.OnClosing(e);
-        }
-
     }
 }

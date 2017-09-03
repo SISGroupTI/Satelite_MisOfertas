@@ -47,3 +47,11 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuDescuentoWindow
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuControl.g.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuControl.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposEmpresaControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\RegistrarEmpresaWindow.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\UserOptionControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposEmpresaControl.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\RegistrarEmpresaWindow.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\UserOptionControl.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposLocalControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposLocalControl.baml

@@ -1,5 +1,4 @@
-﻿using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,25 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace View
 {
     /// <summary>
-    /// Lógica de interacción para MenuOfertasWindow.xaml
+    /// Lógica de interacción para CamposLocalControl.xaml
     /// </summary>
-    public partial class MenuOfertasWindow : MetroWindow
+    public partial class CamposLocalControl : UserControl
     {
-        public MenuOfertasWindow()
+        public CamposLocalControl()
         {
             InitializeComponent();
         }
-
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
-            base.OnClosing(e);
-        }
-
     }
 }

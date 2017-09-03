@@ -34,5 +34,11 @@ namespace View
             MenuOfertasWindow menuOfertasWindow = new MenuOfertasWindow();
             menuOfertasWindow.Show();
         }
+
+        private void registrar_empresa_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarEmpresaWindow registrarEmpresaWindow = new RegistrarEmpresaWindow();
+            registrarEmpresaWindow.Show();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace View
     /// <summary>
     /// Lógica de interacción para MenuDescuentoWindow.xaml
     /// </summary>
-    public partial class MenuDescuentoWindow : Window
+    public partial class MenuDescuentoWindow : MetroWindow
     {
         public MenuDescuentoWindow()
         {

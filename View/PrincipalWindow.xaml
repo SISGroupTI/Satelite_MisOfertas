@@ -26,6 +26,7 @@
         </Grid.RowDefinitions>
         <Image Margin="10" Source="img/Imagen-ms SinLogo.png"/>
         <local:MenuControl Grid.Column="1" Grid.ColumnSpan="2"/>
+        <local:UserOptionControl Grid.Column="3" Margin="0,25"/>
         <GroupBox Header="Panel de Control" Margin="10,41,10,8" Grid.Row="1" Grid.ColumnSpan="3" Controls:ControlsHelper.ContentCharacterCasing="Normal" Background="#FFCFCFCF">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
