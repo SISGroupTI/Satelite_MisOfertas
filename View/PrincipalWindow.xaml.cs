@@ -29,12 +29,13 @@ namespace View
     {
 
         PrincipalPage principalPage = new PrincipalPage();
+        VerDescuentoPage verDescuentoPage;
+        VerOfertasPage verOfertasPage;
         MenuOfertaPage menuOfertaPage;
-        MenuDescuentoPage MenuDescuentoPage;
-        RegistrarEmpresaPage registrarEmpresaPage;
-        ModificarEmpresaPage modificarEmpresaPage;
-        RegistrarLocalPage registrarLocalPage;
-        ModificarLocalPage modificarLocalPage;
+        MenuLocalPage menuLocalPage;
+        MenuProductoPage menuProductoPage;
+        MenuEmpresaPage menuEmpresaPage;
+        MenuTrabajdorPage menuTrabajdorPage;
         public PrincipalWindow()
         {
             InitializeComponent();
@@ -45,57 +46,55 @@ namespace View
         private void initFristPage()
         {
             setNavigationService(principalPage);
-        }
-
-        private void menu_oferta_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.menuOfertaPage==null)
-            {
-                menuOfertaPage = new MenuOfertaPage();
-            }
-            setNavigationService(menuOfertaPage);
-        }
-
+        }  
         private void menu_inicio_Click(object sender, RoutedEventArgs e)
         {
             initFristPage();
         }
-
-        private void menu_descuento_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.MenuDescuentoPage == null)
-            {
-                MenuDescuentoPage = new MenuDescuentoPage();
-            }
-            setNavigationService(MenuDescuentoPage);
-        }
-
-        private void registrar_empresa_Click(object sender, RoutedEventArgs e)
-        {
-            if (registrarEmpresaPage == null) { this.registrarEmpresaPage = new RegistrarEmpresaPage(); }
-            setNavigationService(registrarEmpresaPage);
-        }
-
-        private void modificar_empresa_Click(object sender, RoutedEventArgs e)
-        {
-            if (modificarEmpresaPage == null) { this.modificarEmpresaPage = new ModificarEmpresaPage(); }
-            setNavigationService(modificarEmpresaPage);
-        }
-        private void setNavigationService(Page page)
+        
+        public void setNavigationService(Page page)
         {
             frame.NavigationService.Navigate(page);
         }
-
-        private void registrar_local_Click(object sender, RoutedEventArgs e)
+        
+        private void ver_oferta_Click(object sender, RoutedEventArgs e)
         {
-            if (registrarLocalPage==null) { registrarLocalPage = new RegistrarLocalPage(); }
-            setNavigationService(registrarLocalPage);
+            if (verOfertasPage == null) { verOfertasPage = new VerOfertasPage(); }
+            setNavigationService(verOfertasPage);
+        }
+        private void ver_descuento_Click(object sender, RoutedEventArgs e)
+        {
+            if (verDescuentoPage == null) { verDescuentoPage = new VerDescuentoPage(); }
+            setNavigationService(verDescuentoPage);
+        }
+        private void menu_oferta_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuOfertaPage == null) { menuOfertaPage = new MenuOfertaPage(); }
+            setNavigationService(menuOfertaPage);
+        }
+        
+        private void menu_local_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuLocalPage == null) { menuLocalPage = new MenuLocalPage(); }
+            setNavigationService(menuLocalPage);
         }
 
-        private void Mmodificar_local_Click(object sender, RoutedEventArgs e)
+        private void menu_producto_Click(object sender, RoutedEventArgs e)
         {
-            if (modificarLocalPage == null) { modificarLocalPage = new ModificarLocalPage(); }
-            setNavigationService(modificarLocalPage);
+            if (menuProductoPage == null) { menuProductoPage = new MenuProductoPage(); }
+            setNavigationService(menuProductoPage);
+        }
+
+        private void menu_empresa_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuEmpresaPage == null) { menuEmpresaPage = new MenuEmpresaPage(); }
+            setNavigationService(menuEmpresaPage);
+        }
+
+        private void menu_trabajor_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuTrabajdorPage == null) { menuTrabajdorPage = new MenuTrabajdorPage(); }
+            setNavigationService(menuTrabajdorPage);
         }
     }
 

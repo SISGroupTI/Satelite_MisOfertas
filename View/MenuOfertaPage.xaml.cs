@@ -19,9 +19,16 @@ namespace View
     /// </summary>
     public partial class MenuOfertaPage : Page
     {
+        RegistrarOfertaPage registrarOfertaPage;
         public MenuOfertaPage()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregarOferta_Click(object sender, RoutedEventArgs e)
+        {
+            if (registrarOfertaPage == null) { registrarOfertaPage = new RegistrarOfertaPage(); }
+            NavigationService.Navigate(registrarOfertaPage);
         }
     }
 }

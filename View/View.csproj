@@ -13,6 +13,8 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,15 +62,15 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.IO, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.IO.dll</HintPath>
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
-    <Reference Include="System.Runtime, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Runtime.dll</HintPath>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading.Tasks, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Threading.Tasks.dll</HintPath>
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -103,17 +105,38 @@
     <Compile Include="CamposLocalControl.xaml.cs">
       <DependentUpon>CamposLocalControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuDescuentoPage.xaml.cs">
-      <DependentUpon>MenuDescuentoPage.xaml</DependentUpon>
+    <Compile Include="CamposOfertaControl.xaml.cs">
+      <DependentUpon>CamposOfertaControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CamposProductoControl.xaml.cs">
+      <DependentUpon>CamposProductoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuEmpresaPage.xaml.cs">
+      <DependentUpon>MenuEmpresaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuLocalPage.xaml.cs">
+      <DependentUpon>MenuLocalPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuOfertaPage.xaml.cs">
       <DependentUpon>MenuOfertaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuProductoPage.xaml.cs">
+      <DependentUpon>MenuProductoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTrabajdorPage.xaml.cs">
+      <DependentUpon>MenuTrabajdorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModificarEmpresaPage.xaml.cs">
       <DependentUpon>ModificarEmpresaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModificarLocalPage.xaml.cs">
       <DependentUpon>ModificarLocalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarOfertaPage.xaml.cs">
+      <DependentUpon>ModificarOfertaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProductoPage.xaml.cs">
+      <DependentUpon>ModificarProductoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrincipalPage.xaml.cs">
       <DependentUpon>PrincipalPage.xaml</DependentUpon>
@@ -124,8 +147,20 @@
     <Compile Include="RegistrarLocalPage.xaml.cs">
       <DependentUpon>RegistrarLocalPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarOfertaPage.xaml.cs">
+      <DependentUpon>RegistrarOfertaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarProductoPage.xaml.cs">
+      <DependentUpon>RegistrarProductoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserOptionControl.xaml.cs">
       <DependentUpon>UserOptionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VerDescuentoPage.xaml.cs">
+      <DependentUpon>VerDescuentoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VerOfertasPage.xaml.cs">
+      <DependentUpon>VerOfertasPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -168,15 +203,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CamposOfertaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CamposProductoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuDescuentoPage.xaml">
+    <Page Include="MenuEmpresaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuLocalPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MenuOfertaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuProductoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuTrabajdorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,6 +240,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ModificarLocalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModificarOfertaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModificarProductoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,7 +267,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RegistrarOfertaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrarProductoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserOptionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VerDescuentoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VerOfertasPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,10 +307,15 @@
     <Resource Include="img\3-star-rating.jpg" />
     <Resource Include="img\add-ic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\empty.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
 </Project>

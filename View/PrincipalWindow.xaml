@@ -33,33 +33,23 @@
                 <MenuItem x:Name="menu_inicio" Header="Inicio" Margin="30,0" FontSize="16" Click="menu_inicio_Click" >
 
                 </MenuItem>
-                <MenuItem x:Name="menu_oferta" Header="_Ofertas" Margin="0,0,30,0" Click="menu_oferta_Click"/>
-                <MenuItem x:Name="menu_descuento" Header="_Descuentos" Margin="0,0,30,0" Click="menu_descuento_Click">
+                <MenuItem x:Name="ver_oferta" Header="_Ofertas" Margin="0,0,30,0" Click="ver_oferta_Click"/>
+                <MenuItem x:Name="ver_descuento" Header="_Descuentos" Margin="0,0,30,0" Click="ver_descuento_Click">
 
                 </MenuItem>
                 <MenuItem x:Name="menu_mantenedores" Header="Mantenedores" Margin="0,0,30,0">
-                    <MenuItem Header="Productos">
+                    <MenuItem Header="Productos" x:Name="menu_producto" Click="menu_producto_Click">
                     </MenuItem>
-                    <MenuItem Header="Ofertas">
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Empresas">
-                        <MenuItem Header="Registrar" x:Name="registrar_empresa" Click="registrar_empresa_Click">
-
-                        </MenuItem>
-                        <MenuItem Header="Modificar" x:Name="modificar_empresa" Click="modificar_empresa_Click">
-                           
-                        </MenuItem>
+                    <MenuItem Header="Ofertas" x:Name="menu_oferta" Click="menu_oferta_Click">
+                        
                     </MenuItem>
                     <Separator/>
-                    <MenuItem Header="Locales">
-                        <MenuItem Header="Registrar Local" x:Name="registrar_local" Click="registrar_local_Click">
-                            
-                        </MenuItem>
-                        <MenuItem Header="Modificar Local" x:Name="Mmodificar_local" Click="Mmodificar_local_Click">
-                            
-                        </MenuItem>
+                    <MenuItem x:Name="menu_empresa" Header="Empresas" Click="menu_empresa_Click">
                     </MenuItem>
+                    <Separator/>
+                    <MenuItem x:Name="menu_local" Header="Locales" Click="menu_local_Click">
+                    </MenuItem>
+                    <MenuItem x:Name="menu_trabajor" Header="Trabajadores" Click="menu_trabajor_Click"></MenuItem>
                 </MenuItem>
                 <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" IsEnabled="False">
 

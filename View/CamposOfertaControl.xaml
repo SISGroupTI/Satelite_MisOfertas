@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="View.CamposOfertaControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="320">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Local" Margin="10,5"/>
+        <Label Content="Fecha de Creacion" Margin="10,5" Grid.Row="3"/>
+        <Label Content="Codigo de Oferta" Margin="10,5" Grid.Row="2"/>
+        <Label Content="Rubro" Margin="10,5" Grid.Row="1"/>
+        <Label Content="Fecha de Publicacion" Margin="10,5" Grid.Row="4" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="txtLocal"
+            Controls:TextBoxHelper.Watermark="102"
+            Controls:TextBoxHelper.ClearTextButton="True"
+            Grid.Column="1" Margin="10,5" TextWrapping="Wrap" Text=""/>
+        <TextBox x:Name="txtCodigoOferta"
+            Controls:TextBoxHelper.Watermark="COD001"
+            Controls:TextBoxHelper.ClearTextButton="True"
+            Grid.Column="1" Margin="10,5" TextWrapping="Wrap" Text="" Grid.Row="2"/>
+        <ComboBox x:Name="cbxRubro" Grid.Column="1" Margin="10,5" Grid.Row="1"/>
+        <DatePicker x:Name="dpFechaCreacion" Grid.Column="1" Margin="10,5" Grid.Row="3"/>
+        <DatePicker x:Name="dpFechaPublicacion" Grid.Column="1" Margin="10,5" Grid.Row="4"/>
+
+    </Grid>
+</UserControl>
