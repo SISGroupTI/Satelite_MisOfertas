@@ -51,11 +51,16 @@
                     </MenuItem>
                     <MenuItem x:Name="menu_trabajor" Header="Trabajadores" Click="menu_trabajor_Click"></MenuItem>
                 </MenuItem>
-                <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" IsEnabled="False">
-
+                <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" IsEnabled="True">
+                    <MenuItem Header="Tiendas" x:Name="menu_reporte_tienda" Click="menu_reporte_tienda_Click">
+                        
+                    </MenuItem>
+                    <MenuItem Header="Valoraciones" x:Name="menu_reporte_valoracion" Click="menu_reporte_valoracion_Click">
+                        
+                    </MenuItem>
                 </MenuItem>
-                <MenuItem x:Name="menu_archivos" Header="Archivos" Margin="0,0,20,0" IsEnabled="False">
-
+                <MenuItem x:Name="menu_archivos" Header="Archivo" Margin="0,0,20,0" IsEnabled="True" Click="menu_archivos_Click">
+                    
                 </MenuItem>
             </Menu>
         </DockPanel>

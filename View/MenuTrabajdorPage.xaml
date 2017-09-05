@@ -33,7 +33,7 @@
         <Image Margin="10" Source="img/user-ic.png" Grid.Column="1"/>
         <Button x:Name="btnAgregarTrabajador"
                     Content="" Grid.Column="1" Margin="15,0"
-                    Style="{DynamicResource MetroCircleButtonStyle}" RenderTransformOrigin="0.545,0.455" Grid.Row="1">
+                    Style="{DynamicResource MetroCircleButtonStyle}" RenderTransformOrigin="0.545,0.455" Grid.Row="1" Click="btnAgregarTrabajador_Click">
             <Button.Background>
                 <ImageBrush ImageSource="img/add-ic.png"/>
             </Button.Background>

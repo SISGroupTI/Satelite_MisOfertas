@@ -19,9 +19,17 @@ namespace View
     /// </summary>
     public partial class MenuTrabajdorPage : Page
     {
+        RegistrarTrabajadorPage registrarTrabajadorPage;
         public MenuTrabajdorPage()
         {
             InitializeComponent();
         }
+
+        private void btnAgregarTrabajador_Click(object sender, RoutedEventArgs e)
+        {
+            if (registrarTrabajadorPage == null) { registrarTrabajadorPage = new RegistrarTrabajadorPage(); }
+            NavigationService.Navigate(registrarTrabajadorPage);
+        }
     }
+    
 }

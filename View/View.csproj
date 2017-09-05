@@ -99,6 +99,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CamposConsumidorControl.xaml.cs">
+      <DependentUpon>CamposConsumidorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CamposDatosDescuentoControl.xaml.cs">
+      <DependentUpon>CamposDatosDescuentoControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CamposEmpresaControl.xaml.cs">
       <DependentUpon>CamposEmpresaControl.xaml</DependentUpon>
     </Compile>
@@ -111,6 +117,12 @@
     <Compile Include="CamposProductoControl.xaml.cs">
       <DependentUpon>CamposProductoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CamposTrabajadorControl.xaml.cs">
+      <DependentUpon>CamposTrabajadorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBIPage.xaml.cs">
+      <DependentUpon>MenuBIPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MenuEmpresaPage.xaml.cs">
       <DependentUpon>MenuEmpresaPage.xaml</DependentUpon>
     </Compile>
@@ -122,6 +134,12 @@
     </Compile>
     <Compile Include="MenuProductoPage.xaml.cs">
       <DependentUpon>MenuProductoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuReporteTiendaPage.xaml.cs">
+      <DependentUpon>MenuReporteTiendaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuReporteValoracionPage.xaml.cs">
+      <DependentUpon>MenuReporteValoracionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuTrabajdorPage.xaml.cs">
       <DependentUpon>MenuTrabajdorPage.xaml</DependentUpon>
@@ -138,6 +156,9 @@
     <Compile Include="ModificarProductoPage.xaml.cs">
       <DependentUpon>ModificarProductoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModificarTrabajadorPage.xaml.cs">
+      <DependentUpon>ModificarTrabajadorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalPage.xaml.cs">
       <DependentUpon>PrincipalPage.xaml</DependentUpon>
     </Compile>
@@ -153,8 +174,14 @@
     <Compile Include="RegistrarProductoPage.xaml.cs">
       <DependentUpon>RegistrarProductoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarTrabajadorPage.xaml.cs">
+      <DependentUpon>RegistrarTrabajadorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserOptionControl.xaml.cs">
       <DependentUpon>UserOptionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VerDescuentoDetallePage.xaml.cs">
+      <DependentUpon>VerDescuentoDetallePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="VerDescuentoPage.xaml.cs">
       <DependentUpon>VerDescuentoPage.xaml</DependentUpon>
@@ -195,6 +222,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CamposConsumidorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CamposDatosDescuentoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CamposEmpresaControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,7 +246,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CamposTrabajadorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuBIPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +271,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MenuProductoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuReporteTiendaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuReporteValoracionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,6 +299,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ModificarProductoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModificarTrabajadorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,7 +330,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RegistrarTrabajadorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserOptionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VerDescuentoDetallePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

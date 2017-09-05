@@ -36,6 +36,9 @@ namespace View
         MenuProductoPage menuProductoPage;
         MenuEmpresaPage menuEmpresaPage;
         MenuTrabajdorPage menuTrabajdorPage;
+        MenuReporteTiendaPage menuReporteTiendaPage;
+        MenuReporteValoracionPage menuReporteValoracionPage;
+        MenuBIPage menuBIPage;
         public PrincipalWindow()
         {
             InitializeComponent();
@@ -95,6 +98,25 @@ namespace View
         {
             if (menuTrabajdorPage == null) { menuTrabajdorPage = new MenuTrabajdorPage(); }
             setNavigationService(menuTrabajdorPage);
+        }
+
+        private void menu_reporte_tienda_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (menuReporteTiendaPage == null) { menuReporteTiendaPage = new MenuReporteTiendaPage(); }
+            setNavigationService(menuReporteTiendaPage);
+        }
+
+        private void menu_reporte_valoracion_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuReporteValoracionPage == null) { menuReporteValoracionPage = new MenuReporteValoracionPage(); }
+            setNavigationService(menuReporteValoracionPage);
+        }
+
+        private void menu_archivos_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuBIPage == null) { menuBIPage = new MenuBIPage(); }
+            setNavigationService(menuBIPage);
         }
     }
 

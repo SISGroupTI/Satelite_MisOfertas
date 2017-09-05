@@ -95,3 +95,15 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuEmpresaPage.g.c
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuEmpresaPage.baml
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuTrabajdorPage.g.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuTrabajdorPage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposTrabajadorControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\RegistrarTrabajadorPage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposTrabajadorControl.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\RegistrarTrabajadorPage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuReporteTiendaPage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuReporteValoracionPage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\ModificarTrabajadorPage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuReporteTiendaPage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuReporteValoracionPage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\ModificarTrabajadorPage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuBIPage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuBIPage.baml
