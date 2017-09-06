@@ -118,6 +118,57 @@ namespace View
             if (menuBIPage == null) { menuBIPage = new MenuBIPage(); }
             setNavigationService(menuBIPage);
         }
+
+
+        /** 
+         * A partir de este punto todas las acciones realizadas con
+         * respecto al menu de inicio son con fines de demostracion en 
+         * proceso de desarrollo, estos posteriormente se comentaran
+         * para su no uso 
+         * **/
+
+        ModificarProductoPage modificarProducto;
+        private void menu_modificar_producto_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarProducto == null) { modificarProducto = new ModificarProductoPage(); }
+            setNavigationService(modificarProducto);
+        }
+        ModificarOfertaPage modificarOfertaPage;
+        private void menu_modificar_oferta_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarOfertaPage == null) { modificarOfertaPage = new ModificarOfertaPage(); }
+            setNavigationService(modificarOfertaPage);
+        }
+        VerOfertaDetallePage verOfertaDetallePage;
+        private void menu_detalle_oferta_Click(object sender, RoutedEventArgs e)
+        {
+            if (verOfertaDetallePage == null) { verOfertaDetallePage = new VerOfertaDetallePage(); }
+            setNavigationService(verOfertaDetallePage);
+        }
+        ModificarEmpresaPage modificarEmpresaPage;
+        private void menu_modificar_empresa_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarEmpresaPage == null) { modificarEmpresaPage = new ModificarEmpresaPage(); }
+            setNavigationService(modificarEmpresaPage);
+        }
+        ModificarTrabajadorPage modificarTrabajadorPage;
+        private void menu_modificar_trabajadores_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarTrabajadorPage == null) { modificarTrabajadorPage = new ModificarTrabajadorPage(); }
+            setNavigationService(modificarTrabajadorPage);
+        }
+        ModificarLocalPage modificarLocalPage;
+        private void menu_modificar_locales_Click(object sender, RoutedEventArgs e)
+        {
+            if (modificarLocalPage == null) { modificarLocalPage = new ModificarLocalPage(); }
+            setNavigationService(modificarLocalPage);
+        }
+        VerDescuentoDetallePage verDescuentoDetallePage;
+        private void menu_mostrar_descuento_Click(object sender, RoutedEventArgs e)
+        {
+            if (verDescuentoDetallePage == null) { verDescuentoDetallePage = new VerDescuentoDetallePage(); }
+            setNavigationService(verDescuentoDetallePage);
+        }
     }
 
 }

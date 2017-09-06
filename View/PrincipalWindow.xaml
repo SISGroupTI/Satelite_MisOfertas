@@ -50,6 +50,39 @@
                     <MenuItem x:Name="menu_local" Header="Locales" Click="menu_local_Click">
                     </MenuItem>
                     <MenuItem x:Name="menu_trabajor" Header="Trabajadores" Click="menu_trabajor_Click"></MenuItem>
+                    <MenuItem Header="Development">
+                        <MenuItem Header="Productos">
+                            <MenuItem x:Name="menu_modificar_producto" Header="Modificar" Click="menu_modificar_producto_Click" >
+                                
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Ofertas">
+                            <MenuItem x:Name="menu_modificar_oferta" Header="Modificar" Click="menu_modificar_oferta_Click">
+
+                            </MenuItem>
+                            <MenuItem x:Name="menu_detalle_oferta" Header="Detalle" Click="menu_detalle_oferta_Click">
+
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Empresas">
+                            <MenuItem x:Name="menu_modificar_empresa" Header="Modificar" Click="menu_modificar_empresa_Click">
+
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Trabajadores">
+                            <MenuItem x:Name="menu_modificar_trabajadores" Header="Modificar" Click="menu_modificar_trabajadores_Click">
+
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Locales">
+                            <MenuItem x:Name="menu_modificar_locales" Header="Modificar" Click="menu_modificar_locales_Click">
+
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem x:Name="menu_mostrar_descuento" Header="Detalle Descuento" Click="menu_mostrar_descuento_Click">
+
+                        </MenuItem>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" IsEnabled="True">
                     <MenuItem Header="Tiendas" x:Name="menu_reporte_tienda" Click="menu_reporte_tienda_Click">

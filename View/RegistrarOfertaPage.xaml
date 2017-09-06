@@ -51,14 +51,14 @@
             <RichTextBox Grid.Column="1" Margin="10,10,280,10" Grid.Row="8">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="RichTextBox"/>
+                        <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
             <RichTextBox Grid.Column="1" Margin="10,10,280,10" Grid.Row="10">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="RichTextBox"/>
+                        <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>

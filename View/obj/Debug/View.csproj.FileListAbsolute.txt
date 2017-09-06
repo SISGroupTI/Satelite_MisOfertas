@@ -107,3 +107,11 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuReporteValoraci
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\ModificarTrabajadorPage.baml
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuBIPage.g.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\MenuBIPage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposConsumidorControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposDatosDescuentoControl.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\VerDescuentoDetallePage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposConsumidorControl.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\CamposDatosDescuentoControl.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\VerDescuentoDetallePage.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\VerOfertaDetallePage.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\VerOfertaDetallePage.baml

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,18 +16,13 @@ using System.Windows.Shapes;
 namespace View
 {
     /// <summary>
-    /// Lógica de interacción para RegistrarLocalPage.xaml
+    /// Lógica de interacción para VerOfertaDetallePage.xaml
     /// </summary>
-    public partial class RegistrarLocalPage : Page
+    public partial class VerOfertaDetallePage : Page
     {
-        public RegistrarLocalPage()
+        public VerOfertaDetallePage()
         {
             InitializeComponent();
-        }
-
-        private void btnGuardar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
