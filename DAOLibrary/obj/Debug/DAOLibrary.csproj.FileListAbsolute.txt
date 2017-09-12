@@ -15,3 +15,7 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.c
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.pdb

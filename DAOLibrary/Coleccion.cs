@@ -7,24 +7,24 @@ using EntityLibrary;
 
 namespace DAOLibrary
 {
-    class Coleccion
+    public class Coleccion
     {
-        private List<Trabajador> trabajadores;
+        private Trabajador[] trabajadores;
         private Trabajador encargado, administrador, gerente;
-
-        private Coleccion()
+        
+        public Coleccion()
         {
             if (Trabajadores == null)
             {
-                Trabajadores = new List<Trabajador>();
+                Trabajadores = new Trabajador[3];
                 setTrabajadores();
-                trabajadores.Add(encargado);
-                trabajadores.Add(administrador);
-                trabajadores.Add(gerente);
+                trabajadores[0]=encargado;
+                trabajadores[1]=administrador;
+                trabajadores[2]=gerente;
             }
         }
 
-        public List<Trabajador> Trabajadores { get => trabajadores; set => trabajadores = value; }
+        public Trabajador[] Trabajadores { get => trabajadores; set => trabajadores = value; }
 
         private void setTrabajadores()
         {
@@ -41,5 +41,20 @@ namespace DAOLibrary
             gerente.Contrasena = "4961.qwas";
             gerente.Id_perfil = 1;
         }
+
+        public int compararLista(String p_usuario, String p_contrasena)
+        {
+            for (int i = 0; i <trabajadores.Length; i++)
+            {
+                String usuario = trabajadores[i].Nombre_usuario;
+                String contrasena = trabajadores[i].Contrasena;
+                if (usuario.Equals(p_usuario) && contrasena.Equals(p_contrasena))
+                {
+                    return trabajadores[i].Id_perfil;
+                }
+            }
+            return 0;
+        }
     }
+
 }

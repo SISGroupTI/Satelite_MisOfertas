@@ -42,7 +42,7 @@ namespace View
         public PrincipalWindow()
         {
             InitializeComponent();
-            initFristPage();
+            //initFristPage();
             
         }
 

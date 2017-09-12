@@ -43,10 +43,10 @@
                     <MenuItem Header="Ofertas" x:Name="menu_oferta" Click="menu_oferta_Click">
                         
                     </MenuItem>
-                    <Separator/>
+                    <Separator x:Name="separador1"/>
                     <MenuItem x:Name="menu_empresa" Header="Empresas" Click="menu_empresa_Click">
                     </MenuItem>
-                    <Separator/>
+                    <Separator x:Name="separador2"/>
                     <MenuItem x:Name="menu_local" Header="Locales" Click="menu_local_Click">
                     </MenuItem>
                     <MenuItem x:Name="menu_trabajor" Header="Trabajadores" Click="menu_trabajor_Click"></MenuItem>
@@ -84,7 +84,7 @@
                         </MenuItem>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" IsEnabled="True">
+                <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" >
                     <MenuItem Header="Tiendas" x:Name="menu_reporte_tienda" Click="menu_reporte_tienda_Click">
                         
                     </MenuItem>
@@ -92,7 +92,7 @@
                         
                     </MenuItem>
                 </MenuItem>
-                <MenuItem x:Name="menu_archivos" Header="Archivo" Margin="0,0,20,0" IsEnabled="True" Click="menu_archivos_Click">
+                <MenuItem x:Name="menu_archivos" Header="Archivo" Margin="0,0,20,0"  Click="menu_archivos_Click">
                     
                 </MenuItem>
             </Menu>

@@ -217,3 +217,10 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\obj\Debug\View.Properties.Re
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\obj\Debug\View.csproj.GenerateResource.Cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\obj\Debug\View.exe
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\obj\Debug\View.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\NegLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\BusinessLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\EntityLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\NegLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\BusinessLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\EntityLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\obj\Debug\View.csproj.CoreCompileInputs.cache

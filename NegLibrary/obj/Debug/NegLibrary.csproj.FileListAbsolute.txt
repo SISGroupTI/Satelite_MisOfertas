@@ -1,0 +1,10 @@
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\NegLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\NegLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\EntityLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\EntityLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.csprojResolveAssemblyReference.cache
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.pdb
