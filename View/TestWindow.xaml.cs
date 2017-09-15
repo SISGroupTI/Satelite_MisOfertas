@@ -43,7 +43,7 @@ namespace View
 
             OracleDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            lblNombreLocal.Content = dr.GetString(3);
+            lblNombreLocal.Content = dr.GetString(0);
 
         }
     }
