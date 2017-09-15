@@ -9,11 +9,10 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibr
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.pdb
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibrary.dll.CodeAnalysisLog.xml
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\bin\Debug\EntityLibrary.dll.lastcodeanalysissucceeded
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\bin\Debug\EntityLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\bin\Debug\EntityLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csprojResolveAssemblyReference.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.csprojResolveAssemblyReference.cache

@@ -19,7 +19,14 @@ namespace ConxionLibrary
         }
         public OracleConnection Connect()
         {
-            con.ConnectionString = "User Id=<username>;Password=<password>;Data Source=<datasource>";
+            String dataSource = "(DESCRIPTION ="+
+                                    "(ADDRESS = (PROTOCOL = TCP)(HOST = DESKTOP - LQ8HQGJ)(PORT = 1521))"+
+                                        "(CONNECT_DATA ="+
+                                            "(SERVER = DEDICATED)"+
+                                             "(SERVICE_NAME = XE)"+
+                                    ")"+
+                                 ")";
+            con.ConnectionString = "User Id=portafolio;Password=portafolio;Data Source="+dataSource;
             return con;
         }
 

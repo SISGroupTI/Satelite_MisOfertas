@@ -8,3 +8,13 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.c
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\obj\Debug\NegLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\NegLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\NegLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\BusinessLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\EntityLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\BusinessLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.csprojResolveAssemblyReference.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.pdb

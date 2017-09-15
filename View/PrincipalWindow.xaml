@@ -82,6 +82,9 @@
                         <MenuItem x:Name="menu_mostrar_descuento" Header="Detalle Descuento" Click="menu_mostrar_descuento_Click">
 
                         </MenuItem>
+                        <MenuItem x:Name="test" Header="Test" Click="test_Click">
+
+                        </MenuItem>
                     </MenuItem>
                 </MenuItem>
                 <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" >

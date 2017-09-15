@@ -224,3 +224,12 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\NegLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\BusinessLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\EntityLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\NegLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\BusinessLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\EntityLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\NegLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\BusinessLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\Oracle.DataAccess.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\TestWindow.g.cs
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\TestWindow.baml

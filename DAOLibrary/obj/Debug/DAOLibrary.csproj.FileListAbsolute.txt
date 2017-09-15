@@ -9,8 +9,6 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibra
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.CodeAnalysisLog.xml
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.lastcodeanalysissucceeded
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
@@ -19,3 +17,6 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\BusinessLibr
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\EntityLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\EntityLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
