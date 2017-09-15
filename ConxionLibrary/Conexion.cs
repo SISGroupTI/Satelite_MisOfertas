@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 
 namespace ConxionLibrary
-{
+{//
     public class Conexion
     {
-        OracleConnection con;
+        private static OracleConnection con;
 
         public Conexion()
         {
@@ -17,26 +17,33 @@ namespace ConxionLibrary
                 con = new OracleConnection();
             }
         }
-        public OracleConnection Connect()
+        public static OracleConnection Connect()
         {
             String dataSource = "(DESCRIPTION ="+
-                                    "(ADDRESS = (PROTOCOL = TCP)(HOST = DESKTOP - LQ8HQGJ)(PORT = 1521))"+
+                                    "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))"+
                                         "(CONNECT_DATA ="+
                                             "(SERVER = DEDICATED)"+
                                              "(SERVICE_NAME = XE)"+
                                     ")"+
                                  ")";
-            con.ConnectionString = "User Id=portafolio;Password=portafolio;Data Source="+dataSource;
+            /**String dataSource = "(DESCRIPTION =" +
+                                    "(ADDRESS = (PROTOCOL = TCP)(HOST = LAPTOP-2AFLT0V8)(PORT = 1521))" +
+                                        "(CONNECT_DATA =" +
+                                            "(SERVER = DEDICATED)" +
+                                             "(SERVICE_NAME = XE)" +
+                                    ")" +
+                                 ")";*/
+            con.ConnectionString = "User Id=misofertas;Password=root;Data Source="+dataSource;
             return con;
         }
 
-        public void Close()
+        public static void Close()
         {
             con.Close();
             con.Dispose();
         }
 
-        public void Open()
+        public static void Open()
         {
             con.Open();
         }
