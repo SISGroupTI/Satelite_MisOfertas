@@ -24,6 +24,7 @@ namespace DAOLibrary
             String nombre_usuario = trabajador.NombreUsuario;
             String contrasena = trabajador.Contrasena;
             OracleCommand cmd = new OracleCommand();
+            cmd.Connection = cone.Obtener();
             cmd.CommandText = "SP_INICIO_SESION_TRABAJADOR";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("p_NOMBRE_USUARIO", OracleDbType.Varchar2).Value = nombre_usuario;
@@ -32,7 +33,7 @@ namespace DAOLibrary
             output.Direction = System.Data.ParameterDirection.Output;
             try
             {
-
+                cone.Obtener().Open();
                 cmd.ExecuteNonQuery();
                 OracleDataReader dr = ((OracleRefCursor)output.Value).GetDataReader();
                 while (dr.Read())
