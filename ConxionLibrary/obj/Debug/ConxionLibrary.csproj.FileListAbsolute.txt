@@ -3,5 +3,7 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLi
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.CodeAnalysisLog.xml
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.lastcodeanalysissucceeded
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.config
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\Oracle.DataAccess.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\Oracle.ManagedDataAccess.dll

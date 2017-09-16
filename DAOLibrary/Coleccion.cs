@@ -29,28 +29,28 @@ namespace DAOLibrary
         private void setTrabajadores()
         {
             encargado = new Trabajador();
-            encargado.Nombre_usuario = "al.cardenas";
+            encargado.NombreUsuario = "al.cardenas";
             encargado.Contrasena = "lamoda";
-            encargado.Id_perfil = 3;
+            encargado.Perfil= new Perfil(3,"encargada");
             administrador = new Trabajador();
-            administrador.Nombre_usuario = "so.braumuller";
+            administrador.NombreUsuario = "so.braumuller";
             administrador.Contrasena = "lachora";
-            administrador.Id_perfil = 2;
+            administrador.Perfil = new Perfil(2, "administradora");
             gerente = new Trabajador();
-            gerente.Nombre_usuario = "ia.cardenas";
+            gerente.NombreUsuario = "ia.cardenas";
             gerente.Contrasena = "4961.qwas";
-            gerente.Id_perfil = 1;
+            gerente.Perfil = new Perfil(1, "gerente");
         }
 
-        public int compararLista(String p_usuario, String p_contrasena)
+        public long compararLista(String p_usuario, String p_contrasena)
         {
             for (int i = 0; i <trabajadores.Length; i++)
             {
-                String usuario = trabajadores[i].Nombre_usuario;
+                String usuario = trabajadores[i].NombreUsuario;
                 String contrasena = trabajadores[i].Contrasena;
                 if (usuario.Equals(p_usuario) && contrasena.Equals(p_contrasena))
                 {
-                    return trabajadores[i].Id_perfil;
+                    return trabajadores[i].Perfil.IdPerfil;
                 }
             }
             return 0;

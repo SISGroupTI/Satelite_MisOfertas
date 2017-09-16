@@ -1,26 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using DAOLibrary;
 using EntityLibrary;
+using System;
+
 namespace NegLibrary
 {
     public class TrabajadorNeg
     {
         Coleccion coleccion;
-        
+
         public TrabajadorNeg()
         {
-            if (coleccion==null)
+            if (coleccion == null)
             {
                 coleccion = new Coleccion();
             }
         }
-        public int validarCredenciales(String usuario, String contrasena)
+        public Boolean validarCredenciales(String usuario, String contrasena)
         {
-            return coleccion.compararLista(usuario, contrasena);
+            Trabajador trabajador = new Trabajador();
+            trabajador.NombreUsuario = usuario;
+            trabajador.Contrasena = contrasena;
+            DAOTrabajador daoTrabajador = new DAOTrabajador();
+            return daoTrabajador.validarTrabajador(trabajador);
         }
     }
 }

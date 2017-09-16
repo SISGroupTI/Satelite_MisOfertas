@@ -18,3 +18,8 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.cs
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\obj\Debug\NegLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\ConxionLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\ConxionLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\ConxionLibrary.dll.config
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\NegLibrary\bin\Debug\BusinessLibrary.dll.config

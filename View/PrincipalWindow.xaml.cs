@@ -169,12 +169,7 @@ namespace View
             if (verDescuentoDetallePage == null) { verDescuentoDetallePage = new VerDescuentoDetallePage(); }
             setNavigationService(verDescuentoDetallePage);
         }
-        private void test_Click(object sender, RoutedEventArgs e)
-        {
-            TestWindow testWindow = new TestWindow();
-
-            testWindow.Show();
-        }
+        
     }
 
 }

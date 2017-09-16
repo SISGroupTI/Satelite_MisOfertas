@@ -20,3 +20,9 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\EntityLibrar
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\EntityLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\EntityLibrary.pdb
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\ConxionLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\Oracle.DataAccess.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.config
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll

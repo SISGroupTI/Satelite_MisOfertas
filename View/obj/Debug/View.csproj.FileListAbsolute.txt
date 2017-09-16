@@ -230,6 +230,8 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\EntityLibrary.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\NegLibrary.pdb
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\BusinessLibrary.pdb
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\EntityLibrary.pdb
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\Oracle.DataAccess.dll
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\TestWindow.g.cs
-G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\obj\Debug\TestWindow.baml
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\ConxionLibrary.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\ConxionLibrary.pdb
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\ConxionLibrary.dll.config
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\Oracle.ManagedDataAccess.dll
+G:\Usuario\Ian\Documents\Satelite Mis Ofertas\View\bin\Debug\BusinessLibrary.dll.config

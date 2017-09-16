@@ -1,4 +1,4 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,45 +8,22 @@ namespace ConxionLibrary
 {//
     public class Conexion
     {
-        private static OracleConnection con;
+        String cadena = "Data Source=localhost;User ID=misofertas;Password=root";
+        private static OracleConnection cone;
 
         public Conexion()
         {
-            if (con==null)
+            if (cone == null)
             {
-                con = new OracleConnection();
+                cone = new OracleConnection();
+                cone.ConnectionString = cadena;
             }
         }
-        public static OracleConnection Connect()
+
+        public OracleConnection Obtener()
         {
-            String dataSource = "(DESCRIPTION ="+
-                                    "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))"+
-                                        "(CONNECT_DATA ="+
-                                            "(SERVER = DEDICATED)"+
-                                             "(SERVICE_NAME = XE)"+
-                                    ")"+
-                                 ")";
-            /**String dataSource = "(DESCRIPTION =" +
-                                    "(ADDRESS = (PROTOCOL = TCP)(HOST = LAPTOP-2AFLT0V8)(PORT = 1521))" +
-                                        "(CONNECT_DATA =" +
-                                            "(SERVER = DEDICATED)" +
-                                             "(SERVICE_NAME = XE)" +
-                                    ")" +
-                                 ")";*/
-            con.ConnectionString = "User Id=misofertas;Password=root;Data Source="+dataSource;
-            return con;
+            return cone;
         }
 
-        public static void Close()
-        {
-            con.Close();
-            con.Dispose();
-        }
-
-        public static void Open()
-        {
-            con.Open();
-        }
-        
     }
 }
