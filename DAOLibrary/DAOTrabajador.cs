@@ -13,7 +13,6 @@ namespace DAOLibrary
     public class DAOTrabajador
     {
         private Conexion cone;
-        DataSet dataSet = new DataSet();
         public DAOTrabajador()
         {
             cone = new Conexion();
