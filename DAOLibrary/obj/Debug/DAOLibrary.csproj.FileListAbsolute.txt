@@ -26,3 +26,9 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\ConxionLibrar
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\Oracle.DataAccess.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.config
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.config
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\Oracle.DataAccess.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config

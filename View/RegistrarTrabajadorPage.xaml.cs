@@ -22,6 +22,7 @@ namespace View
         public RegistrarTrabajadorPage()
         {
             InitializeComponent();
+            //camposTrabajador.txtNombre.IsEnabled=false;
         }
     }
 }

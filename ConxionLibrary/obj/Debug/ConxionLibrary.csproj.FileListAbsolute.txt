@@ -7,3 +7,12 @@ G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\ConxionLi
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\Oracle.DataAccess.dll
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\ConxionLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.config
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.pdb
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\bin\Debug\Oracle.DataAccess.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
+D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb

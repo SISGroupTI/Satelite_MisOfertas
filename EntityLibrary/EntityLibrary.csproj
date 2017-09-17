@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Local.cs" />
     <Compile Include="Modulo.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Permiso.cs" />

@@ -16,13 +16,21 @@ namespace NegLibrary
                 coleccion = new Coleccion();
             }
         }
-        public Boolean validarCredenciales(String usuario, String contrasena)
+        public long validarCredenciales(String usuario, String contrasena)
         {
             Trabajador trabajador = new Trabajador();
             trabajador.NombreUsuario = usuario;
             trabajador.Contrasena = contrasena;
             DAOTrabajador daoTrabajador = new DAOTrabajador();
-            return daoTrabajador.validarTrabajador(trabajador);
+            trabajador = daoTrabajador.validarTrabajador(trabajador);
+            if (trabajador != null)
+            {
+                return trabajador.Perfil.IdPerfil;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

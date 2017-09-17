@@ -21,6 +21,7 @@ namespace EntityLibrary
         private String contrasena;
         private short isActivo;
         private Perfil perfil;
+        private Local local;
 
         public long IdTrabajador { get => idTrabajador; set => idTrabajador = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
@@ -35,12 +36,13 @@ namespace EntityLibrary
         public string Contrasena { get => contrasena; set => contrasena = value; }
         public short IsActivo { get => isActivo; set => isActivo = value; }
         public Perfil Perfil { get => perfil; set => perfil = value; }
+        public Local Local { get => local; set => local = value; }
 
         public Trabajador()
         {
         }
 
-        public Trabajador(long idTrabajador, string nombreUsuario, int rut, string dv, string nombre, string apellidos, string correoCorporativo, DateTime fechaIngreso, DateTime fechaModificacion, int fechaEliminacion, string contrasena, short isActivo, Perfil perfil)
+        public Trabajador(long idTrabajador, string nombreUsuario, int rut, string dv, string nombre, string apellidos, string correoCorporativo, DateTime fechaIngreso, DateTime fechaModificacion, int fechaEliminacion, string contrasena, short isActivo, Perfil perfil, Local local)
         {
             this.idTrabajador = idTrabajador;
             this.nombreUsuario = nombreUsuario;
@@ -55,6 +57,7 @@ namespace EntityLibrary
             this.contrasena = contrasena;
             this.isActivo = isActivo;
             this.perfil = perfil;
+            this.Local = local;
         }
     }
 }

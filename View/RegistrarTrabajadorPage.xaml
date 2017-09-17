@@ -28,7 +28,7 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,10" TextWrapping="Wrap" Text="Administrador de Trabajadores" Width="550" FontSize="36"/>
         <Label Content="Ingresar nuevo registro" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Width="250" FontSize="22"/>
         <Separator Grid.Column="1" HorizontalAlignment="Left" Margin="0" Grid.Row="2" Width="910"/>
-        <local:CamposTrabajadorControl Grid.Column="1" Margin="10,10,460,10" Grid.Row="3"/>
+        <local:CamposTrabajadorControl x:Name="camposTrabajador" Grid.Column="1" Margin="10,10,460,10" Grid.Row="3"/>
         <Separator Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="0" Grid.Row="4" VerticalAlignment="Top" Width="560"/>
         <Button x:Name="btnAgregarTrabajador" Content="Agregar Trabajador" Grid.Column="1" Margin="300,10,460,10" Grid.Row="5" FontSize="12" Background="#FFCFCFCF"/>
     </Grid>
