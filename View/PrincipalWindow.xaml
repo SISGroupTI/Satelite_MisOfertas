@@ -25,7 +25,7 @@
         <Image Margin="10" Source="img/Imagen-ms SinLogo.png"/>
         <local:UserOptionControl Grid.Column="3" Margin="0,25,0,0" Height="26" VerticalAlignment="Top"/>
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="53"/>
-        <Label Content="Nombre Usurio" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="91"/>
+        <Label x:Name="lblNombreUsuario" Content="Nombre Usurio" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="91"/>
         <Label Name="lblTimer" Grid.Column="3" HorizontalAlignment="Left" Margin="126,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="85"/>
         <Frame x:Name="frame" Grid.ColumnSpan="4" Content="" Grid.Row="1" NavigationUIVisibility="Hidden"/>
         <DockPanel Grid.Column="1" Margin="0" Grid.ColumnSpan="2">

@@ -7,14 +7,9 @@ namespace NegLibrary
 {
     public class TrabajadorNeg
     {
-        Coleccion coleccion;
-
+ 
         public TrabajadorNeg()
         {
-            if (coleccion == null)
-            {
-                coleccion = new Coleccion();
-            }
         }
         public long validarCredenciales(String usuario, String contrasena)
         {
@@ -25,6 +20,8 @@ namespace NegLibrary
             trabajador = daoTrabajador.validarTrabajador(trabajador);
             if (trabajador != null)
             {
+                //Devuelve el perfil del trabajador para la validacion del 
+                //LoginWindows.xaml.cs
                 return trabajador.Perfil.IdPerfil;
             }
             else

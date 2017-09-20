@@ -19,9 +19,74 @@ namespace View
     /// </summary>
     public partial class CamposEmpresaControl : UserControl
     {
+        Boolean camposLlenos = false;
+
+        public bool CamposLlenos { get => camposLlenos; set => camposLlenos = value; }
+
         public CamposEmpresaControl()
         {
             InitializeComponent();
+        }
+
+        private void txtRutEmpresa_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txtRutEmpresa.Text.Length==10)
+            {
+                CamposLlenos = true;
+                String rut = txtRutEmpresa.Text;
+                bool validacion = false;
+                try
+                {
+                    rut = rut.ToUpper();
+                    rut = rut.Replace(".", "");
+                    rut = rut.Replace("-", "");
+                    int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+
+                    char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
+
+                    int m = 0, s = 1;
+                    for (; rutAux != 0; rutAux /= 10)
+                    {
+                        s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+                    }
+                    if (dv == (char)(s != 0 ? s + 47 : 75))
+                    {
+                        validacion = true;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+                if (!validacion)
+                {
+                    MessageBox.Show("Rut invalido");
+                    CamposLlenos = false;
+                }
+                //MessageBox.Show("DV: "+rut.Substring(8,1));
+                //MessageBox.Show("Rut: " + rut.Substring(0, 8));
+            }
+        }
+
+        private void txtRutEmpresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.K || e.Key==Key.Subtract)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombreEmpresa_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtNombreEmpresa.Text.Length > 0)
+            {
+                CamposLlenos = true;
+            }
+            else { CamposLlenos = false; }
         }
     }
 }

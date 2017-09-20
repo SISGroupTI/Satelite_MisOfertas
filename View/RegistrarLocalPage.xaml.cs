@@ -22,6 +22,12 @@ namespace View
         public RegistrarLocalPage()
         {
             InitializeComponent();
+            cargarEmpresas();
+        }
+
+        private void cargarEmpresas()
+        {
+            
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)

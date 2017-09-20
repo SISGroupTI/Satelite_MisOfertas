@@ -21,7 +21,7 @@
         <TextBox x:Name="txtNumeroLocal"
             Controls:TextBoxHelper.Watermark="102"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Height="23" Margin="10,4,45,5" TextWrapping="Wrap" Text="" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+            Grid.Column="1" Height="23" Margin="10,4,45,5" TextWrapping="Wrap" Text="" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" KeyDown="txtNumeroLocal_KeyDown"/>
         <TextBox x:Name="txtDireccionLocal"
             Controls:TextBoxHelper.Watermark="Los Angeles 0832"
             Controls:TextBoxHelper.ClearTextButton="True"

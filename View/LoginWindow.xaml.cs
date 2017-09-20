@@ -20,6 +20,7 @@ namespace View
     public partial class LoginWindow : MetroWindow
     {
         TrabajadorNeg trabajadorNeg;
+        PrincipalWindow principalWindow;
         public LoginWindow()
         {
             InitializeComponent();
@@ -31,8 +32,11 @@ namespace View
             {
                 trabajadorNeg = new TrabajadorNeg();
             }
-
-            PrincipalWindow principalWindow = new PrincipalWindow();
+            if (principalWindow == null)
+            {
+                principalWindow = new PrincipalWindow();
+            }
+            principalWindow.lblNombreUsuario.Content = txtUsuario.Text;
             switch (trabajadorNeg.validarCredenciales(txtUsuario.Text, txtContrasena.Password))
             {
                 case 1:

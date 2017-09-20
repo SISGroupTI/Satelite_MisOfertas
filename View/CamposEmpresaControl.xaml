@@ -21,13 +21,13 @@
         <TextBox
             Controls:TextBoxHelper.Watermark="12345678-9"
             Controls:TextBoxHelper.ClearTextButton="True"
-            x:Name="txtRutEmpresa" Grid.Column="1" Margin="10,6,45,3" TextWrapping="Wrap">
+            x:Name="txtRutEmpresa" Grid.Column="1" Margin="10,6,45,3" TextWrapping="Wrap" TextChanged="txtRutEmpresa_TextChanged" MaxLength="10" KeyDown="txtRutEmpresa_KeyDown">
 
         </TextBox>
         <TextBox
             Controls:TextBoxHelper.Watermark="SIS Group"
             Controls:TextBoxHelper.ClearTextButton="True"
-            x:Name="txtNombreEmpresa" Grid.Column="1" Margin="10,6,45,3" Grid.Row="1" TextWrapping="Wrap" Text="">
+            x:Name="txtNombreEmpresa" Grid.Column="1" Margin="10,6,45,3" Grid.Row="1" TextWrapping="Wrap" Text="" TextChanged="txtNombreEmpresa_TextChanged">
 
         </TextBox>
 

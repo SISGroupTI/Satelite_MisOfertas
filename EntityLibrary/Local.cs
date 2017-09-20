@@ -35,5 +35,10 @@ namespace EntityLibrary
         {
         }
 
+        public Local(int numeroLocal, string direccion)
+        {
+            this.numeroLocal = numeroLocal;
+            this.direccion = direccion;
+        }
     }
 }

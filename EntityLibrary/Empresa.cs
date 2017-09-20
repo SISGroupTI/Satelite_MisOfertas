@@ -20,6 +20,7 @@ namespace EntityLibrary
         public DateTime FechaIncorporacion { get => fechaIncorporacion; set => fechaIncorporacion = value; }
         public DateTime FechaModificacion { get => fechaModificacion; set => fechaModificacion = value; }
         public DateTime FechaEliminacion { get => fechaEliminacion; set => fechaEliminacion = value; }
+        public int IsActivo { get => isActivo; set => isActivo = value; }
 
         public Empresa(int idEmpresa, int rutEmpresa, char dvEmpresa, string nombreEmpresa, DateTime fechaIncorporacion, DateTime fechaModificacion, DateTime fechaEliminacion, int isActivo)
         {
@@ -35,6 +36,13 @@ namespace EntityLibrary
 
         public Empresa()
         {
+        }
+
+        public Empresa(int rutEmpresa, char dvEmpresa, string nombreEmpresa)
+        {
+            this.rutEmpresa = rutEmpresa;
+            this.dvEmpresa = dvEmpresa;
+            this.nombreEmpresa = nombreEmpresa;
         }
     }
 }
