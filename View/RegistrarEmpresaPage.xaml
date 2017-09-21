@@ -30,11 +30,24 @@
         <Image Margin="10" Source="img/bussinec-ic.png"/>
         <Label Content="Administrador de Empresas" Margin="10,15,105,10" FontSize="36" Grid.ColumnSpan="4" Grid.Column="1"/>
         <Label Content="Ingresar nuevo registro" Margin="10,0,305,0" FontSize="22" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="1"/>
-        <DataGrid x:Name="dtgLocales" Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1">
+        <DataGrid x:Name="dtgLocales" Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1"
+                  AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="clmNumeroLocal" Header="Local N°" Binding="{Binding NumeroLocal}" Width="80"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="Local N°" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label x:Name="txtNumeroLocal" Content="{Binding NumeroLocal}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn x:Name="clmNumeroLocal" Header="Local N°" Binding="{Binding NumeroLocal}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="clmDireccion" Header="Direccion" Binding="{Binding Direccion}" Width="490"></DataGridTextColumn>
-                <DataGridTextColumn x:Name="clmBotonEliminar" Header="Eliminar" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="clmBotonEliminar" Header="Eliminar" Width="80">
+                   
+                </DataGridTextColumn>-->
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnRegistrar" Content="Ingresar Empresa" Margin="90,10,30,32" Background="#FFCFCFCF" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="27" IsEnabled="False" Click="btnRegistrar_Click"/>

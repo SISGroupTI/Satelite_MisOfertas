@@ -41,9 +41,9 @@ namespace View
                 controlesLocal.txtNumeroLocal.Text = "";
                 //MessageBox.Show("Local Agregado");
                 btnRegistrar.IsEnabled = true;
-                var locales = localNeg.LocalesObject;
+                var locales = localNeg.Locales;
                 dtgLocales.ItemsSource = locales.ToList();
-                dtgLocales.AutoGenerateColumns = true;
+                //dtgLocales.AutoGenerateColumns = true;
                 dtgLocales.Items.Refresh();
                 
             }
@@ -69,6 +69,8 @@ namespace View
                         MessageBox.Show("Registro Exitoso");
                         controlesEmpresa.txtNombreEmpresa.Text = "";
                         controlesEmpresa.txtRutEmpresa.Text = "";
+                        dtgLocales.Items.Refresh();
+
                     }
                     else
                     {

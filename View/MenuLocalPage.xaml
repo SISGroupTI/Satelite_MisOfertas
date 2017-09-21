@@ -51,10 +51,6 @@
         <ComboBox Grid.Column="4" Margin="10,6,10,3" Grid.Row="2" Height="30"/>
         <DataGrid Grid.ColumnSpan="4" Grid.Column="1" Margin="10,10,10,25" Grid.Row="3">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Empresa" Binding="{Binding Codigo}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Local" Binding="{Binding Titulo}" Width="150"></DataGridTextColumn>
-                <DataGridTextColumn Header="Direccion" Binding="{Binding FechaCreacion}" Width="300"></DataGridTextColumn>
-                <DataGridTextColumn Header="Fecha de Ingreso" Binding="{Binding FechaPublicacion}" Width="140"></DataGridTextColumn>
                 <DataGridTextColumn Header="Editar" Width="70"></DataGridTextColumn>
                 <DataGridTextColumn Header="Ver" Width="70"></DataGridTextColumn>
             </DataGrid.Columns>

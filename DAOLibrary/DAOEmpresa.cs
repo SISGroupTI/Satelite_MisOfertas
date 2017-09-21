@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Dynamic;
 
 namespace BusinessLibrary
 {
@@ -95,6 +96,46 @@ namespace BusinessLibrary
             }
             catch (Exception e)
             {
+                return null;
+            }
+        }
+        public List<Empresa> ListarEmpresas()
+        {
+            try
+            {
+                Empresa empresa;
+                List<Empresa> listaEmpresas = new List<Empresa>();
+                //Object empresaObj;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_EMPRESAS_MENU";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    empresa = new Empresa();
+                    //empresaObj = new Object();
+                    empresa.IdEmpresa = dr.GetInt32(0);
+                    empresa.RutEmpresa = dr.GetInt32(1);
+                    empresa.NombreEmpresa = dr.GetString(3);
+                    empresa.FechaIncorporacion = DateTime.Parse(dr.GetString(4));
+                    empresa.CantidadLocales = dr.GetInt32(5);
+                    //empresa.DvEmpresa = dr.GetChar(2);
+                    //empresaObj = empresa;
+                    listaEmpresas.Add(empresa);
+                }
+                cone.Obtener().Close();
+                return listaEmpresas;
+
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
                 return null;
             }
         }

@@ -73,6 +73,44 @@ namespace BusinessLibrary
             }
         }
 
+        public List<Local> listarLocalIdEmpresa(Empresa empresa)
+        {
+            int idLocal = empresa.IdEmpresa;
+            try
+            {
+                Local local;
+                List<Local> listaLocales = new List<Local>();
+                //Object empresaObj;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_LOCALES_POR_IDEMPRES";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_ID_EMPRESA",OracleDbType.Int32).Value=idLocal;
+                cmd.Parameters.Add("p_IS_ACTIVO", OracleDbType.Int32).Value = 1;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    local = new Local();
+                    local.Empresa = empresa;
+                    local.IdLocal = dr.GetInt32(0);
+                    local.NumeroLocal = dr.GetInt32(1);
+                    local.Direccion = dr.GetString(2);
+                    listaLocales.Add(local);
+                }
+                cone.Obtener().Close();
+                return listaLocales;
 
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return null;
+            }
+        }
     }
 }

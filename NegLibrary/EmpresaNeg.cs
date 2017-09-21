@@ -56,5 +56,12 @@ namespace NegLibrary
                 return false;
             }
         }
+        public List<Empresa> ListarEmpresas()
+        {
+            return daoEmpresa.ListarEmpresas();
+        }
+
+        
+
     }
 }

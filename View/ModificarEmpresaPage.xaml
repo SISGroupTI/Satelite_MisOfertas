@@ -30,11 +30,24 @@
         <Image Margin="10" Source="img/bussinec-ic.png"/>
         <Label Content="Administrador de Empresas" Margin="10,15,105,10" FontSize="36" Grid.ColumnSpan="4" Grid.Column="1"/>
         <Label Content="Modificar Registro" Margin="10,0,305,0" FontSize="22" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="1"/>
-        <DataGrid Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1">
+        <DataGrid x:Name="dtLocal" Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Local N°" Binding="{Binding NumeroLocal}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Direccion" Binding="{Binding Direccion}" Width="490"></DataGridTextColumn>
-                <DataGridTextColumn Header="Eliminar" Width="80"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="Eliminar"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEliminar" Content="Eliminar"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnModificarEmpresa" Content="Modificar Empresa" Margin="90,10,30,32" Background="#FFCFCFCF" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="27" Click="btnModificarEmpresa_Click"/>
@@ -46,7 +59,7 @@
                     <RowDefinition Height="88*"/>
                     <RowDefinition Height="49*"/>
                 </Grid.RowDefinitions>
-                <local:CamposEmpresaControl Margin="0,0,0,5"/>
+                <local:CamposEmpresaControl x:Name="controlesEmpresa" Margin="0,0,0,5"/>
                 <Separator Margin="0,78,0,0"/>
                 <Button Content="" Margin="10,5,410,5" Grid.Row="1"
                         Style="{DynamicResource MetroCircleButtonStyle}">
@@ -55,8 +68,8 @@
                     </Button.Background>
                 </Button>
                 <TextBlock HorizontalAlignment="Left" Margin="65,10,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Añadir Locales" Width="90" FontSize="14"/>
-                <local:CamposLocalControl Margin="0,4,0,0" Grid.Row="2"/>
-                <Button Content="Añadir" Margin="190,5,195,0" Grid.Row="3" Background="#FFCFCFCF" Height="27" VerticalAlignment="Top"/>
+                <local:CamposLocalControl x:Name="controlesLocal" Margin="0,4,0,0" Grid.Row="2"/>
+                <Button x:Name="btnAñadirLocal" Content="Añadir" Margin="190,5,195,0" Grid.Row="3" Background="#FFCFCFCF" Height="27" VerticalAlignment="Top" Click="btnAñadirLocal_Click"/>
             </Grid>
         </ScrollViewer>
     </Grid>

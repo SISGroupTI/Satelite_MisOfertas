@@ -1,5 +1,8 @@
-﻿using System;
+﻿using EntityLibrary;
+using NegLibrary;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,20 +22,34 @@ namespace View
     /// </summary>
     public partial class RegistrarLocalPage : Page
     {
+        EmpresaNeg empresaNeg;
         public RegistrarLocalPage()
         {
             InitializeComponent();
+            if(empresaNeg==null)
+                empresaNeg = new EmpresaNeg();
             cargarEmpresas();
         }
+        
 
         private void cargarEmpresas()
         {
-            
+            List<String> nombres = new List<string>();
+            foreach (Empresa empresa in empresaNeg.ListarEmpresas())
+            {
+                String nombreEmpresa = empresa.NombreEmpresa;
+                nombres.Add(nombreEmpresa);
+                int idEmpresa = empresa.IdEmpresa;
+                cbxEmpresa.ItemsSource = nombres;
+                cbxEmpresa.SelectedValue = empresa.IdEmpresa;
+            }
+           
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        
     }
 }
