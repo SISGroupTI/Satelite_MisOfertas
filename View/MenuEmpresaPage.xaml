@@ -71,11 +71,11 @@
                 </DataGridTemplateColumn><!--4-->
                 <DataGridTemplateColumn >
                     <DataGridTemplateColumn.Header>
-                        <TextBlock  Text="Ver"  />
+                        <TextBlock  Text="Eliminar"  />
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnGoVer" Content="Ver"></Button>
+                            <Button x:Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn><!--5 -->

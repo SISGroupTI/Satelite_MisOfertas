@@ -44,7 +44,7 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnEliminar" Content="Eliminar"></Button>
+                            <Button x:Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

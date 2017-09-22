@@ -13,6 +13,7 @@ namespace EntityLibrary
         private String direccion;
         private DateTime fechaRegistro;
         private DateTime fechaEliminacion;
+        private int isActivo;
 
         public int IdLocal { get => idLocal; set => idLocal = value; }
         public Empresa Empresa { get => empresa; set => empresa = value; }
@@ -20,8 +21,9 @@ namespace EntityLibrary
         public string Direccion { get => direccion; set => direccion = value; }
         public DateTime FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
         public DateTime FechaEliminacion { get => fechaEliminacion; set => fechaEliminacion = value; }
+        public int IsActivo { get => isActivo; set => isActivo = value; }
 
-        public Local(int idLocal, Empresa empresa, int numeroLocal, string direccion, DateTime fechaRegistro, DateTime fechaEliminacion)
+        public Local(int idLocal, Empresa empresa, int numeroLocal, string direccion, DateTime fechaRegistro, DateTime fechaEliminacion,int isActivo)
         {
             this.idLocal = idLocal;
             this.empresa = empresa;
@@ -29,6 +31,7 @@ namespace EntityLibrary
             this.direccion = direccion;
             this.fechaRegistro = fechaRegistro;
             this.fechaEliminacion = fechaEliminacion;
+            this.isActivo = isActivo;
         }
 
         public Local()

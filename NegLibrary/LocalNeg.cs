@@ -41,14 +41,43 @@ namespace NegLibrary
             }
 
         }
-        public Boolean RegistraLocal(Empresa empresa, Local local)
+        /*
+         * Este metodo no elimina el local de la lista
+         * si no lo que hace es reemplazar el local de la lista
+         * haciendo un match entre en local que entra
+         * y el local existente en la lista al cual se le setea el 
+         * Is activo a 0 con el fin de devolver la misma lista
+         * pero con este local ya modificado
+         * */
+        public Boolean EliminarLocalList(Local localIn)
         {
-            return true;
+            int idLocal = localIn.IdLocal;
+            foreach (Local local in Locales)
+            {
+                if (local.IdLocal==idLocal)
+                {
+                    Locales.Remove(local);
+                    local.IsActivo = 0;
+                    Locales.Add(local);
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<Local> ListarLocalesIdEmpresa(Empresa empresa)
         {
             return daoLocal.listarLocalIdEmpresa(empresa);
+        }
+
+        public Boolean EliminarLocales()
+        {
+            return daoLocal.EliminarLocal(Locales);
+        }
+
+        public List<Local> ListarLocales()
+        {
+            return daoLocal.listarLocales();
         }
     }
 }

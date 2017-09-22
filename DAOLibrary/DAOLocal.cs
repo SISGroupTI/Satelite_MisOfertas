@@ -73,6 +73,58 @@ namespace BusinessLibrary
             }
         }
 
+        public bool EliminarLocal(List<Local> locales)
+        {
+            foreach (Local local in locales)
+            {
+                if (local.IsActivo == 0)
+                {
+                    try
+                    {
+                        /*
+                         * Se guardan los campos del objeto encapsulado
+                         * y se asignan a variables locales del metodo
+                         * */
+                        int idLocal = local.IdLocal;
+                        // Se instancia un OracleCommand encargado de armar la consulta y ejecutarla
+                        OracleCommand cmd = new OracleCommand();
+                        // Se le asigna la conexion
+                        cmd.Connection = cone.Obtener();
+                        // Se le asigna el nombre del SP (Ojo tiene que ser igual a la BD sin comillas)
+                        cmd.CommandText = "SP_ELIMINAR_LOCAL";
+                        // Se le indica el tipo de comando en este caso son StoredProcedures
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        /*
+                             * En este apartado se declaran los parametros que contiene el procedimiento Almacenado
+                             * el primer parametro del Add() es el nombre de la variable descrita en la BD
+                             * el segundo parameto del Add() es el tipo de variable de la base de datos
+                             * Finalmente a este parametro descrito anteriormente se le asigna el valor
+                             * Opcionalmente se puede declarar la direccion de este (parametro In o Out)
+                             * */
+                        cmd.Parameters.Add("p_ID_LOCAL", OracleDbType.Int16).Value = idLocal;
+                        cmd.Parameters.Add("p_IS_ACTIVO", OracleDbType.Int16).Value = 0;
+                        /*
+                         * Se valida si la conexion esta cerrada esto para minimizar 
+                         * errores tales como "La conexion ya esta abierta"
+                         */
+                        if (cone.Obtener().State == ConnectionState.Closed)
+                        {
+                            cone.Obtener().Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                        cone.Obtener().Close();
+
+                    }
+                    catch (Exception e)
+                    {
+                        cone.Obtener().Close();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         public List<Local> listarLocalIdEmpresa(Empresa empresa)
         {
             int idLocal = empresa.IdEmpresa;
@@ -100,6 +152,49 @@ namespace BusinessLibrary
                     local.IdLocal = dr.GetInt32(0);
                     local.NumeroLocal = dr.GetInt32(1);
                     local.Direccion = dr.GetString(2);
+                    local.IsActivo = dr.GetInt16(5);
+                    listaLocales.Add(local);
+                }
+                cone.Obtener().Close();
+                return listaLocales;
+
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return null;
+            }
+        }
+
+        public List<Local> listarLocales()
+        {
+            try
+            {
+                Local local;
+                List<Local> listaLocales = new List<Local>();
+                //Object empresaObj;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_LOCAL_MENU";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                Empresa empresa;
+                while (dr.Read())
+                {
+                    local = new Local();
+                    local.IdLocal = dr.GetInt32(0);
+                    local.NumeroLocal = dr.GetInt32(1);
+                    local.Direccion = dr.GetString(2);
+                    empresa = new Empresa();
+                    empresa.NombreEmpresa = dr.GetString(3);
+                    empresa.IdEmpresa = dr.GetInt32(4);
+                    local.FechaRegistro = dr.GetDateTime(5);
+                    local.Empresa = empresa;
                     listaLocales.Add(local);
                 }
                 cone.Obtener().Close();

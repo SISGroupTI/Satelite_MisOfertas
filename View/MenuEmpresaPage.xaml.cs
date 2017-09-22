@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -40,6 +41,7 @@ namespace View
             
             lista = empresaNeg.ListarEmpresas();
             dtEmpresa.ItemsSource = lista.ToList();
+            dtEmpresa.Items.Refresh();
         }
 
         private void btnAgregarEmpresa_Click(object sender, RoutedEventArgs e)
@@ -55,6 +57,26 @@ namespace View
             ModificarEmpresaPage modificarEmpresaPage = new ModificarEmpresaPage();
             modificarEmpresaPage.cargarDatosEmpresa(empresa);
             NavigationService.Navigate(modificarEmpresaPage);
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult dialogResult= System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Empresa", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Empresa empresa = (Empresa)dtEmpresa.SelectedItems[0];
+                Boolean res = empresaNeg.EliminarEmpresa(empresa);
+                if (res)
+                {
+                    System.Windows.MessageBox.Show("Empresa Eliminada", "Eliminar Empresa");
+                    cargarEmpresas();
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+            
         }
     }
 }

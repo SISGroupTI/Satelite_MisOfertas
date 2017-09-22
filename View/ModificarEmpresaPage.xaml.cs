@@ -23,26 +23,34 @@ namespace View
     {
         LocalNeg localNeg;
         List<Local> locales = new List<Local>();
+        String nombreEmpresa="";
+        int idEmpresa;
+        EmpresaNeg empresaNeg;
         public ModificarEmpresaPage()
         {
             InitializeComponent();
             if (localNeg == null)
                 localNeg = new LocalNeg();
+            if (empresaNeg == null)
+                empresaNeg = new EmpresaNeg();
         }
 
         public void cargarDatosEmpresa(Empresa empresa)
         {
+            idEmpresa = empresa.IdEmpresa;
             String rut = empresa.RutEmpresa.ToString();
             String rutCompleto = rut +"-"+ Dv(rut);
             controlesEmpresa.txtRutEmpresa.Text = rutCompleto;
             controlesEmpresa.txtNombreEmpresa.Text = empresa.NombreEmpresa;
+            nombreEmpresa = empresa.NombreEmpresa;
             controlesEmpresa.txtRutEmpresa.IsEnabled = false;
-            cargarDataGrid(empresa);
+            cargarDataGridLocales(empresa);
         }
 
-        private void cargarDataGrid(Empresa empresa)
+        private void cargarDataGridLocales(Empresa empresa)
         {
             locales = localNeg.ListarLocalesIdEmpresa(empresa);
+            localNeg.Locales = locales;
             dtLocal.ItemsSource= locales.ToList();
             dtLocal.Items.Refresh();
         }
@@ -59,7 +67,34 @@ namespace View
 
         private void btnModificarEmpresa_Click(object sender, RoutedEventArgs e)
         {
-
+            Boolean resEmpresa = false;
+            Boolean resLocal = false;
+            Empresa empresa;
+            String rutCompleto = controlesEmpresa.txtRutEmpresa.Text.ToUpper();
+            int rut = int.Parse(rutCompleto.Substring(0, 8));
+            char dv = char.Parse(rutCompleto.Substring(9, 1));
+            String nombre = controlesEmpresa.txtNombreEmpresa.Text;
+            int id = idEmpresa;
+            empresa = new Empresa();
+            empresa.RutEmpresa = rut;
+            empresa.DvEmpresa = dv;
+            empresa.NombreEmpresa = nombre;
+            empresa.IdEmpresa = id;
+            //Primero se modifica la empresa
+            //Si se modifico em campo nombre empresa se actualiza si no no
+            if (!(nombreEmpresa.Equals(controlesEmpresa.txtNombreEmpresa.Text)))
+            {
+                resEmpresa = empresaNeg.ModificarEmpresa(rut,dv,nombre,idEmpresa);
+            }
+            resLocal= localNeg.EliminarLocales();
+            if (resEmpresa)
+            {
+                MessageBox.Show("Empresa Modificada", "Modificar Empresa");
+                if (resLocal)
+                {
+                    cargarDataGridLocales(empresa);
+                }
+            }
         }
         int flag = 0;
         private void btnAñadirLocal_Click(object sender, RoutedEventArgs e)
@@ -86,6 +121,28 @@ namespace View
                 else { MessageBox.Show("Error interno"); }
             }
             else { MessageBox.Show("Ingrese los campos"); }
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Local local = (Local)dtLocal.SelectedItems[0];
+            List<Local> listaAux = new List<Local>();
+            Boolean res;
+            res = localNeg.EliminarLocalList(local);
+            if (res)
+            {
+                foreach (Local loc in localNeg.Locales)
+                {
+                    if (loc.IsActivo!=0)
+                    {
+                        listaAux.Add(loc);
+                    }
+                }
+                MessageBox.Show("Para confirma presione\n Modificar Empresa");
+                dtLocal.ItemsSource = listaAux;
+                dtLocal.Items.Refresh();
+            }
+            else { MessageBox.Show("No sepudo Eliminar"); }
         }
     }
 }

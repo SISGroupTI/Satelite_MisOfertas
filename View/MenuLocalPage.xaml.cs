@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NegLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace View
     public partial class MenuLocalPage : Page
     {
         RegistrarLocalPage registrarLocalPage;
+        LocalNeg localNeg;
         public MenuLocalPage()
         {
             InitializeComponent();
+            if (localNeg == null)
+                localNeg = new LocalNeg();
+            cargarDataGridLocal();
+        }
+
+        private void cargarDataGridLocal()
+        {
+            dtLocal.ItemsSource = localNeg.ListarLocales();
+            dtLocal.Items.Refresh();
         }
 
         private void btnAgregarLocal_Click(object sender, RoutedEventArgs e)

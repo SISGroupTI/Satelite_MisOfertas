@@ -39,11 +39,9 @@ namespace View
             {
                 controlesLocal.txtDireccionLocal.Text = "";
                 controlesLocal.txtNumeroLocal.Text = "";
-                //MessageBox.Show("Local Agregado");
                 btnRegistrar.IsEnabled = true;
                 var locales = localNeg.Locales;
                 dtgLocales.ItemsSource = locales.ToList();
-                //dtgLocales.AutoGenerateColumns = true;
                 dtgLocales.Items.Refresh();
                 
             }

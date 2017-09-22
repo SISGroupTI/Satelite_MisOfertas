@@ -48,7 +48,14 @@ namespace View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            if (!(controlesLocal.txtNumeroLocal.Text.Equals("") && controlesLocal.txtDireccionLocal.Text.Equals("")))
+            {
+                int numeroLocal = int.Parse(controlesLocal.txtNumeroLocal.Text);
+                String direccionLocal = controlesLocal.txtDireccionLocal.Text;
+                
+            }
+            else { MessageBox.Show("sads"); }
         }
         
     }
