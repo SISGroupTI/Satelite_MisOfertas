@@ -12,6 +12,7 @@ namespace EntityLibrary
         private DateTime fechaModificacion;
         private DateTime fechaEliminacion;
         private int isActivo;
+        private int cantidadLocales;
 
         public int IdEmpresa { get => idEmpresa; set => idEmpresa = value; }
         public int RutEmpresa { get => rutEmpresa; set => rutEmpresa = value; }
@@ -21,6 +22,7 @@ namespace EntityLibrary
         public DateTime FechaModificacion { get => fechaModificacion; set => fechaModificacion = value; }
         public DateTime FechaEliminacion { get => fechaEliminacion; set => fechaEliminacion = value; }
         public int IsActivo { get => isActivo; set => isActivo = value; }
+        public int CantidadLocales { get => cantidadLocales; set => cantidadLocales = value; }
 
         public Empresa(int idEmpresa, int rutEmpresa, char dvEmpresa, string nombreEmpresa, DateTime fechaIncorporacion, DateTime fechaModificacion, DateTime fechaEliminacion, int isActivo)
         {

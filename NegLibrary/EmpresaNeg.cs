@@ -56,5 +56,24 @@ namespace NegLibrary
                 return false;
             }
         }
+        public List<Empresa> ListarEmpresas()
+        {
+            return daoEmpresa.ListarEmpresas();
+        }
+
+        public Boolean ModificarEmpresa(int rut, char dv,String nombre,int idEmpresa)
+        {
+            Empresa empresa = new Empresa();
+            empresa.RutEmpresa = rut;
+            empresa.DvEmpresa = dv;
+            empresa.NombreEmpresa = nombre;
+            empresa.IdEmpresa = idEmpresa;
+            return daoEmpresa.ModificarEmpresa(empresa);
+        }
+
+        public Boolean EliminarEmpresa(Empresa empresa)
+        {
+            return daoEmpresa.EliminarEmpresa(empresa);
+        }
     }
 }
