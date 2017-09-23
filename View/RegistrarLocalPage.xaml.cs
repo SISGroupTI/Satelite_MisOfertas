@@ -23,39 +23,60 @@ namespace View
     public partial class RegistrarLocalPage : Page
     {
         EmpresaNeg empresaNeg;
+        LocalNeg localNeg;
         public RegistrarLocalPage()
         {
             InitializeComponent();
             if(empresaNeg==null)
                 empresaNeg = new EmpresaNeg();
+            if (localNeg == null)
+                localNeg = new LocalNeg();
             cargarEmpresas();
         }
         
 
         private void cargarEmpresas()
         {
-            List<String> nombres = new List<string>();
-            foreach (Empresa empresa in empresaNeg.ListarEmpresas())
-            {
-                String nombreEmpresa = empresa.NombreEmpresa;
-                nombres.Add(nombreEmpresa);
-                int idEmpresa = empresa.IdEmpresa;
-                cbxEmpresa.ItemsSource = nombres;
-                cbxEmpresa.SelectedValue = empresa.IdEmpresa;
-            }
-           
+            cbxEmpresa.ItemsSource = empresaNeg.ListarEmpresas();
+            cbxEmpresa.DisplayMemberPath = "NombreEmpresa";
+            cbxEmpresa.SelectedValuePath = "IdEmpresa";
+
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (!(controlesLocal.txtNumeroLocal.Text.Equals("") && controlesLocal.txtDireccionLocal.Text.Equals("")))
+
+            /***/
+            if (!(cbxEmpresa.SelectedIndex == -1))
             {
-                int numeroLocal = int.Parse(controlesLocal.txtNumeroLocal.Text);
-                String direccionLocal = controlesLocal.txtDireccionLocal.Text;
-                
+                if (!(controlesLocal.txtNumeroLocal.Text.Equals("") && controlesLocal.txtDireccionLocal.Text.Equals("")))
+                {
+                    int numeroLocal = int.Parse(controlesLocal.txtNumeroLocal.Text);
+                    String direccionLocal = controlesLocal.txtDireccionLocal.Text;
+                    Local local = new Local();
+                    local.Direccion = direccionLocal;
+                    local.NumeroLocal = numeroLocal;
+                    Empresa empresa = (Empresa)cbxEmpresa.SelectionBoxItem;
+                    Boolean res=localNeg.RegistrarLocal(local,empresa);
+                    if (res)
+                    {
+                        MessageBox.Show("Registrado Correctamente", "Registro Local");
+                        cbxEmpresa.SelectedIndex = -1;
+                        controlesLocal.txtDireccionLocal.Text = "";
+                        controlesLocal.txtNumeroLocal.Text = "";
+
+                    }
+                    else { MessageBox.Show("No se completo el registro", "Registro Local"); }
+                    //MessageBox.Show("" + empresa.IdEmpresa);
+
+                }
+                else
+                {
+                    MessageBox.Show("Campos Obligatorios");
+                }
+
             }
-            else { MessageBox.Show("sads"); }
+            else { MessageBox.Show("Seleccione Empresa"); }
         }
         
     }

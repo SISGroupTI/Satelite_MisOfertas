@@ -69,7 +69,7 @@
                 </Button>
                 <TextBlock HorizontalAlignment="Left" Margin="65,10,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Añadir Locales" Width="90" FontSize="14"/>
                 <local:CamposLocalControl x:Name="controlesLocal" Margin="0,4,0,0" Grid.Row="2"/>
-                <Button x:Name="btnGuardarLocal" Content="Añadir" Margin="190,5,195,0" Grid.Row="3" Background="#FFCFCFCF" Height="27" VerticalAlignment="Top" Click="btnGuardarLocal_Click"/>
+                <Button x:Name="btnGuardarLocal" Content="Añadir" Margin="190,5,195,0" Grid.Row="3" Background="#FFCFCFCF" Height="27" VerticalAlignment="Top" Click="btnGuardarLocal_Click" IsEnabled="False"/>
             </Grid>
         </ScrollViewer>
     </Grid>

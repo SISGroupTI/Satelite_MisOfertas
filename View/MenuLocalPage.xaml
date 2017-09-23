@@ -63,7 +63,7 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnGoEditar" Content="Editar" ></Button>
+                            <Button x:Name="btnGoEditar" Content="Editar" Click="btnGoEditar_Click" ></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -74,7 +74,7 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnEliminar" Content="Eliminar"></Button>
+                            <Button x:Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

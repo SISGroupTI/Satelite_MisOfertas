@@ -29,6 +29,25 @@ namespace View
                 localNeg = new LocalNeg();
             if (empresaNeg == null)
                 empresaNeg = new EmpresaNeg();
+            InicializarEvents();
+        }
+
+        private void InicializarEvents()
+        {
+            controlesLocal.txtDireccionLocal.TextChanged += TxtDireccionLocal_TextChanged;
+            controlesLocal.txtNumeroLocal.TextChanged += TxtNumeroLocal_TextChanged;
+        }
+
+        private void TxtNumeroLocal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (controlesLocal.txtNumeroLocal.Text.Trim().Length < 1) { btnGuardarLocal.IsEnabled = false; }
+            else { btnGuardarLocal.IsEnabled = true; }
+        }
+
+        private void TxtDireccionLocal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (controlesLocal.txtDireccionLocal.Text.Trim().Length < 1) { btnGuardarLocal.IsEnabled = false; }
+            else { btnGuardarLocal.IsEnabled = true; }
         }
 
         private void btnGuardarLocal_Click(object sender, RoutedEventArgs e)

@@ -32,6 +32,7 @@ namespace NegLibrary
             try
             {
                 Local local = new Local(numeroLocal, direccion);
+                local.IsActivo = 1;
                 locales.Add(local);
                 return true;
             }
@@ -65,6 +66,14 @@ namespace NegLibrary
             return false;
         }
 
+        public bool EliminarLocal(Local local)
+        {
+            local.IsActivo = 0;
+            List<Local> locales = new List<Local>();
+            locales.Add(local);
+            return daoLocal.EliminarLocal(locales);
+        }
+
         public List<Local> ListarLocalesIdEmpresa(Empresa empresa)
         {
             return daoLocal.listarLocalIdEmpresa(empresa);
@@ -78,6 +87,16 @@ namespace NegLibrary
         public List<Local> ListarLocales()
         {
             return daoLocal.listarLocales();
+        }
+        public Boolean RegistrarLocal(Local local,Empresa empresa)
+        {
+            List<Local> locales = new List<Local>();
+            locales.Add(local);
+            return daoLocal.RegistrarLocal(empresa,locales);
+        }
+        public Boolean ModificarLocal(Local local)
+        {
+            return daoLocal.ModificarLocal(local);
         }
     }
 }

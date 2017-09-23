@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -25,6 +26,7 @@ namespace View
         List<Local> locales = new List<Local>();
         String nombreEmpresa="";
         int idEmpresa;
+        Empresa empresa;
         EmpresaNeg empresaNeg;
         public ModificarEmpresaPage()
         {
@@ -33,10 +35,37 @@ namespace View
                 localNeg = new LocalNeg();
             if (empresaNeg == null)
                 empresaNeg = new EmpresaNeg();
+            InicializarEvents();
+        }
+        //Inicializa los eventos de los textbox
+        private void InicializarEvents()
+        {
+            controlesLocal.txtDireccionLocal.TextChanged += TxtDireccionLocal_TextChanged;
+            controlesLocal.txtNumeroLocal.TextChanged += TxtNumeroLocal_TextChanged;
+        }
+        /*
+         * Se setea un evento para el control del usuario el cual capta
+         * los cambios en el textBox
+         * */
+        private void TxtNumeroLocal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Se valida si ingreso un caracter en el textbox txtNumeroLocal sacandole los espacios y midiendo el largo
+            if (controlesLocal.txtNumeroLocal.Text.Trim().Length < 1) { btnAñadirLocal.IsEnabled = false; }
+            else { btnAñadirLocal.IsEnabled = true; }
+        }
+        /*
+         * Se setea un evento para el control del usuario el cual capta
+         * los cambios en el textBox
+         * */
+        private void TxtDireccionLocal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (controlesLocal.txtDireccionLocal.Text.Trim().Length < 1) { btnAñadirLocal.IsEnabled = false; }
+            else { btnAñadirLocal.IsEnabled = true; }
         }
 
         public void cargarDatosEmpresa(Empresa empresa)
         {
+            this.empresa = empresa;
             idEmpresa = empresa.IdEmpresa;
             String rut = empresa.RutEmpresa.ToString();
             String rutCompleto = rut +"-"+ Dv(rut);
@@ -54,7 +83,7 @@ namespace View
             dtLocal.ItemsSource= locales.ToList();
             dtLocal.Items.Refresh();
         }
-
+        // Metodo para devolver el digito verificador a partir de un rut
         public static string Dv(string r)
         {
             int suma = 0;
@@ -87,40 +116,42 @@ namespace View
                 resEmpresa = empresaNeg.ModificarEmpresa(rut,dv,nombre,idEmpresa);
             }
             resLocal= localNeg.EliminarLocales();
-            if (resEmpresa)
+            if (resLocal)
             {
-                MessageBox.Show("Empresa Modificada", "Modificar Empresa");
+                System.Windows.MessageBox.Show("Empresa Modificada", "Modificar Empresa");
                 if (resLocal)
                 {
                     cargarDataGridLocales(empresa);
                 }
             }
         }
-        int flag = 0;
         private void btnAñadirLocal_Click(object sender, RoutedEventArgs e)
         {
             if (!(controlesLocal.txtDireccionLocal.Text.ToString().Equals("") &&
                 controlesLocal.txtNumeroLocal.Text.ToString().Equals("")))
             {
-                if(flag==0)
-                    localNeg.Locales = locales;
 
-                String direccion = controlesLocal.txtDireccionLocal.Text.ToString();
-                int numero = int.Parse(controlesLocal.txtNumeroLocal.Text.ToString());
-                if (localNeg.GuardarLocalList(numero, direccion))
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Añadir Local", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    controlesLocal.txtDireccionLocal.Text = "";
-                    controlesLocal.txtNumeroLocal.Text = "";
-                    //MessageBox.Show("Local Agregado");
-                    btnModificarEmpresa.IsEnabled = true;
-                    dtLocal.ItemsSource = localNeg.Locales.ToList();
-                    //dtgLocales.AutoGenerateColumns = true;
-                    dtLocal.Items.Refresh();
+                    Local local = new Local();
+                    local.NumeroLocal = int.Parse(controlesLocal.txtNumeroLocal.Text);
+                    local.Direccion = controlesLocal.txtDireccionLocal.Text;
+                    Boolean res = localNeg.RegistrarLocal(local,empresa);
+                    if (res)
+                    {
+                        controlesLocal.txtNumeroLocal.Text = "";
+                        controlesLocal.txtDireccionLocal.Text="";
+                        System.Windows.MessageBox.Show("Local Ingresada", "Ingresar Local");
+                        cargarDataGridLocales(empresa);
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
 
                 }
-                else { MessageBox.Show("Error interno"); }
             }
-            else { MessageBox.Show("Ingrese los campos"); }
+            else { System.Windows.MessageBox.Show("Ingrese los campos"); }
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -129,6 +160,7 @@ namespace View
             List<Local> listaAux = new List<Local>();
             Boolean res;
             res = localNeg.EliminarLocalList(local);
+
             if (res)
             {
                 foreach (Local loc in localNeg.Locales)
@@ -138,11 +170,11 @@ namespace View
                         listaAux.Add(loc);
                     }
                 }
-                MessageBox.Show("Para confirma presione\n Modificar Empresa");
+                System.Windows.MessageBox.Show("Para confirma presione\nModificar Empresa");
                 dtLocal.ItemsSource = listaAux;
                 dtLocal.Items.Refresh();
             }
-            else { MessageBox.Show("No sepudo Eliminar"); }
+            else { System.Windows.MessageBox.Show("No sepudo Eliminar"); }
         }
     }
 }

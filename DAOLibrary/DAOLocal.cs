@@ -72,7 +72,6 @@ namespace BusinessLibrary
                 return false;
             }
         }
-
         public bool EliminarLocal(List<Local> locales)
         {
             foreach (Local local in locales)
@@ -124,7 +123,6 @@ namespace BusinessLibrary
             }
             return true;
         }
-
         public List<Local> listarLocalIdEmpresa(Empresa empresa)
         {
             int idLocal = empresa.IdEmpresa;
@@ -165,7 +163,6 @@ namespace BusinessLibrary
                 return null;
             }
         }
-
         public List<Local> listarLocales()
         {
             try
@@ -205,6 +202,55 @@ namespace BusinessLibrary
             {
                 cone.Obtener().Close();
                 return null;
+            }
+        }
+        public Boolean ModificarLocal(Local local)
+        {
+            try
+            {
+                /*
+                 * Se guardan los campos del objeto encapsulado
+                 * y se asignan a variables locales del metodo
+                 * */
+                int idLocal = local.IdLocal;
+                int numLocal = local.NumeroLocal;
+                String direccion = local.Direccion;
+                // Se instancia un OracleCommand encargado de armar la consulta y ejecutarla
+                OracleCommand cmd = new OracleCommand();
+                // Se le asigna la conexion
+                cmd.Connection = cone.Obtener();
+                // Se le asigna el nombre del SP (Ojo tiene que ser igual a la BD sin comillas)
+                cmd.CommandText = "SP_MODIFICAR_LOCAL";
+                // Se le indica el tipo de comando en este caso son StoredProcedures
+                cmd.CommandType = CommandType.StoredProcedure;
+                /*
+                     * En este apartado se declaran los parametros que contiene el procedimiento Almacenado
+                     * el primer parametro del Add() es el nombre de la variable descrita en la BD
+                     * el segundo parameto del Add() es el tipo de variable de la base de datos
+                     * Finalmente a este parametro descrito anteriormente se le asigna el valor
+                     * Opcionalmente se puede declarar la direccion de este (parametro In o Out)
+                     * */
+                cmd.Parameters.Add("p_ID_LOCAL", OracleDbType.Int32).Value = idLocal;
+                cmd.Parameters.Add("p_NUMERO_LOCAL", OracleDbType.Int32).Value = numLocal;
+                cmd.Parameters.Add("p_DIRECCION", OracleDbType.Varchar2).Value = direccion;
+
+                /*
+                 * Se valida si la conexion esta cerrada esto para minimizar 
+                 * errores tales como "La conexion ya esta abierta"
+                 */
+                if (cone.Obtener().State == ConnectionState.Closed)
+                {
+                    cone.Obtener().Open();
+                }
+                cmd.ExecuteNonQuery();
+                cone.Obtener().Close();
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return false;
             }
         }
     }
