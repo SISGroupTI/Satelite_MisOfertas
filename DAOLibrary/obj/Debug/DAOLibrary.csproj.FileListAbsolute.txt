@@ -32,3 +32,17 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\Oracle.DataA
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.config
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.pdb
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.dll
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\Oracle.DataAccess.dll
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.pdb
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
+C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb

@@ -79,25 +79,25 @@ namespace View
              * Se crea un DialogResult para alojar la respuesta del MessageBox 
              * que en este caso se seteo el MessageBoxButtons con YesNo (ctrl+espacio) para mas opc 
              * */
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Empresa", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                // Se reliza la misma accion de rescatar al item seleccionado del data grid y parcearlo a Empresa
-                Empresa empresa = (Empresa)dtEmpresa.SelectedItems[0];
-                // Se procede a eliminar la empresa
-                Boolean res = empresaNeg.EliminarEmpresa(empresa);
-                if (res)
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Empresa", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    // Se lanza el mensaje al usuario
-                    System.Windows.MessageBox.Show("Empresa Eliminada", "Eliminar Empresa");
-                    // se procede a cargar las empresas nuevamente
-                    cargarEmpresas();
+                    // Se reliza la misma accion de rescatar al item seleccionado del data grid y parcearlo a Empresa
+                    Empresa empresa = (Empresa)dtEmpresa.SelectedItems[0];
+                    // Se procede a eliminar la empresa
+                    Boolean res = empresaNeg.EliminarEmpresa(empresa);
+                    if (res)
+                    {
+                        // Se lanza el mensaje al usuario
+                        System.Windows.MessageBox.Show("Empresa Eliminada", "Eliminar Empresa");
+                        // se procede a cargar las empresas nuevamente
+                        cargarEmpresas();
+                    }
                 }
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                // Nada aqui
-            }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // Nada aqui
+                }
             
         }
     }

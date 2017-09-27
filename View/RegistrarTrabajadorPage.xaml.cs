@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NegLibrary;
+using EntityLibrary;
 
 namespace View
 {
@@ -19,10 +21,15 @@ namespace View
     /// </summary>
     public partial class RegistrarTrabajadorPage : Page
     {
+        TrabajadorNeg trabNeg;
         public RegistrarTrabajadorPage()
         {
             InitializeComponent();
+            if (trabNeg == null)
+                trabNeg = new TrabajadorNeg();
             //camposTrabajador.txtNombre.IsEnabled=false;
         }
+
+        
     }
 }
