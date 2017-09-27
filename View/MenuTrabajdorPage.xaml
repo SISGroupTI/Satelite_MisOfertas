@@ -49,17 +49,43 @@
         <TextBlock Grid.Column="2" Margin="355,10,10,0" Grid.Row="2" TextWrapping="Wrap" Text="Ordenar por" FontSize="18"/>
         <ComboBox Grid.Column="3" Margin="10,6,10,3" Grid.Row="2" Height="30"/>
         <ComboBox Grid.Column="4" Margin="10,6,10,3" Grid.Row="2" Height="30"/>
-        <DataGrid Grid.ColumnSpan="4" Grid.Column="1" Margin="10,10,10,25" Grid.Row="3">
+        <DataGrid x:Name="dtTrabajador" Grid.ColumnSpan="4" Grid.Column="1" Margin="10,10,10,25" Grid.Row="3"
+                  AutoGenerateColumns="False"
+                  CanUserDeleteRows="False"
+                  CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Usuario" Binding="{Binding Rut}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Rut" Binding="{Binding Rut}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Local Asignado" Binding="{Binding LocalAsignado}" Width="130"></DataGridTextColumn>
-                <DataGridTextColumn Header="Correo" Binding="{Binding Correo}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Perfil" Binding="{Binding Perfil}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Fecha de Ingreso" Binding="{Binding FechaIngreso}" Width="120"></DataGridTextColumn>
-                <DataGridTextColumn Header="Editar" Width="70"></DataGridTextColumn>
-                <DataGridTextColumn Header="Ver" Width="70"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="campoUsurio"  Header="NombreUsuario" Binding="{Binding NombreUsuario}" Width="100"/>
+                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding Nombre}" Width="100"/>
+                <DataGridTextColumn x:Name="campoRut" Header="Rut" Binding="{Binding Rut}" Width="100"/>
+                <DataGridTextColumn x:Name="campoDv" Header="Dv" Binding="{Binding Dv}" Width="100"/>
+                <DataGridTextColumn Header="Local Asignado" Binding="{Binding LocalAsignado.IDLocal}" Width="130"/>
+                <DataGridTextColumn x:Name="campoCorreo" Header="Correo" Binding="{Binding CorreoCorporativo}" Width="100"/>
+                <DataGridTextColumn Header="Perfil" Binding="{Binding Perfil.IdPerfil}" Width="100"/>
+                <DataGridTextColumn x:Uid="campoFechaIngreso" Header="Fecha de Ingreso" Binding="{Binding FechaIngreso}" Width="120"/>
+                <!--<DataGridTextColumn Header="Editar" Width="70"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ver" Width="70"></DataGridTextColumn>-->
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="Editar"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnGoEditar" Content="Editar" Click="btnGoEditar_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--4-->
+                <DataGridTemplateColumn >
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="Eliminar"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--5 -->
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

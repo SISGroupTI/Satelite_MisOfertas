@@ -16,3 +16,9 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLib
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.pdb
 G:\Usuario\Ian\Documents\Satelite Mis Ofertas\EntityLibrary\obj\Debug\EntityLibrary.csprojResolveAssemblyReference.cache
+C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\bin\Debug\EntityLibrary.dll
+C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\bin\Debug\EntityLibrary.pdb
+C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csprojResolveAssemblyReference.cache
+C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
+C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.dll
+C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.pdb

@@ -59,5 +59,15 @@ namespace EntityLibrary
             this.perfil = perfil;
             this.Local = local;
         }
+
+        public Trabajador(string nombre, string apellido, int rut, string dv, string nombreUsuario, string correo, string contrasena)
+        {
+            this.nombre = nombre;
+            this.apellidos = apellido;
+            this.rut = rut;
+            this.nombreUsuario = nombreUsuario;
+            this.correoCorporativo = correo;
+            this.contrasena = contrasena;
+        }
     }
 }
