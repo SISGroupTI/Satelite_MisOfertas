@@ -1,4 +1,5 @@
-﻿using NegLibrary;
+﻿using EntityLibrary;
+using NegLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,6 +104,16 @@ namespace View
             else
             {
                 MessageBox.Show("Ingrese todos los datos");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Local local = (Local)dtgLocales.SelectedItems[0];
+            if (localNeg.EliminarLocalList(local)) { MessageBox.Show("Local Descartado", "Registrar Empresa");
+                var locales = localNeg.Locales;
+                dtgLocales.ItemsSource = locales.ToList();
+                dtgLocales.Items.Refresh();
             }
         }
     }

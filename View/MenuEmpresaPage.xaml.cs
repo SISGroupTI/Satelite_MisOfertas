@@ -46,12 +46,19 @@ namespace View
         //Evento del boton para agregar empresa
         private void btnAgregarEmpresa_Click(object sender, RoutedEventArgs e)
         {
+            gotoAgregarEmpresa();
+            
+        }
+
+        private void gotoAgregarEmpresa()
+        {
             if (registrarEmpresaPage == null) { registrarEmpresaPage = new RegistrarEmpresaPage(); }
             NavigationService.Navigate(registrarEmpresaPage);
         }
+
         /*
-         * Este metodo se encarga de derivar al modificar
-         * */
+* Este metodo se encarga de derivar al modificar
+* */
         private void btnGoEditar_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -99,6 +106,11 @@ namespace View
                     // Nada aqui
                 }
             
+        }
+
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            gotoAgregarEmpresa();
         }
     }
 }
