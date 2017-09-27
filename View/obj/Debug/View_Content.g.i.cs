@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/empty.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagen-ms%20sinlogo.ico")]
 
 
