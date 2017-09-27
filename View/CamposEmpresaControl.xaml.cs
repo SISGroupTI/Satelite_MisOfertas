@@ -63,8 +63,6 @@ namespace View
                     MessageBox.Show("Rut invalido");
                     CamposLlenos = false;
                 }
-                //MessageBox.Show("DV: "+rut.Substring(8,1));
-                //MessageBox.Show("Rut: " + rut.Substring(0, 8));
             }
         }
 

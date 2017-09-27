@@ -28,6 +28,7 @@ namespace View
     public partial class MenuTrabajdorPage : Page
     {
         RegistrarTrabajadorPage registrarTrabajadorPage;
+        ModificarTrabajadorPage modificarTrabajadorPage;
         TrabajadorNeg trabNeg;
         List<Trabajador> lista = new List<Trabajador>();
         public MenuTrabajdorPage()
@@ -44,8 +45,26 @@ namespace View
         private void cargarDataGridTrabajador()
         {
             lista = trabNeg.listarTrabajadores();
-            dtTrabajador.ItemsSource = lista.ToList();
-            dtTrabajador.Items.Refresh();
+            if (lista != null)
+            {
+                dtTrabajador.ItemsSource = lista;
+                dtTrabajador.Items.Refresh();
+            }
+            else
+            {
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Error de carga de datos","Carga Trabajadores",MessageBoxButtons.AbortRetryIgnore);
+                switch (dialogResult)
+                {
+                    case DialogResult.Abort:
+
+                        break;
+                    case DialogResult.Retry:
+                        cargarDataGridTrabajador();
+                        break;
+                    case DialogResult.Ignore:
+                        break;
+                }
+            }
         }
 
 
@@ -53,6 +72,7 @@ namespace View
         {
             if (registrarTrabajadorPage == null) { registrarTrabajadorPage = new RegistrarTrabajadorPage(); }
             NavigationService.Navigate(registrarTrabajadorPage);
+            
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -77,6 +97,10 @@ namespace View
 
         private void btnGoEditar_Click(object sender, RoutedEventArgs e)
         {
+            Trabajador trabajador = (Trabajador)dtTrabajador.SelectedItems[0];
+            if (modificarTrabajadorPage == null) { modificarTrabajadorPage = new ModificarTrabajadorPage(); }
+            modificarTrabajadorPage.cargarDatosTrabajador(trabajador);
+            NavigationService.Navigate(modificarTrabajadorPage);
         }
 
     }

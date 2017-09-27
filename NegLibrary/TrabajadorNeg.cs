@@ -13,13 +13,13 @@ namespace NegLibrary
     {
         private List<Trabajador> trabajadores;
         private List<Object> localesObject = new List<Object>();
-        DAOTrabajador DaoTrabajador;
+        DAOTrabajador daoTrabajador;
         public TrabajadorNeg()
         {
             if (trabajadores == null)
                 trabajadores = new List<Trabajador>();
-            if (DaoTrabajador == null)
-                DaoTrabajador = new DAOTrabajador();
+            if (daoTrabajador == null)
+                daoTrabajador = new DAOTrabajador();
 
 
         }
@@ -27,7 +27,7 @@ namespace NegLibrary
 
         public List<Trabajador> listarTrabajadores()
         {
-            return DaoTrabajador.listarTrabajadores();
+            return daoTrabajador.ListarTrabajadores();
         }
 
         public long validarCredenciales(String usuario, String contrasena)
@@ -51,14 +51,21 @@ namespace NegLibrary
 
         public Boolean RegistrarTrabajador(Local local, Perfil perfil, Trabajador trab)
         {
-            List<Trabajador> trabajadores = new List<Trabajador>();
-            trabajadores.Add(trab);
-            return DaoTrabajador.RegistrarTrabajador(trab);
+            trab.Local = local;
+            trab.Perfil = perfil;
+            return daoTrabajador.RegistrarTrabajador(trab);
         }
 
         public Boolean EliminarTrabajadores(Trabajador trabajador)
         {
-            return DaoTrabajador.EliminarTrabajador(trabajador);
+            return daoTrabajador.EliminarTrabajador(trabajador);
+        }
+
+        public bool ModificarTrabajador(Local local, Perfil perfil, Trabajador trabajador)
+        {
+            trabajador.Local = local;
+            trabajador.Perfil = perfil;
+            return daoTrabajador.ModificarTrabajador(trabajador);
         }
     }
 }

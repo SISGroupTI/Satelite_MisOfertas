@@ -71,9 +71,8 @@ namespace DAOLibrary
             return null;
         }
 
-       public List<Trabajador> listarTrabajadores()
+       public List<Trabajador> ListarTrabajadores()
         {
-            
             try
             {               
                 Trabajador trabajador;
@@ -93,8 +92,7 @@ namespace DAOLibrary
                 while (dr.Read())
                 {
                     trabajador = new Trabajador();
-                    trabajador.IdTrabajador = dr.GetInt32(0);
-                    
+                    trabajador.IdTrabajador = dr.GetInt16(0);
                     trabajador.Nombre = dr.GetString(4);
                     trabajador.Rut = dr.GetInt32(2);
                     trabajador.Dv = dr.GetString(3);
@@ -104,8 +102,10 @@ namespace DAOLibrary
                     perfil = new Perfil();
                     perfil.IdPerfil = dr.GetInt32(12);
                     trabajador.NombreUsuario = dr.GetString(1);
+                    trabajador.Apellidos = dr.GetString(5);
                     trabajador.Perfil = perfil;
                     trabajador.Local = local;
+                    trabajador.Contrasena = dr.GetString(14);
                     listaTrabajadores.Add(trabajador);
                 }
                 cone.Obtener().Close();
@@ -122,24 +122,31 @@ namespace DAOLibrary
         {
             try
             {
+                long idPerfil = trabajador.Perfil.IdPerfil;
+                int idLocal = trabajador.Local.IdLocal;
+                String nombreUsuario = trabajador.NombreUsuario;
                 int rut = trabajador.Rut;
                 String dv = trabajador.Dv;
                 String nombre = trabajador.Nombre;
-                String nombreUsuario = trabajador.NombreUsuario;
+                String apellidos = trabajador.Apellidos;
                 String correoCorporativo = trabajador.CorreoCorporativo;
                 String contrasena = trabajador.Contrasena;
-
+                int isActivo = 1;
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = cone.Obtener();
                 cmd.CommandText = "SP_REGISTRO_TRABAJADOR";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("p_RUT", OracleDbType.Int32).Value = rut;
-                cmd.Parameters.Add("p_DV", OracleDbType.Varchar2).Value = dv;
-                cmd.Parameters.Add("p_NOMBRE", OracleDbType.Varchar2).Value = nombre;
+                cmd.Parameters.Add("p_ID_PERFIL", OracleDbType.Int32).Value = idPerfil;
+                cmd.Parameters.Add("p_ID_LOCAL", OracleDbType.Int32).Value = idLocal;
                 cmd.Parameters.Add("p_NOMBRE_USUARIO", OracleDbType.Varchar2).Value = nombreUsuario;
+                cmd.Parameters.Add("p_RUT", OracleDbType.Int32).Value = rut;
+                cmd.Parameters.Add("p_DV", OracleDbType.Char).Value = dv;
+                cmd.Parameters.Add("p_NOMBRE", OracleDbType.Varchar2).Value = nombre;
+                cmd.Parameters.Add("p_APELLIDOS", OracleDbType.Varchar2).Value = apellidos;
                 cmd.Parameters.Add("p_CORREO_CORPORATIVO", OracleDbType.Varchar2).Value = correoCorporativo;
                 cmd.Parameters.Add("p_CONTRASENA", OracleDbType.Varchar2).Value = contrasena;
+                cmd.Parameters.Add("IS_ACTIVO", OracleDbType.Int16).Value = isActivo;
 
                 if (cone.Obtener().State==ConnectionState.Closed)
                 {
@@ -184,26 +191,46 @@ namespace DAOLibrary
             }
         }
 
-        /*public Boolean ModificarTrabajador(Trabajador trabajador)
+        public Boolean ModificarTrabajador(Trabajador trabajador)
         {
             try
             {
+                long idTrabajador = trabajador.IdTrabajador;
+                long idPerfil = trabajador.Perfil.IdPerfil;
+                int idLocal = trabajador.Local.IdLocal;
+                String nombreUsuario = trabajador.NombreUsuario;
                 int rut = trabajador.Rut;
                 String dv = trabajador.Dv;
                 String nombre = trabajador.Nombre;
                 String apellidos = trabajador.Apellidos;
-                String nombreUsuario = trabajador.NombreUsuario;
                 String correoCorporativo = trabajador.CorreoCorporativo;
-                String contrasena = trabajador.Contrasena;
-                long idPerfil = perfil.IdPerfil;
-                int idLocal = local.IdLocal;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_MODIFICAR_TRABAJADOR";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_ID_TRABAJADOR", OracleDbType.Int32).Value = idTrabajador;
+                cmd.Parameters.Add("p_ID_PERFIL", OracleDbType.Int32).Value = idPerfil;
+                cmd.Parameters.Add("p_ID_LOCAL", OracleDbType.Int32).Value = idLocal;
+                cmd.Parameters.Add("p_NOMBRE_USUARIO", OracleDbType.Varchar2).Value = nombreUsuario;
+                cmd.Parameters.Add("p_RUT", OracleDbType.Int32).Value = rut;
+                cmd.Parameters.Add("p_DV", OracleDbType.Char).Value = dv;
+                cmd.Parameters.Add("p_NOMBRE", OracleDbType.Varchar2).Value = nombre;
+                cmd.Parameters.Add("p_APELLIDOS", OracleDbType.Varchar2).Value = apellidos;
+                cmd.Parameters.Add("p_CORREO_CORPORATIVO", OracleDbType.Varchar2).Value = correoCorporativo;
+                if (cone.Obtener().State == ConnectionState.Closed)
+                {
+                    cone.Obtener().Open();
+                }
+                cmd.ExecuteNonQuery();
+                cone.Obtener().Close();
                 return true;
             }
+
             catch (Exception e)
             {
                 cone.Obtener().Close();
                 return false;
             }
-        }*/
+        }
     }
 }

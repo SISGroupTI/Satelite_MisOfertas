@@ -100,6 +100,7 @@ namespace View
 
         private void menu_trabajor_Click(object sender, RoutedEventArgs e)
         {
+            menuTrabajdorPage = null;
             if (menuTrabajdorPage == null) { menuTrabajdorPage = new MenuTrabajdorPage(); }
             setNavigationService(menuTrabajdorPage);
         }
