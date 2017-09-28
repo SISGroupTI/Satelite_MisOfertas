@@ -48,6 +48,7 @@
     <Compile Include="Coleccion.cs" />
     <Compile Include="DAOEmpresa.cs" />
     <Compile Include="DAOLocal.cs" />
+    <Compile Include="DAOProducto.cs" />
     <Compile Include="DAOTrabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

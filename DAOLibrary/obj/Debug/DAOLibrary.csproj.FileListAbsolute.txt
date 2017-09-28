@@ -32,3 +32,17 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\Oracle.DataA
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.dll
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\Oracle.DataAccess.dll
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.pdb

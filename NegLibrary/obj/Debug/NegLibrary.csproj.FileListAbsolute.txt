@@ -28,3 +28,18 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\Oracle.Manag
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.dll.config
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\NegLibrary.dll
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\NegLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.dll
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\EntityLibrary.dll
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.dll
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\EntityLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csprojResolveAssemblyReference.cache
+C:\proyecto\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
+C:\proyecto\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.dll
+C:\proyecto\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.pdb

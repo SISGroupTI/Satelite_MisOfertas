@@ -240,3 +240,44 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\Oracle.ManagedData
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\BusinessLibrary.dll.config
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\ConxionLibrary.pdb
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\View\bin\Debug\ConxionLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\LoginWindow.baml
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposConsumidorControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposDatosDescuentoControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposEmpresaControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposLocalControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposOfertaControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposProductoControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\CamposTrabajadorControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\LoginWindow.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuBIPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuEmpresaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuLocalPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuOfertaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuProductoPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuReporteTiendaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuReporteValoracionPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\MenuTrabajdorPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\ModificarEmpresaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\ModificarLocalPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\ModificarOfertaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\ModificarProductoPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\ModificarTrabajadorPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\PrincipalPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\PrincipalWindow.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\RegistrarEmpresaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\RegistrarLocalPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\RegistrarOfertaPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\RegistrarProductoPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\RegistrarTrabajadorPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\UserOptionControl.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\VerDescuentoDetallePage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\VerDescuentoPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\VerOfertaDetallePage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\VerOfertasPage.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\App.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\View_MarkupCompile.cache
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\View_MarkupCompile.lref
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\View.exe
+C:\proyecto\Satelite_MisOfertas\View\obj\Debug\View.pdb

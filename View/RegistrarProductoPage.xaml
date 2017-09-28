@@ -23,12 +23,12 @@
             <RowDefinition Height="341*"/>
             <RowDefinition Height="68*"/>
         </Grid.RowDefinitions>
-        <local:CamposProductoControl Grid.Column="1" Margin="10,10,0,10" Grid.Row="3" HorizontalAlignment="Left" Width="472"/>
+        <local:CamposProductoControl x:Name="camposProductos" Grid.Column="1" Margin="10,10,0,10" Grid.Row="3" HorizontalAlignment="Left" Width="472" Loaded="CamposProductoControl_Loaded"/>
         <Image Margin="5" Source="img/product-ic.png"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Administrador de Producto" VerticalAlignment="Top" Height="60" Width="472" FontSize="36"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="Ingresar nuevo registro" Width="310" FontSize="24" Margin="10,0,0,0"/>
         <Separator Grid.Column="1" Margin="10,0" Grid.Row="2"/>
-        <Button x:Name="btnGuardarRegistro" Content="Guardar Producto" Grid.Column="1" HorizontalAlignment="Left" Margin="325,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="157" Height="48" Background="#FFCFCFCF"/>
+        <Button x:Name="btnGuardarRegistro" Content="Guardar Producto" Grid.Column="1" HorizontalAlignment="Left" Margin="325,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="157" Height="48" Background="#FFCFCFCF" Click="btnGuardarRegistro_Click"/>
 
     </Grid>
 </Page>

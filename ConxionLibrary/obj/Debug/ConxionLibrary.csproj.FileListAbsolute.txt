@@ -16,3 +16,12 @@ D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionL
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
 D:\Ian Cardenas\Documentos\Satelite MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.config
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.pdb
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\bin\Debug\Oracle.DataAccess.dll
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
+C:\proyecto\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb

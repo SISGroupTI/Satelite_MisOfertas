@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="EmpresaNeg.cs" />
     <Compile Include="LocalNeg.cs" />
+    <Compile Include="ProductoNeg.cs" />
     <Compile Include="TrabajadorNeg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
