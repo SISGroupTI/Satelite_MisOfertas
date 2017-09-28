@@ -381,6 +381,10 @@
     <Resource Include="img\empty.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntityLibrary\EntityLibrary.csproj">
+      <Project>{ba76d726-bd99-4daf-aea0-ec319fceadad}</Project>
+      <Name>EntityLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NegLibrary\NegLibrary.csproj">
       <Project>{1e70c000-75a8-41aa-a908-d4a8574feff7}</Project>
       <Name>NegLibrary</Name>

@@ -39,7 +39,7 @@ namespace View
             principalWindow.lblNombreUsuario.Content = txtUsuario.Text;
             switch (trabajadorNeg.validarCredenciales(txtUsuario.Text, txtContrasena.Password))
             {
-                case 1:
+                case 2:
                     principalWindow.menu_mantenedores.Visibility = Visibility.Collapsed;
                     principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
                     principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
@@ -51,7 +51,7 @@ namespace View
                     principalWindow.Show();
                     this.Close();
                     break;
-                case 2:
+                case 3:
                     principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
                     principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
                     principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
@@ -61,7 +61,7 @@ namespace View
                     principalWindow.Show();
                     this.Close();
                     break;
-                case 3:
+                case 4:
                     PrincipalPage principalPage = new PrincipalPage();
                     principalWindow.menu_empresa.Visibility = Visibility.Collapsed;
                     principalWindow.menu_local.Visibility = Visibility.Collapsed;
@@ -76,9 +76,14 @@ namespace View
                     principalWindow.Show();
                     this.Close();
                     break;
+                case 1:
+                    PrincipalPage principal = new PrincipalPage();
+                    principalWindow.setNavigationService(principal);
+                    principalWindow.Show();
+                    this.Close();
+                    break;
                 default:
                     MessageBox.Show("Credenciales invalidas");
-
                     break;
 
             }

@@ -45,16 +45,17 @@
         <TextBox x:Name="txtRut"
             Controls:TextBoxHelper.Watermark="12345678-9"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" Grid.Row="2" TextWrapping="Wrap" Text=""/>
+            Grid.Column="1" Margin="10,7" Grid.Row="2" TextWrapping="Wrap" Text="" KeyDown="txtRut_KeyDown" TextChanged="txtRut_TextChanged" MaxLength="10"/>
         <TextBox x:Name="txtApellidos"
             Controls:TextBoxHelper.Watermark="Ej: Perez Rosales"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" Grid.Row="1" TextWrapping="Wrap" Text=""/>
+            Grid.Column="1" Margin="10,7" Grid.Row="1" TextWrapping="Wrap" Text="" KeyDown="txtApellidos_KeyDown"/>
         <TextBox x:Name="txtNombre"
             Controls:TextBoxHelper.Watermark="Ej: Juan"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" TextWrapping="Wrap" Text=""/>
+            Grid.Column="1" Margin="10,7" TextWrapping="Wrap" Text="" KeyDown="txtNombre_KeyDown"/>
         <PasswordBox x:Name="txtContrasena" Grid.Column="1" Margin="10,7" Grid.Row="5"/>
+        <TextBox x:Name="etIdTrabajador" HorizontalAlignment="Left" Height="23" Margin="55,28,0,0" Grid.Row="6" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.RowSpan="2" Visibility="Collapsed"/>
 
     </Grid>
 </UserControl>

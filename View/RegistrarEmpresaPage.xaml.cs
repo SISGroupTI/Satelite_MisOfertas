@@ -29,6 +29,25 @@ namespace View
                 localNeg = new LocalNeg();
             if (empresaNeg == null)
                 empresaNeg = new EmpresaNeg();
+            InicializarEvents();
+        }
+
+        private void InicializarEvents()
+        {
+            controlesLocal.txtDireccionLocal.TextChanged += TxtDireccionLocal_TextChanged;
+            controlesLocal.txtNumeroLocal.TextChanged += TxtNumeroLocal_TextChanged;
+        }
+
+        private void TxtNumeroLocal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (controlesLocal.txtNumeroLocal.Text.Trim().Length < 1) { btnGuardarLocal.IsEnabled = false; }
+            else { btnGuardarLocal.IsEnabled = true; }
+        }
+
+        private void TxtDireccionLocal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (controlesLocal.txtDireccionLocal.Text.Trim().Length < 1) { btnGuardarLocal.IsEnabled = false; }
+            else { btnGuardarLocal.IsEnabled = true; }
         }
 
         private void btnGuardarLocal_Click(object sender, RoutedEventArgs e)
@@ -39,11 +58,9 @@ namespace View
             {
                 controlesLocal.txtDireccionLocal.Text = "";
                 controlesLocal.txtNumeroLocal.Text = "";
-                //MessageBox.Show("Local Agregado");
                 btnRegistrar.IsEnabled = true;
-                var locales = localNeg.LocalesObject;
+                var locales = localNeg.Locales;
                 dtgLocales.ItemsSource = locales.ToList();
-                dtgLocales.AutoGenerateColumns = true;
                 dtgLocales.Items.Refresh();
                 
             }
@@ -69,6 +86,8 @@ namespace View
                         MessageBox.Show("Registro Exitoso");
                         controlesEmpresa.txtNombreEmpresa.Text = "";
                         controlesEmpresa.txtRutEmpresa.Text = "";
+                        dtgLocales.Items.Refresh();
+
                     }
                     else
                     {

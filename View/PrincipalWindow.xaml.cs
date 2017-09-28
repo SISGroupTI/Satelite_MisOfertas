@@ -72,30 +72,35 @@ namespace View
         }
         private void menu_oferta_Click(object sender, RoutedEventArgs e)
         {
+            menuOfertaPage = null;
             if (menuOfertaPage == null) { menuOfertaPage = new MenuOfertaPage(); }
             setNavigationService(menuOfertaPage);
         }
         
         private void menu_local_Click(object sender, RoutedEventArgs e)
         {
+            menuLocalPage = null;
             if (menuLocalPage == null) { menuLocalPage = new MenuLocalPage(); }
             setNavigationService(menuLocalPage);
         }
 
         private void menu_producto_Click(object sender, RoutedEventArgs e)
         {
+            menuProductoPage = null;
             if (menuProductoPage == null) { menuProductoPage = new MenuProductoPage(); }
             setNavigationService(menuProductoPage);
         }
 
         private void menu_empresa_Click(object sender, RoutedEventArgs e)
         {
+            menuEmpresaPage = null;
             if (menuEmpresaPage == null) { menuEmpresaPage = new MenuEmpresaPage(); }
             setNavigationService(menuEmpresaPage);
         }
 
         private void menu_trabajor_Click(object sender, RoutedEventArgs e)
         {
+            menuTrabajdorPage = null;
             if (menuTrabajdorPage == null) { menuTrabajdorPage = new MenuTrabajdorPage(); }
             setNavigationService(menuTrabajdorPage);
         }
