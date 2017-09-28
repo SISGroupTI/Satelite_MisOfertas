@@ -41,7 +41,13 @@ namespace NegLibrary
             {
                 //Devuelve el perfil del trabajador para la validacion del 
                 //LoginWindows.xaml.cs
-                return trabajador.Perfil.IdPerfil;
+                try {
+                    long idPerfil = trabajador.Perfil.IdPerfil;
+                    return idPerfil;
+                } catch {
+                    return 0;
+                }
+                
             }
             else
             {

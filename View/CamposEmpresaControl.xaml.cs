@@ -61,6 +61,7 @@ namespace View
                 if (!validacion)
                 {
                     MessageBox.Show("Rut invalido");
+                    txtRutEmpresa.Clear();
                     CamposLlenos = false;
                 }
             }

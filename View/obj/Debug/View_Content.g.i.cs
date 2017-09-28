@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/empty.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/if_circle-edit-pen-pencil-glyph_763463.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/if_delete_678153.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/if_find01_928435.png")]
 
 

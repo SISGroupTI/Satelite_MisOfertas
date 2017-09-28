@@ -102,7 +102,7 @@ namespace View
             modificarTrabajadorPage.cargarDatosTrabajador(trabajador);
             NavigationService.Navigate(modificarTrabajadorPage);
         }
-
+        
     }
 
 }

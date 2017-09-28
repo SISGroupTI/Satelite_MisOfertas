@@ -63,7 +63,9 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnGoEditar" Content="Editar" Click="btnGoEditar_Click" ></Button>
+                            <Button x:Name="btnGoEditar" Click="btnGoEditar_Click" Width="40" Height="40" >
+                                <Image Source="img/if_circle-edit-pen-pencil-glyph_763463.png" Stretch="Fill"/>
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -74,7 +76,9 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click"></Button>
+                            <Button x:Name="btnEliminar" Click="btnEliminar_Click" HorizontalAlignment="Center" VerticalAlignment="Center"  VerticalContentAlignment="Center" Width="40" Height="40">
+                                <Image Source="img/if_delete_678153.png" Stretch="Fill" />
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
