@@ -46,11 +46,11 @@
                     <Separator x:Name="separador1"/>
                     <MenuItem x:Name="menu_empresa" Header="Empresas" Click="menu_empresa_Click">
                     </MenuItem>
-                    <Separator x:Name="separador2"/>
                     <MenuItem x:Name="menu_local" Header="Locales" Click="menu_local_Click">
                     </MenuItem>
+                    <Separator x:Name="separador2"/>
                     <MenuItem x:Name="menu_trabajor" Header="Trabajadores" Click="menu_trabajor_Click"></MenuItem>
-                    <MenuItem Header="Development">
+                    <MenuItem Header="Development" Visibility="Collapsed">
                         <MenuItem Header="Productos">
                             <MenuItem x:Name="menu_modificar_producto" Header="Modificar" Click="menu_modificar_producto_Click" >
                                 
