@@ -60,7 +60,7 @@ namespace View
                 controlesLocal.txtDireccionLocal.Text = "";
                 controlesLocal.txtNumeroLocal.Text = "";
                 btnRegistrar.IsEnabled = true;
-                var locales = localNeg.Locales;
+                List<Local> locales = localNeg.Locales;
                 dtgLocales.ItemsSource = locales.ToList();
                 dtgLocales.Items.Refresh();
                 

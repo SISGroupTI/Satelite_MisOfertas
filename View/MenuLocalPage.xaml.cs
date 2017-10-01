@@ -40,6 +40,11 @@ namespace View
 
         private void btnAgregarLocal_Click(object sender, RoutedEventArgs e)
         {
+            goToEditar();
+        }
+
+        private void goToEditar()
+        {
             if (registrarLocalPage == null) { registrarLocalPage = new RegistrarLocalPage(); }
             NavigationService.Navigate(registrarLocalPage);
         }
@@ -87,6 +92,11 @@ namespace View
             {
 
             }
+        }
+        
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            goToEditar();
         }
     }
 }

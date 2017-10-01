@@ -32,8 +32,8 @@
         </StackPanel>
         <Image Margin="10" Source="img/user-ic.png" Grid.Column="1"/>
         <Button x:Name="btnAgregarTrabajador"
-                    Content="" Grid.Column="1" Margin="15,0"
-                    Style="{DynamicResource MetroCircleButtonStyle}" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Click="btnAgregarTrabajador_Click">
+                    Content="" Grid.Column="1" Margin="15,0,0,0"
+                    Style="{DynamicResource MetroCircleButtonStyle}" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Click="btnAgregarTrabajador_Click" HorizontalAlignment="Left" Width="52" Height="44" VerticalAlignment="Top">
             <Button.Background>
                 <ImageBrush ImageSource="img/add-ic.png"/>
             </Button.Background>
@@ -45,7 +45,7 @@
 
         </TextBox>
         <TextBlock TextAlignment="Center" Margin="10" TextWrapping="Wrap" Text="Buscar" FontSize="18" Grid.Column="1" Grid.Row="2"/>
-        <TextBlock Height="40" TextAlignment="Center" TextWrapping="Wrap" Text="Nuevo Registro" Background="#FFCFCFCF" FontSize="22" Grid.Column="2" Margin="10,4,223,0" Grid.Row="1" RenderTransformOrigin="0.494,0.225"/>
+        <TextBlock PreviewMouseDown="TextBlock_PreviewMouseDown" Height="40" TextAlignment="Center" TextWrapping="Wrap" Text="Nuevo Registro" Background="#FFCFCFCF" FontSize="22" Grid.Column="2" Margin="10,4,223,0" Grid.Row="1" RenderTransformOrigin="0.494,0.225"/>
         <TextBlock Grid.Column="2" Margin="355,10,10,0" Grid.Row="2" TextWrapping="Wrap" Text="Ordenar por" FontSize="18" Visibility="Hidden"/>
         <ComboBox Grid.Column="3" Margin="10,6,10,3" Grid.Row="2" Height="30" Visibility="Hidden"/>
         <ComboBox Grid.Column="4" Margin="10,6,10,3" Grid.Row="2" Height="30" Visibility="Hidden"/>

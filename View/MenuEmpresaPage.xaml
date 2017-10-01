@@ -32,8 +32,8 @@
         </StackPanel>
         <Image Margin="10" Source="img/bussinec-ic.png" Grid.Column="1"/>
         <Button x:Name="btnAgregarEmpresa"
-                    Content="" Grid.Column="1" Margin="15,0"
-                    Style="{DynamicResource MetroCircleButtonStyle}" RenderTransformOrigin="0.545,0.455" Grid.Row="1" Click="btnAgregarEmpresa_Click">
+                    Content="" Grid.Column="1" Margin="15,0,0,0"
+                    Style="{DynamicResource MetroCircleButtonStyle}" RenderTransformOrigin="0.545,0.455" Grid.Row="1" Click="btnAgregarEmpresa_Click" HorizontalAlignment="Left" Width="52" Height="44" VerticalAlignment="Top">
             <Button.Background>
                 <ImageBrush ImageSource="img/add-ic.png"/>
             </Button.Background>
@@ -54,11 +54,16 @@
                   CanUserDeleteRows="False"
                   CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="campoId" Header="Id" Binding="{Binding IdEmpresa}" Width="100"/><!-- 0-->
-                <DataGridTextColumn x:Name="campoRut" Header="rut" Binding="{Binding RutEmpresa}" Width="100"/><!-- 0-->
-                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding NombreEmpresa}" Width="200"/><!--1-->
-                <DataGridTextColumn x:Name="campoFecha" Header="Fecha de Incorporacion" Binding="{Binding FechaIncorporacion}" Width="150"/><!--2-->
-                <DataGridTextColumn x:Name="compoLocal" Header="Locales" Binding="{Binding CantidadLocales}" Width="120"/><!--3-->
+                <DataGridTextColumn x:Name="campoId" Header="Id" Binding="{Binding IdEmpresa}" Width="100"/>
+                <!-- 0-->
+                <DataGridTextColumn x:Name="campoRut" Header="rut" Binding="{Binding RutEmpresa}" Width="100"/>
+                <!-- 0-->
+                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding NombreEmpresa}" Width="200"/>
+                <!--1-->
+                <DataGridTextColumn x:Name="campoFecha" Header="Fecha de Incorporacion" Binding="{Binding FechaIncorporacion}" Width="150"/>
+                <!--2-->
+                <DataGridTextColumn x:Name="compoLocal" Header="Locales" Binding="{Binding CantidadLocales}" Width="120"/>
+                <!--3-->
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>
                         <TextBlock  Text="Editar"  />

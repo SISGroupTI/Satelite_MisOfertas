@@ -70,9 +70,14 @@ namespace View
 
         private void btnAgregarTrabajador_Click(object sender, RoutedEventArgs e)
         {
+            toToRegistrar();
+
+        }
+
+        private void toToRegistrar()
+        {
             if (registrarTrabajadorPage == null) { registrarTrabajadorPage = new RegistrarTrabajadorPage(); }
             NavigationService.Navigate(registrarTrabajadorPage);
-            
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -103,6 +108,11 @@ namespace View
             NavigationService.Navigate(modificarTrabajadorPage);
         }
         
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            toToRegistrar();
+
+        }
     }
 
 }

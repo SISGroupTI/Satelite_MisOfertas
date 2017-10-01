@@ -381,6 +381,10 @@
     <Resource Include="img\empty.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAOLibrary\DAOLibrary.csproj">
+      <Project>{b8d74b7f-b940-46f9-8f65-1baf56a1fe98}</Project>
+      <Name>DAOLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityLibrary\EntityLibrary.csproj">
       <Project>{ba76d726-bd99-4daf-aea0-ec319fceadad}</Project>
       <Name>EntityLibrary</Name>

@@ -20,9 +20,9 @@
         <Label Content="Rut:" Margin="10,5"/>
         <Label Content="Nombre:" Margin="10,5" Grid.Row="1"/>
         <Label Content="Correo:" Margin="10,5" Grid.Row="2"/>
-        <TextBox x:Name="txtRut" Grid.Column="1" Margin="10,7,14,7" TextWrapping="Wrap" Custom:TextBoxHelper.Watermark="12345678-9"/>
-        <TextBox x:Name="txtNombre" Grid.Column="1" Margin="10,7,14,7" Grid.Row="1" TextWrapping="Wrap" Custom:TextBoxHelper.Watermark="Juan"/>
-        <TextBox x:Name="txtCorreo" Grid.Column="1" Margin="10,7,14,7" Grid.Row="2" TextWrapping="Wrap" Custom:TextBoxHelper.Watermark="correo@dominio.cl"/>
+        <TextBox Grid.Column="1" Margin="10,7,14,7" TextWrapping="Wrap" Custom:TextBoxHelper.Watermark="12345678-9" MaxLength="10"/>
+        <TextBox x:Name="txtNombre" Grid.Column="1" Margin="10,7,14,7" Grid.Row="1" TextWrapping="Wrap" Custom:TextBoxHelper.Watermark="Juan" MaxLength="50"/>
+        <TextBox x:Name="txtCorreo" Grid.Column="1" Margin="10,7,14,7" Grid.Row="2" TextWrapping="Wrap" Custom:TextBoxHelper.Watermark="correo@dominio.cl" MaxLength="40"/>
 
     </Grid>
 </UserControl>

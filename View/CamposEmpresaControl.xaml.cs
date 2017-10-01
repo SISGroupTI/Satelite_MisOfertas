@@ -69,7 +69,7 @@ namespace View
 
         private void txtRutEmpresa_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.K || e.Key==Key.Subtract)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.K || e.Key==Key.Subtract || e.Key==Key.OemQuotes)
             {
                 e.Handled = false;
             }
@@ -78,14 +78,7 @@ namespace View
                 e.Handled = true;
             }
         }
-
-        private void txtNombreEmpresa_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txtNombreEmpresa.Text.Length > 0)
-            {
-                CamposLlenos = true;
-            }
-            else { CamposLlenos = false; }
-        }
+        
+        
     }
 }

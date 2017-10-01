@@ -25,13 +25,13 @@
         <Label Content="Puntos Acomulados:" Margin="10,5" Grid.Row="2"/>
         <Label Content="Descuento:" Margin="10,5" Grid.Row="3"/>
         <Label Content="Tope:" Margin="10,5" Grid.Row="4"/>
-        <DatePicker x:Name="dpFechaEmision" Grid.Column="1" Margin="10,7"/>
-        <TextBox x:Name="txtRubros" Grid.Column="1" Margin="10,7" Grid.Row="1" TextWrapping="Wrap" />
-        <TextBox x:Name="txtPuntos" Grid.Column="1" Margin="10,7,80,7" Grid.Row="2" TextWrapping="Wrap" />
-        <TextBox x:Name="txtDescuento" Grid.Column="1" Margin="10,7,80,7" Grid.Row="3" TextWrapping="Wrap" />
-        <TextBox x:Name="txtTope" Grid.Column="1" Margin="10,7,80,7" Grid.Row="4" TextWrapping="Wrap" />
+        <DatePicker x:Name="dpFechaEmision" Grid.Column="1" Margin="10,7" IsEnabled="False"/>
+        <TextBox x:Name="txtRubros" Grid.Column="1" Margin="10,7" Grid.Row="1" TextWrapping="Wrap" IsEnabled="False" />
+        <TextBox x:Name="txtPuntos" Grid.Column="1" Margin="10,7,80,7" Grid.Row="2" TextWrapping="Wrap" IsEnabled="False" />
+        <TextBox x:Name="txtDescuento" Grid.Column="1" Margin="10,7,80,7" Grid.Row="3" TextWrapping="Wrap" IsEnabled="False" />
+        <TextBox x:Name="txtTope" Grid.Column="1" Margin="10,7,80,7" Grid.Row="4" TextWrapping="Wrap" IsEnabled="False" />
         <Label Content="Condiciones:" Margin="10,7" Grid.Row="5"/>
-        <RichTextBox x:Name="rtbCondiciones" Margin="10,0,10,10" Grid.Row="6" Grid.ColumnSpan="2">
+        <RichTextBox x:Name="rtbCondiciones" Margin="10,0,10,10" Grid.Row="6" Grid.ColumnSpan="2" IsEnabled="False">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>

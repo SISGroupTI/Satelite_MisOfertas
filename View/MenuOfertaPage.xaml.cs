@@ -27,8 +27,20 @@ namespace View
 
         private void btnAgregarOferta_Click(object sender, RoutedEventArgs e)
         {
+            goToRegistrar();
+        }
+
+        private void goToRegistrar()
+        {
             if (registrarOfertaPage == null) { registrarOfertaPage = new RegistrarOfertaPage(); }
             NavigationService.Navigate(registrarOfertaPage);
+        }
+        
+
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            goToRegistrar();
+
         }
     }
 }

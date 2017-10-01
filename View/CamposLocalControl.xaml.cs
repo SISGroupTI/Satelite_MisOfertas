@@ -31,5 +31,9 @@ namespace View
             else { 
                 e.Handled = true;}
         }
+        private void txtDireccionLocal_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }

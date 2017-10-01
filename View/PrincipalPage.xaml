@@ -37,7 +37,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0,2,0,0" Grid.Row="1" Background="#FFCFCFCF" Grid.RowSpan="2">
-                        <TextBlock Foreground="#303030" FontSize="18" Margin="42,6,43,6">Nuevo Producto</TextBlock>
+                        <TextBlock PreviewMouseDown="TextBlock_PreviewMouseDown" Foreground="#303030" FontSize="18" Margin="42,6,43,6">Nuevo Producto</TextBlock>
                     </StackPanel>
                     <Grid Width="215" Margin="1,0,1,31" Grid.RowSpan="2">
                         <Grid.RowDefinitions>

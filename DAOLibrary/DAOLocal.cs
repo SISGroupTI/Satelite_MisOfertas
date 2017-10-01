@@ -136,7 +136,6 @@ namespace BusinessLibrary
                 cmd.CommandText = "SP_SELECT_LOCALES_POR_IDEMPRES";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("p_ID_EMPRESA",OracleDbType.Int32).Value=idLocal;
-                cmd.Parameters.Add("p_IS_ACTIVO", OracleDbType.Int32).Value = 1;
                 cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 if (cone.Obtener().State.Equals(ConnectionState.Closed))
                 {

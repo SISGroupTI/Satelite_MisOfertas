@@ -8,7 +8,7 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      d:DesignHeight="549" d:DesignWidth="1000"
+      d:DesignHeight="1969" d:DesignWidth="1000"
       Title="RegistrarOfertaPage">
 
     <ScrollViewer >
@@ -43,19 +43,19 @@
             <TextBlock Grid.Column="1" Margin="10,10,361,10" TextWrapping="Wrap" Text="Administrador de Oferta" FontSize="48"/>
             <TextBlock Grid.Column="1" Margin="10,77,361,16" TextWrapping="Wrap" Text="Agregar Oferta" FontSize="24" Grid.RowSpan="3"/>
             <Separator Grid.Column="1" Margin="10,0" Grid.Row="2"/>
-            <local:CamposOfertaControl Grid.Column="1" Margin="10,10,361,10" Grid.Row="3"/>
+            <local:CamposOfertaControl x:Name="camposOfertas" Grid.Column="1" Margin="10,10,361,10" Grid.Row="3"/>
             <Separator Grid.Column="1" Margin="10,254,280,2" Grid.Row="3" Grid.RowSpan="2"/>
             <Label Content="Titulo:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Grid.Row="5" RenderTransformOrigin="0.474,0.288" Width="549" FontSize="18"/>
             <Label Content="Descripcion:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Grid.Row="7" RenderTransformOrigin="0.474,0.288" Width="549" FontSize="18"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,21" Grid.Row="6" TextWrapping="Wrap" Text="" Width="630"/>
-            <RichTextBox Grid.Column="1" Margin="10,10,280,10" Grid.Row="8">
+            <TextBox x:Name="tbxTitulo" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,21" Grid.Row="6" TextWrapping="Wrap" Text="" Width="630"/>
+            <RichTextBox x:Name="tbxDescripcion" Grid.Column="1" Margin="10,10,280,10" Grid.Row="8">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <RichTextBox Grid.Column="1" Margin="10,10,280,10" Grid.Row="10">
+            <RichTextBox x:Name="tbxCondiciones" Grid.Column="1" Margin="10,10,280,10" Grid.Row="10">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
@@ -79,7 +79,7 @@
                 <Label Content="Productos:" Margin="10,5,5,5"/>
                 <Label Content="Cantidad Minima:" Margin="10,5" Grid.Row="1"/>
                 <Label Content="Cantidad Maxima:" Margin="10,5" Grid.Row="2"/>
-                <ComboBox Grid.Column="1" Margin="10,5,20,5"/>
+                <ComboBox x:Name="cbxProductos" Grid.Column="1" Margin="10,5,20,5"/>
                 <Button Content="Agregar" Grid.Column="2" Margin="20,5"/>
                 <TextBox x:Name="txtCantidadMinima" Controls:TextBoxHelper.ClearTextButton="True"
                     Grid.Column="1" Margin="10,7,20,7" Grid.Row="1" TextWrapping="Wrap" Text=""/>
