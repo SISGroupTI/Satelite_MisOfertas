@@ -45,5 +45,12 @@ namespace View
         {
             validarIngresosNumeros(sender, e);
         }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            validarIngresosNumeros(sender, e);
+        }
+
+
     }
 }

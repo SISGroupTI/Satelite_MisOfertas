@@ -40,6 +40,7 @@ namespace View
             cbxEmpresa.ItemsSource = empresaNeg.ListarEmpresas();
             cbxEmpresa.DisplayMemberPath = "NombreEmpresa";
             cbxEmpresa.SelectedValuePath = "IdEmpresa";
+            cbxEmpresa.SelectedIndex = 0;
 
         }
 

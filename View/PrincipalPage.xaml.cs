@@ -28,6 +28,8 @@ namespace View
     {
         private double _lastLecture;
         private double _trend;
+        private RegistrarProductoPage registrarProductoPage;
+
         public SeriesCollection LastHourSeries { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -144,6 +146,12 @@ namespace View
         {
             var handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (registrarProductoPage == null) { registrarProductoPage = new RegistrarProductoPage(); }
+            NavigationService.Navigate(registrarProductoPage);
         }
     } 
 }

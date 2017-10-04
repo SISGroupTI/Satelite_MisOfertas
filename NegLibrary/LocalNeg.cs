@@ -10,7 +10,6 @@ namespace NegLibrary
     public class LocalNeg
     {
         private List<Local> locales;
-        private List<Object> localesObject = new List<Object>();
         DAOLocal daoLocal;
         public LocalNeg()
         {

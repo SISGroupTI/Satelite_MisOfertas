@@ -6,36 +6,41 @@
              xmlns:local="clr-namespace:View"
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="320">
+             d:DesignHeight="258.459" d:DesignWidth="320">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="0*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+
         </Grid.RowDefinitions>
         <Label Content="Local" Margin="10,5"/>
-        <Label Content="Fecha de Creacion" Margin="10,5" Grid.Row="3"/>
+        <Label Content="Fecha de Finalizacion" Margin="10,5" Grid.Row="3"/>
         <Label Content="Codigo de Oferta" Margin="10,5" Grid.Row="2"/>
         <Label Content="Rubro" Margin="10,5" Grid.Row="1"/>
         <Label Content="Fecha de Publicacion" Margin="10,5" Grid.Row="4" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="txtLocal"
-            Controls:TextBoxHelper.Watermark="102"
-            Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,5" TextWrapping="Wrap" Text=""/>
         <TextBox x:Name="txtCodigoOferta"
-            Controls:TextBoxHelper.Watermark="COD001"
+            Controls:TextBoxHelper.Watermark="001"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,5" TextWrapping="Wrap" Text="" Grid.Row="2"/>
-        <ComboBox x:Name="cbxRubro" Grid.Column="1" Margin="10,5" Grid.Row="1"/>
-        <DatePicker x:Name="dpFechaCreacion" Grid.Column="1" Margin="10,5" Grid.Row="3"/>
+            Grid.Column="1" Margin="10,5" TextWrapping="Wrap" Text="" Grid.Row="2" KeyDown="txtCodigoOferta_KeyDown"/>
+        <ComboBox x:Name="cbxRubro" Grid.Column="1" Margin="10,5" Grid.Row="1" Controls:TextBoxHelper.Watermark="Seleccione Rubro"/>
+        <DatePicker x:Name="dpFechaFinalizacion" Grid.Column="1" Margin="10,5" Grid.Row="3"/>
         <DatePicker x:Name="dpFechaPublicacion" Grid.Column="1" Margin="10,5" Grid.Row="4"/>
+        <ComboBox x:Name="cbxLocal" Margin="10,5,10,6" Grid.Column="1" Controls:TextBoxHelper.Watermark="Seleccione Local"/>
+        <Label Content="Estado" Margin="10,5" Grid.Row="5"/>
+        <ComboBox x:Name="cbxEstado" Grid.Column="1" Margin="10,5,10,5" Grid.Row="5" Controls:TextBoxHelper.Watermark="Seleccione Estado"/>
+        <Label Content="Precio" Margin="10,5" Grid.Row="6"/>
+        <TextBox x:Name="txtPrecio" Grid.Column="1" Height="23" Margin="10,5" Grid.Row="6" TextWrapping="Wrap" 
+                 Controls:TextBoxHelper.Watermark="21990"
+                 Controls:TextBoxHelper.ClearTextButton="True" KeyDown="txtPrecio_KeyDown"/>
 
     </Grid>
 </UserControl>

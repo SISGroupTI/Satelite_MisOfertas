@@ -106,6 +106,7 @@ namespace DAOLibrary
                     trabajador.Perfil = perfil;
                     trabajador.Local = local;
                     trabajador.Contrasena = dr.GetString(14);
+                    trabajador.FechaIngreso = dr.GetDateTime(7);
                     listaTrabajadores.Add(trabajador);
                 }
                 cone.Obtener().Close();

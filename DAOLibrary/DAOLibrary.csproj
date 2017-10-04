@@ -46,9 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coleccion.cs" />
+    <Compile Include="DAODetalleOferta.cs" />
     <Compile Include="DAOEmpresa.cs" />
+    <Compile Include="DAOEstado.cs" />
     <Compile Include="DAOLocal.cs" />
+    <Compile Include="DAOOferta.cs" />
     <Compile Include="DAOPerfil.cs" />
+    <Compile Include="DAOProducto.cs" />
+    <Compile Include="DAORubro.cs" />
     <Compile Include="DAOTrabajador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
