@@ -9,9 +9,11 @@ namespace EntityLibrary
     {
         private int idRubro;
         private String descripcionRubro;
+        private TipoRubro tipoRubro;
 
         public int IdRubro { get => idRubro; set => idRubro = value; }
         public string DescripcionRubro { get => descripcionRubro; set => descripcionRubro = value; }
+        public TipoRubro TipoRubro { get => tipoRubro; set => tipoRubro = value; }
 
         public Rubro(int idRubro, string descripcionRubro)
         {

@@ -8,7 +8,7 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      d:DesignHeight="549" d:DesignWidth="1000"
+      d:DesignHeight="1955.015" d:DesignWidth="1000"
       Title="ModificarOfertaPage">
 
     <ScrollViewer >
@@ -21,10 +21,10 @@
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="42*"/>
                 <RowDefinition Height="19*"/>
-                <RowDefinition Height="259*"/>
-                <RowDefinition Height="19*"/>
-                <RowDefinition Height="42*"/>
-                <RowDefinition Height="179*"/>
+                <RowDefinition Height="271*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="163*"/>
                 <RowDefinition Height="41*"/>
                 <RowDefinition Height="179*"/>
                 <RowDefinition Height="39*"/>
@@ -43,25 +43,17 @@
             <TextBlock Grid.Column="1" Margin="10,10,361,10" TextWrapping="Wrap" Text="Administrador de Oferta" FontSize="48"/>
             <TextBlock Grid.Column="1" Margin="10,77,361,16" TextWrapping="Wrap" Text="Modificar Oferta" FontSize="36" Grid.RowSpan="3"/>
             <Separator Grid.Column="1" Margin="10,0" Grid.Row="2"/>
-            <local:CamposOfertaControl Grid.Column="1" Margin="10,10,361,10" Grid.Row="3"/>
-            <Separator Grid.Column="1" Margin="10,254,280,2" Grid.Row="3" Grid.RowSpan="2"/>
+            <local:CamposOfertaControl x:Name="camposOfertas" Grid.Column="1" Margin="10,10,361,10" Grid.Row="3"/>
+            <Separator Grid.Column="1" Margin="0,10,290,5" Grid.Row="4"/>
             <Label Content="Titulo:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Grid.Row="5" RenderTransformOrigin="0.474,0.288" Width="549" FontSize="18"/>
             <Label Content="Descripcion:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Grid.Row="7" RenderTransformOrigin="0.474,0.288" Width="549" FontSize="18"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,21" Grid.Row="6" TextWrapping="Wrap" Text="" Width="630"/>
-            <RichTextBox Grid.Column="1" Margin="10,10,280,10" Grid.Row="8">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="RichTextBox"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
-            <RichTextBox Grid.Column="1" Margin="10,10,280,10" Grid.Row="10">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text="RichTextBox"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
+            <TextBox x:Name="txtTitulo" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,21" Grid.Row="6" TextWrapping="Wrap" Text="" Width="630"/>
+            <TextBox x:Name="txtDescripcion"  Grid.Column="1" Margin="10,10,280,10" Grid.Row="8">
+
+            </TextBox>
+            <TextBox x:Name="txtCondiciones" Grid.Column="1" Margin="10,10,280,10" Grid.Row="10">
+
+            </TextBox>
             <Label Content="Condiciones" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="9" Width="503" FontSize="18"/>
             <Separator Grid.Column="1" Margin="10,0,280,0" Grid.Row="11"/>
             <Grid Grid.Column="1" HorizontalAlignment="Left" Grid.Row="12" Width="640">
@@ -79,21 +71,37 @@
                 <Label Content="Productos:" Margin="10,5,5,5"/>
                 <Label Content="Cantidad Minima:" Margin="10,5" Grid.Row="1"/>
                 <Label Content="Cantidad Maxima:" Margin="10,5" Grid.Row="2"/>
-                <ComboBox Grid.Column="1" Margin="10,5,20,5"/>
-                <Button Content="Agregar" Grid.Column="2" Margin="20,5"/>
+                <ComboBox x:Name="cbxProductos" Grid.Column="1" Margin="10,5,20,5"/>
+                <Button x:Name="btnAgregarDetalle" Content="Agregar" Grid.Column="2" Margin="20,5" Click="btnAgregarDetalle_Click"/>
                 <TextBox x:Name="txtCantidadMinima" Controls:TextBoxHelper.ClearTextButton="True"
-                    Grid.Column="1" Margin="10,7,20,7" Grid.Row="1" TextWrapping="Wrap" Text=""/>
+                    Grid.Column="1" Margin="10,7,20,7" Grid.Row="1" TextWrapping="Wrap" Text="" KeyDown="txtCantidadMinima_KeyDown"/>
                 <TextBox x:Name="txtCantidadMaxima" 
                     Controls:TextBoxHelper.ClearTextButton="True"
-                    Grid.Column="1" Margin="10,7,20,7" Grid.Row="2" TextWrapping="Wrap" Text=""/>
-                <DataGrid Margin="10" Grid.Row="3" Grid.ColumnSpan="3">
+                    Grid.Column="1" Margin="10,7,20,7" Grid.Row="2" TextWrapping="Wrap" Text="" KeyDown="txtCantidadMaxima_KeyDown"/>
+                <DataGrid x:Name="dtDetalle" Margin="10" Grid.Row="3" Grid.ColumnSpan="3"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          CanUserReorderColumns="False"
+                          AutoGenerateColumns="False"
+                          >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}" Width="70"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="70"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Precio Normal" Binding="{Binding PrecioNormal}" Width="100"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Cantidad Minima" Binding="{Binding Minimo}" Width="100"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Cantidad Maxima" Binding="{Binding Maximo}" Width="100"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Eliminar" Width="70"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Codigo" Binding="{Binding Producto.CodigoProducto}" Width="70"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Producto.Descripcion}" Width="70"/>
+                        <DataGridTextColumn Header="Precio Normal" Binding="{Binding Producto.PrecioNormal}" Width="100"/>
+                        <DataGridTextColumn Header="Cantidad Minima" Binding="{Binding CantidadMinima}" Width="100"/>
+                        <DataGridTextColumn Header="Cantidad Maxima" Binding="{Binding CantidadMaxima}" Width="100"/>
+                        <DataGridTemplateColumn >
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock  Text="ELIMINAR"  />
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="btnEliminar_Click" x:Name="btnEliminar"  HorizontalAlignment="Center" VerticalAlignment="Center"  VerticalContentAlignment="Center" Width="40" Height="40">
+                                        <Image Source="img/if_delete_678153.png" Stretch="Fill" />
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -127,9 +135,10 @@
                     <ColumnDefinition Width="273*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Margin="10" TextWrapping="Wrap" Text="Publicar Automaticamente" FontSize="18"/>
-                <Controls:ToggleSwitch OnLabel="Si" OffLabel="No" Grid.Column="1" Margin="70,10"/>
+                <RadioButton x:Name="rbSi" Content="Si" Grid.Column="1" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" GroupName="automatico"/>
+                <RadioButton x:Name="rbNo" Content="No" Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.038,0.417" GroupName="automatico"/>
             </Grid>
-            <Button Content="Modificar Oferta" Grid.Column="1" Margin="245,10,361,10" Grid.Row="18" Background="#FF0AD400"/>
+            <Button Content="Modificar Oferta" Grid.Column="1" Margin="245,10,361,10" Grid.Row="18" Background="#FF0AD400" Click="Button_Click"/>
         </Grid>
     </ScrollViewer>
 </Page>

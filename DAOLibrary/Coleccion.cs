@@ -14,22 +14,11 @@ namespace DAOLibrary
 {
     public class Coleccion
     {
-        private static TipoProducto tipoProducto;
-        private  List<TipoProducto> tipoproductos = new List<TipoProducto>();
         public Coleccion()
         {
-            TipoProducto perecible = new TipoProducto();
-            perecible.IdTipoProducto = 1;
-            perecible.Descripcion = "Perecible";
-            TipoProducto noPerecible = new TipoProducto();
-            noPerecible.IdTipoProducto = 2;
-            noPerecible.Descripcion = "No Perecible";
-            tipoproductos.Add(perecible);
-            tipoproductos.Add(noPerecible);
 
         }
 
-        public  List<TipoProducto> Tipoproductos { get => tipoproductos; set => tipoproductos = value; }
     }
 
 }

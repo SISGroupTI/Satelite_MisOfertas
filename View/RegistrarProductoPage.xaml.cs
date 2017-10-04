@@ -42,7 +42,7 @@ namespace View
         private void CbxRubro_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Rubro rubro = (Rubro)(sender as ComboBox).SelectedItem;
-            if (rubro.IdRubro == 2)
+            if (rubro.TipoRubro.IdTipoRubro==1)
             {
                 camposProductos.dpFechaCaducidad.IsEnabled = true;
             }

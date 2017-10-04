@@ -40,13 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetalleOfertaNeg.cs" />
     <Compile Include="EmpresaNeg.cs" />
     <Compile Include="EstadoNeg.cs" />
     <Compile Include="LocalNeg.cs" />
+    <Compile Include="OfertaNeg.cs" />
     <Compile Include="PerfilNeg.cs" />
     <Compile Include="ProductoNeg.cs" />
     <Compile Include="RubroNeg.cs" />
-    <Compile Include="TipoProductoNeg.cs" />
     <Compile Include="TrabajadorNeg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

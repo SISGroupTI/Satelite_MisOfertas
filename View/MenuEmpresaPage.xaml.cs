@@ -40,7 +40,7 @@ namespace View
         {
             
             lista = empresaNeg.ListarEmpresas();
-            dtEmpresa.ItemsSource = lista.ToList();
+            dtEmpresa.ItemsSource = lista;
             dtEmpresa.Items.Refresh();
         }
         //Evento del boton para agregar empresa

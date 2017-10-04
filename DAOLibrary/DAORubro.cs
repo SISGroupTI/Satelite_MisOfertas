@@ -45,6 +45,9 @@ namespace BusinessLibrary
                     rubro = new Rubro();
                     rubro.IdRubro = dr.GetInt32(0);
                     rubro.DescripcionRubro = dr.GetString(1);
+                    TipoRubro tipo = new TipoRubro();
+                    tipo.IdTipoRubro = dr.GetInt32(2);
+                    rubro.TipoRubro = tipo;
                     rubros.Add(rubro);
 
                 }

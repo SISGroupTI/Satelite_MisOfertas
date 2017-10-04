@@ -190,21 +190,25 @@ namespace BusinessLibrary
                     //Rubro
                     rubro.IdRubro = dr.GetInt32(11);
                     rubro.DescripcionRubro = dr.GetString(12);
-                    if (rubro.IdRubro==2)
+                    TipoRubro tipo = new TipoRubro();
+                    tipo.IdTipoRubro = dr.GetInt32(13);
+                    rubro.TipoRubro = tipo;
+                    
+                    producto.Rubro = rubro;
+                    producto.Local = local;
+                    producto.Estado = estado;
+                    if (producto.Rubro.TipoRubro.IdTipoRubro == 1)
                     {
                         producto.FechaCaducidad = dr.GetDateTime(10);
 
                     }
-                    producto.Rubro = rubro;
-                    producto.Local = local;
-                    producto.Estado = estado;
                     listaPro.Add(producto);
 
                 }
                 cone.Obtener().Close();
                 return listaPro;
             }
-            catch
+            catch(Exception e)
             {
                 return null;
             }
@@ -254,14 +258,18 @@ namespace BusinessLibrary
                     //asignacion de objeto a la clase
                     ru.IdRubro = dr.GetInt32(11);
                     ru.DescripcionRubro = dr.GetString(12);
-                    if (rubro.IdRubro == 2)
+                    TipoRubro tipo = new TipoRubro();
+                    tipo.IdTipoRubro = dr.GetInt32(13);
+                    rubro.TipoRubro = tipo;
+                    
+                    producto.Rubro = rubro;
+                    producto.Local = local;
+                    producto.Estado = estado;
+                    if (producto.Rubro.TipoRubro.IdTipoRubro == 1)
                     {
                         producto.FechaCaducidad = dr.GetDateTime(10);
 
                     }
-                    producto.Rubro = rubro;
-                    producto.Local = local;
-                    producto.Estado = estado;
                     listaPro.Add(producto);
 
                 }
