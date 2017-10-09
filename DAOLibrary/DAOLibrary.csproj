@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coleccion.cs" />
+    <Compile Include="DAODescuento.cs" />
     <Compile Include="DAODetalleOferta.cs" />
     <Compile Include="DAOEmpresa.cs" />
     <Compile Include="DAOEstado.cs" />

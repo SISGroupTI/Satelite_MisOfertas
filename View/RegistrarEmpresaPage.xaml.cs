@@ -84,7 +84,7 @@ namespace View
                     res = empresaNeg.RegistrarEmpresa(rut, dv, nombre, localNeg);
                     if (res)
                     {
-                        MessageBox.Show("Registro Exitoso");
+                        MessageBox.Show("Empresa ingresada al sistema");
                         controlesEmpresa.txtNombreEmpresa.Text = "";
                         controlesEmpresa.txtRutEmpresa.Text = "";
                         dtgLocales.Items.Refresh();
@@ -92,7 +92,7 @@ namespace View
                     }
                     else
                     {
-                        MessageBox.Show("No se registro");
+                        MessageBox.Show("Se ha presentado un inconveniente \n verifique los datos e intente nuevamente");
                     }
 
                 }
@@ -103,7 +103,7 @@ namespace View
             }
             else
             {
-                MessageBox.Show("Ingrese todos los datos");
+                MessageBox.Show("Se requiere ingresar todos los datos \n para ingresar este registro al sistema");
             }
         }
 

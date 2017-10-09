@@ -2,6 +2,9 @@
 using NegLibrary;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -29,6 +32,7 @@ namespace View
         RubroNeg rubroNeg;
         OfertaNeg ofertaNeg;
         DetalleOfertaNeg detalleOfertaNeg;
+        List<object> listaImagenes;
         public RegistrarOfertaPage()
         {
             InitializeComponent();
@@ -44,6 +48,8 @@ namespace View
                 ofertaNeg = new OfertaNeg();
             if (detalleOfertaNeg == null)
                 detalleOfertaNeg = new DetalleOfertaNeg();
+            if (listaImagenes == null)
+                listaImagenes = new List<object>();
             cargarCbxs();
             setDatePickers();
         }
@@ -142,7 +148,7 @@ namespace View
             camposOfertas.cbxLocal.SelectedIndex = 0;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnGenerarOferta_Click(object sender, RoutedEventArgs e)
         {
             if (validarCampos())
             {
@@ -160,33 +166,42 @@ namespace View
                     int precio = int.Parse(camposOfertas.txtPrecio.Text.Trim());
                     int isVisible = 1;
                     int isDisponible = rbSi.IsChecked == true ? 1 : 0;
-                    bool res = ofertaNeg.RegistrarOferta(descripcion, condiciones,
+                    Oferta ofertaOut = ofertaNeg.RegistrarOferta(descripcion, condiciones,
                         rubro, local, estado, fechaFinalizacion, fechaPublicacion, titulo, codigoOferta, precio,
                         isVisible, isDisponible);
-                    if (res)
-                    {
-                        Oferta oferta = ofertaNeg.BuscarOferta(descripcion, condiciones,
-                        rubro, local, estado, fechaFinalizacion, fechaPublicacion, titulo, codigoOferta, precio,
-                        isVisible, isDisponible);
-                        if (oferta != null)
+                    if (ofertaOut != null)
+                    {      
+                        detalleOfertaNeg.AsignarOfertaADetalles(ofertaOut);
+                        Boolean res = detalleOfertaNeg.RegistrarDetalle(detalleOfertaNeg.DetalleOfertasList);
+
+                        String rutaImagenesOferta = "D:/MisOfertas/Ofertas/Oferta" + ofertaOut.IdOferta +"_"+ofertaOut.CodigoOferta+ "_" + ofertaOut.FechaCreacion.ToShortDateString();
+
+                        if (!Directory.Exists(rutaImagenesOferta))
+                            Directory.CreateDirectory(rutaImagenesOferta);
+                        foreach (object imagenOferta in listaImagenes)
                         {
-                            detalleOfertaNeg.AsignarOfertaADetalles(oferta);
-                            res = detalleOfertaNeg.RegistrarDetalle(detalleOfertaNeg.DetalleOfertasList);
-                            if (res) {
-                                tbxDescripcion.Text="";
-                                tbxCondiciones.Text="";
-                                camposOfertas.cbxRubro.SelectedIndex=0;
-                                camposOfertas.cbxLocal.SelectedIndex = 0;
-                                camposOfertas.cbxEstado.SelectedIndex = 0;
-                                setDatePickers();
-                                tbxTitulo.Text="";
-                                cbxProductos.SelectedIndex = 0;
-                                txtCantidadMaxima.Text = "";
-                                txtCantidadMinima.Text = "";
-                                System.Windows.MessageBox.Show("Registro Exitoso", "Registro de Oferta");
-                            } 
+                            BitmapImage bitImagen = (BitmapImage)imagenOferta.GetType().GetProperty("Imagen").GetValue(this, null);
+                            Bitmap img = BitmapImage2Bitmap(bitImagen);
+                            img.Save(rutaImagenesOferta+"/newFile.jpeg");
+                            Process.Start(rutaImagenesOferta + "/newFile.jpeg");
                         }
-                        
+
+
+
+
+                        if (res) {
+                            tbxDescripcion.Text="";
+                            tbxCondiciones.Text="";
+                            camposOfertas.cbxRubro.SelectedIndex=0;
+                            camposOfertas.cbxLocal.SelectedIndex = 0;
+                            camposOfertas.cbxEstado.SelectedIndex = 0;
+                            setDatePickers();
+                            tbxTitulo.Text="";
+                            cbxProductos.SelectedIndex = 0;
+                            txtCantidadMaxima.Text = "";
+                            txtCantidadMinima.Text = "";
+                            System.Windows.MessageBox.Show("Registro Exitoso", "Registro de Oferta");
+                        }             
                     }
                 }
                 catch (Exception ex) { System.Windows.MessageBox.Show("Error: " + ex.Message, "Registro de Oferta"); }
@@ -299,15 +314,51 @@ namespace View
             openFile.InitialDirectory = @"C:\Users\%USERPROFILE%\Pictures";
             BitmapImage b = new BitmapImage();
             openFile.Title = "Seleccione Imagen";
-            openFile.Filter = "Todos(*.*) | *.*| Imagenes | *.jpg; *.gif; *.png; *.bmp";
+            openFile.Filter = "Imagenes |*.jpeg; *.jpg; *.gif; *.png; *.bmp";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 b.BeginInit();
                 b.UriSource = new Uri(openFile.FileName);
                 b.EndInit();
-                imgPrincipal.Stretch = Stretch.Fill;
-                imgPrincipal.Source = b;
+                var imagen = new { Ruta = openFile.FileName, Imagen = b }; //custom object
+                listaImagenes.Add(imagen);
+            }
+            cargarDtImagenesOferta();
+
+
+        }
+        public void btnEliminarImagenOferta_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Está seguro de descartar esta imagen?", "Confirmar accion", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                object imagenOferta = (object)dtImagenesOferta.SelectedItems[0];
+                listaImagenes.Remove(imagenOferta);
+                cargarDtImagenesOferta();
             }
         }
+
+        public void cargarDtImagenesOferta()
+        {
+            dtImagenesOferta.ItemsSource = listaImagenes;
+            dtImagenesOferta.Items.Refresh();
+        }
+        private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
+        {
+            // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
+
+            using (MemoryStream outStream = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder();
+                enc.Frames.Add(BitmapFrame.Create(bitmapImage));
+                enc.Save(outStream);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(outStream);
+
+                return new Bitmap(bitmap);
+            }
+        }
+
+
+
     }
 }

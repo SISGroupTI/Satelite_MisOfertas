@@ -20,7 +20,7 @@ namespace NegLibrary
                 daoOferta = new DAOOferta();
         }
 
-        public Boolean RegistrarOferta(String descripcion,String condiciones,Rubro rubro,Local local,Estado estado,DateTime fechaFinalizacion,DateTime fechaPublicacion,String titulo,int codigoOferta,int precio,int isVisible,int isDiponible)
+        public Oferta RegistrarOferta(String descripcion,String condiciones,Rubro rubro,Local local,Estado estado,DateTime fechaFinalizacion,DateTime fechaPublicacion,String titulo,int codigoOferta,int precio,int isVisible,int isDiponible)
         {
             Oferta oferta = new Oferta();
             oferta.CodigoOferta = codigoOferta;

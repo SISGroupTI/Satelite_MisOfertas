@@ -39,9 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consumidor.cs" />
+    <Compile Include="Descuento.cs" />
     <Compile Include="DetalleOferta.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Estado.cs" />
+    <Compile Include="ImagenOferta.cs" />
     <Compile Include="Local.cs" />
     <Compile Include="Modulo.cs" />
     <Compile Include="Oferta.cs" />

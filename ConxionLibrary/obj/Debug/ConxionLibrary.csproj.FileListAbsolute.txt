@@ -25,3 +25,12 @@ C:\ultimoSis\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojR
 C:\ultimoSis\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
 C:\ultimoSis\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
 C:\ultimoSis\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll.config
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\bin\Debug\ConxionLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\bin\Debug\Oracle.DataAccess.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb

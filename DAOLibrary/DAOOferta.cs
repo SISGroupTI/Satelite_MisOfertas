@@ -18,7 +18,7 @@ namespace BusinessLibrary
                 cone = new Conexion();
         }
 
-        public Boolean RegistrarOferta(Oferta oferta) {
+        public Oferta RegistrarOferta(Oferta oferta) {
             try
             {
 
@@ -38,20 +38,23 @@ namespace BusinessLibrary
                 cmd.Parameters.Add("p_DESCRIPCION_OFERTA", OracleDbType.Varchar2).Value = oferta.DescripcionOferta;
                 cmd.Parameters.Add("p_CONDICIONES", OracleDbType.Varchar2).Value = oferta.Condiciones;
                 cmd.Parameters.Add("p_IS_DISPONIBLE", OracleDbType.Int16).Value = oferta.IsDisponible;
+                cmd.Parameters.Add("p_out_ID_OFERTA", OracleDbType.Int32).Direction = ParameterDirection.Output;
                 if (cone.Obtener().State == ConnectionState.Closed)
                 {
 
                     cone.Obtener().Open();
                 }
+
                 cmd.ExecuteNonQuery();
+                oferta.IdOferta = Int32.Parse(cmd.Parameters["p_out_ID_OFERTA"].Value.ToString());
                 cone.Obtener().Close();
-                return true;
+                return oferta;
 
             }
             catch (Exception e)
             {
                 cone.Obtener().Close();
-                return false;
+                return null;
             }
         }
         public Oferta BuscarOferta(Oferta ofertaInput)

@@ -46,3 +46,17 @@ C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAs
 C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
 C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
 C:\ultimoSis\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll.config
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\BusinessLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\Oracle.DataAccess.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\ConxionLibrary.dll.config
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\EntityLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csprojResolveAssemblyReference.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb

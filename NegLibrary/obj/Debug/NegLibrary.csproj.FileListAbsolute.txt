@@ -43,3 +43,18 @@ C:\ultimoSis\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csprojResolveAs
 C:\ultimoSis\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
 C:\ultimoSis\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.dll
 C:\ultimoSis\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\NegLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\NegLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\EntityLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\BusinessLibrary.dll.config
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\EntityLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\ConxionLibrary.dll.config
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csprojResolveAssemblyReference.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.pdb
