@@ -29,13 +29,14 @@ namespace View
         EstadoNeg estadoNeg;
         RubroNeg rubroNeg;
         OfertaNeg ofertaNeg;
+        ImagenesOfertaNeg imagenesOfertaNeg;
+        List<object> listaImagenes; //----------LISTA CUSTOM PARA LA AGREGACION DE NUEVAS IMAGENES
+        List<ImagenOferta> listaImagenesOferta;
         public ModificarOfertaPage()
         {
             InitializeComponent();
             if (detalleOfertaNeg == null)
-            {
                 detalleOfertaNeg = new DetalleOfertaNeg();
-            }
             if (localNeg == null)
                 localNeg = new LocalNeg();
             if (productoNeg == null)
@@ -46,6 +47,13 @@ namespace View
                 rubroNeg = new RubroNeg();
             if (ofertaNeg == null)
                 ofertaNeg = new OfertaNeg();
+            if (imagenesOfertaNeg == null)
+                imagenesOfertaNeg = new ImagenesOfertaNeg();
+            if (listaImagenes == null)
+                listaImagenes = new List<object>();
+            if (listaImagenesOferta == null)
+                listaImagenesOferta = new List<ImagenOferta>();
+           
         }
         private void cargarcbxRubro()
         {
@@ -102,16 +110,38 @@ namespace View
             dtDetalle.ItemsSource = detalleOfertaNeg.DetalleOfertasList;
             dtDetalle.Items.Refresh();
         }
-        public void obtenerDatos(List<DetalleOferta> detalleList, Oferta oferta)
+        public void obtenerDatos(List<DetalleOferta> detalleList, Oferta oferta, List<ImagenOferta> listaImagenesOfertaIn)
         {
             detalleOfertaNeg.DetalleOfertasList = detalleList;
+            listaImagenesOferta = listaImagenesOfertaIn;
             ofertaNeg.Oferta = oferta;
             cargarDtDetalle();
             cargarcbxLocal();
             caragrcbxEstado();
             cargarcbxRubro();
             cargarCampos();
+            cargarImagenes();
+
+
         }
+        public void cargarImagenes()
+        {
+            if (listaImagenesOferta.Count > 0)
+            {
+                
+                foreach (ImagenOferta imagenOferta in listaImagenesOferta)
+                {
+                    BitmapImage b = new BitmapImage();
+                    b.BeginInit();
+                    b.UriSource = new Uri(imagenOferta.Imagen);
+                    b.EndInit();
+                    var imagen = new { Ruta = imagenOferta.Imagen, Imagen = b, Extension = System.IO.Path.GetExtension(imagenOferta.Imagen) }; //custom object
+                    listaImagenes.Add(imagen);
+                }
+                cargarDtImagenesOferta();
+            }
+        }
+
         private void cargarCampos()
         {
             camposOfertas.txtCodigoOferta.Text = ofertaNeg.Oferta.CodigoOferta.ToString();
@@ -289,5 +319,42 @@ namespace View
         {
             validarIngresosNumeros(sender, e);
         }
+
+        //----------------METODO PARA ABRIR EL DIALOGO DE SELECCION DE ARCHIVOS------------------
+
+        private void BtnAbrirFolderModificar_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            //string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+            openFile.InitialDirectory = @"C:\Users\%USERPROFILE%\Pictures";
+            BitmapImage b = new BitmapImage();
+            openFile.Title = "Seleccione Imagen";
+            openFile.Filter = "Imagenes |*.jpeg; *.jpg; *.gif; *.png; *.bmp";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                b.BeginInit();
+                b.UriSource = new Uri(openFile.FileName);
+                b.EndInit();
+                var imagen = new { Ruta = openFile.FileName, Imagen = b, Extension = System.IO.Path.GetExtension(openFile.FileName) }; //custom object
+                listaImagenes.Add(imagen);
+            }
+            cargarDtImagenesOferta();
+        }
+        public void cargarDtImagenesOferta()
+        {
+            dtImagenesOfertaModificar.ItemsSource = listaImagenes;
+            dtImagenesOfertaModificar.Items.Refresh();
+        }
+        public void btnEliminarImagenOferta_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Está seguro de descartar esta imagen?", "Confirmar accion", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                object imagenOferta = (object)dtImagenesOfertaModificar.SelectedItems[0];
+                listaImagenes.Remove(imagenOferta);
+                cargarDtImagenesOferta();
+            }
+        }
+
     }
 }

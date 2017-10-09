@@ -44,6 +44,7 @@
     <Compile Include="DetalleOfertaNeg.cs" />
     <Compile Include="EmpresaNeg.cs" />
     <Compile Include="EstadoNeg.cs" />
+    <Compile Include="ImagenesOfertaNeg.cs" />
     <Compile Include="LocalNeg.cs" />
     <Compile Include="OfertaNeg.cs" />
     <Compile Include="PerfilNeg.cs" />

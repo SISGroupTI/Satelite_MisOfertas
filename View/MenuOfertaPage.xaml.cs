@@ -25,6 +25,7 @@ namespace View
         RegistrarOfertaPage registrarOfertaPage;
         OfertaNeg ofertaNeg;
         DetalleOfertaNeg detalleOfertaNeg;
+        ImagenesOfertaNeg imagenesOfertaNeg;
         public MenuOfertaPage()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace View
                 ofertaNeg = new OfertaNeg();
             if (detalleOfertaNeg == null)
                 detalleOfertaNeg = new DetalleOfertaNeg();
+            if (imagenesOfertaNeg == null)
+                imagenesOfertaNeg = new ImagenesOfertaNeg();
             cargarDtOfertas();
         }
 
@@ -91,7 +94,8 @@ namespace View
             //DetalleOferta detalle = detalleOfertaNeg.
             ModificarOfertaPage modificarOfertaPage = new ModificarOfertaPage();
             List<DetalleOferta> lista= detalleOfertaNeg.BuscarDetalleOferta(oferta);
-            modificarOfertaPage.obtenerDatos(lista,oferta);
+            List<ImagenOferta> listaImagenes = imagenesOfertaNeg.listarImagenesOfertaPorOferta(oferta);
+            modificarOfertaPage.obtenerDatos(lista, oferta, listaImagenes);
             NavigationService.Navigate(modificarOfertaPage);
         }
     }

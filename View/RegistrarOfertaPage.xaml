@@ -83,13 +83,14 @@
                           CanUserDeleteRows="False"
                           CanUserReorderColumns="False"
                           AutoGenerateColumns="False"
+                          HorizontalAlignment="Center"
                           >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Codigo" Binding="{Binding Producto.CodigoProducto}" Width="70"/>
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Producto.Descripcion}" Width="70"/>
-                        <DataGridTextColumn Header="Precio Normal" Binding="{Binding Producto.PrecioNormal}" Width="100"/>
-                        <DataGridTextColumn Header="Cantidad Minima" Binding="{Binding CantidadMinima}" Width="100"/>
-                        <DataGridTextColumn Header="Cantidad Maxima" Binding="{Binding CantidadMaxima}" Width="100"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Producto.Descripcion}" Width="120"/>
+                        <DataGridTextColumn Header="Precio Normal" Binding="{Binding Producto.PrecioNormal}" Width="115"/>
+                        <DataGridTextColumn Header="Cantidad Minima" Binding="{Binding CantidadMinima}" Width="120"/>
+                        <DataGridTextColumn Header="Cantidad Maxima" Binding="{Binding CantidadMaxima}" Width="120" />
                         <DataGridTemplateColumn >
                             <DataGridTemplateColumn.Header>
                                 <TextBlock  Text="ELIMINAR"  />
@@ -104,6 +105,7 @@
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
+                
             </Grid>
             <Separator Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="10,0,0,0" Grid.Row="13" VerticalAlignment="Top" Width="630"/>
             <Button x:Name="btnAbrirFolfer" Content="Subir Imagen" Grid.Column="1" HorizontalAlignment="Center" Margin="160,5,520,5" Grid.Row="14" Width="240" Background="#FF4D79D8" Click="btnAbrirFolfer_Click"/>
