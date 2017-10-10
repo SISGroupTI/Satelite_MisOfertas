@@ -52,6 +52,8 @@ namespace BusinessLibrary
                     consumidor.IdConsumidor = dr.GetInt32(8);
                     consumidor.Nombre = dr.GetString(9);
                     consumidor.Apellidos = dr.GetString(10);
+                    consumidor.Correo = dr.GetString(11);
+                    consumidor.Rut = dr.GetInt32(12);
                     descuento.Consumidor = consumidor;
 
                     listaDescuentos.Add(descuento);

@@ -62,6 +62,10 @@
       <Project>{ba76d726-bd99-4daf-aea0-ec319fceadad}</Project>
       <Name>EntityLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3791240a-73ac-4122-b85c-aa2a57d54173}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

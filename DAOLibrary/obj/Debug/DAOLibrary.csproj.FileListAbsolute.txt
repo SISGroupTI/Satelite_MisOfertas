@@ -60,3 +60,5 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\DAOLibrary.csproj.CoreCompileInputs.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\obj\Debug\BusinessLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\Helpers.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\DAOLibrary\bin\Debug\Helpers.pdb

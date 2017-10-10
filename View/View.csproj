@@ -389,6 +389,10 @@
       <Project>{ba76d726-bd99-4daf-aea0-ec319fceadad}</Project>
       <Name>EntityLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3791240a-73ac-4122-b85c-aa2a57d54173}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NegLibrary\NegLibrary.csproj">
       <Project>{1e70c000-75a8-41aa-a908-d4a8574feff7}</Project>
       <Name>NegLibrary</Name>

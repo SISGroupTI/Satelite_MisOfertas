@@ -39,7 +39,10 @@ namespace View
 
         private void btnGoVerDescuento(object sender, RoutedEventArgs e)
         {
-
+            Descuento descuento = (Descuento)dtDescuentos.SelectedItems[0];
+            VerDescuentoDetallePage verDescuentoDetallePage = new VerDescuentoDetallePage();
+            verDescuentoDetallePage.obtenerDatosDescuento(descuento);
+            NavigationService.Navigate(verDescuentoDetallePage);
         }
     }
 

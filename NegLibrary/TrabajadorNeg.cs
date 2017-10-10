@@ -2,6 +2,7 @@
 using DAOLibrary;
 using EntityLibrary;
 using System;
+using Helpers;
 using BusinessLibrary;
 using System.Text;
 using System.Linq;
@@ -34,20 +35,28 @@ namespace NegLibrary
         {
             Trabajador trabajador = new Trabajador();
             trabajador.NombreUsuario = usuario;
-            trabajador.Contrasena = contrasena;
             DAOTrabajador daoTrabajador = new DAOTrabajador();
             trabajador = daoTrabajador.validarTrabajador(trabajador);
             if (trabajador != null)
             {
                 //Devuelve el perfil del trabajador para la validacion del 
                 //LoginWindows.xaml.cs
-                try {
-                    long idPerfil = trabajador.Perfil.IdPerfil;
-                    return idPerfil;
-                } catch {
+                if (PasswordStorage.VerifyPassword(contrasena,trabajador.Contrasena))
+                {
+                    try
+                    {
+                        long idPerfil = trabajador.Perfil.IdPerfil;
+                        return idPerfil;
+                    }
+                    catch
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
                     return 0;
                 }
-                
             }
             else
             {

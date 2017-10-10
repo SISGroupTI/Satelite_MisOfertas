@@ -1,5 +1,6 @@
 ﻿using ConxionLibrary;
 using EntityLibrary;
+using Helpers;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System;
@@ -20,14 +21,12 @@ namespace DAOLibrary
 
         public Trabajador validarTrabajador(Trabajador trabajador)
         {
-            String nombre_usuario = trabajador.NombreUsuario;
-            String contrasena = trabajador.Contrasena;
+            String nombre_usuario = trabajador.NombreUsuario;    
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = cone.Obtener();
             cmd.CommandText = "SP_INICIO_SESION_TRABAJADOR";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_NOMBRE_USUARIO", OracleDbType.Varchar2).Value = nombre_usuario;
-            cmd.Parameters.Add("p_CONTRASENA", OracleDbType.Varchar2).Value = contrasena;
             cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
             try
             {
@@ -47,6 +46,7 @@ namespace DAOLibrary
                     trabajador.FechaIngreso = dr.GetDateTime(7);
                     trabajador.Nombre = dr.GetString(8);
                     trabajador.Perfil = new Perfil(dr.GetInt32(9), dr.GetString(8));
+                    trabajador.Contrasena = dr.GetString(14);
                     Empresa empresa = new Empresa();
                     empresa.NombreEmpresa = dr.GetString(13);
                     empresa.IdEmpresa = dr.GetInt32(12);
@@ -55,8 +55,6 @@ namespace DAOLibrary
                     local.NumeroLocal = dr.GetInt32(11);
                     local.Empresa = empresa;
                     trabajador.Local = local;
-
-
                 }
                 cone.Obtener().Close();
                 return trabajador;
@@ -123,6 +121,8 @@ namespace DAOLibrary
         {
             try
             {
+                
+
                 long idPerfil = trabajador.Perfil.IdPerfil;
                 int idLocal = trabajador.Local.IdLocal;
                 String nombreUsuario = trabajador.NombreUsuario;
@@ -131,7 +131,7 @@ namespace DAOLibrary
                 String nombre = trabajador.Nombre;
                 String apellidos = trabajador.Apellidos;
                 String correoCorporativo = trabajador.CorreoCorporativo;
-                String contrasena = trabajador.Contrasena;
+                String contrasena = PasswordStorage.CreateHash(trabajador.Contrasena);
                 int isActivo = 1;
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = cone.Obtener();

@@ -58,3 +58,5 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.csproj.CoreCompileInputs.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\obj\Debug\NegLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\Helpers.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\NegLibrary\bin\Debug\Helpers.pdb

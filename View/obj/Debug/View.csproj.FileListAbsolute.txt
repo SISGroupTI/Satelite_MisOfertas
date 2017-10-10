@@ -468,3 +468,5 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\obj\Debug\
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\obj\Debug\View.csproj.CoreCompileInputs.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\obj\Debug\View.exe
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\obj\Debug\View.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\Helpers.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\Helpers.pdb
