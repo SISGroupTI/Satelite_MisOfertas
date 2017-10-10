@@ -29,6 +29,10 @@ namespace View
         EstadoNeg estadoNeg;
         RubroNeg rubroNeg;
         OfertaNeg ofertaNeg;
+
+
+
+
         ImagenesOfertaNeg imagenesOfertaNeg;
         List<object> listaImagenes; //----------LISTA CUSTOM PARA LA AGREGACION DE NUEVAS IMAGENES
         List<ImagenOferta> listaImagenesOferta;
@@ -180,28 +184,35 @@ namespace View
         }
         private bool validarCamposDetalle()
         {
-            if (txtCantidadMaxima.Text.Trim().Length < 1 ||
-                txtCantidadMinima.Text.Trim().Length < 1)
+            if (txtCantidadMaxima.Text.Trim().Length < 1 || txtCantidadMinima.Text.Trim().Length < 1)
             {
                 return false;
             }
-            else { return true; }
+            else {
+                if (Int32.Parse(txtCantidadMinima.Text.ToString()) >= Int32.Parse(txtCantidadMaxima.Text.ToString()) )
+                {
+                    return false;
+                }
+                return true;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (validarDiponibilidad()) {
-                System.Windows.Forms.MessageBox.Show("Oferta en curso", "Modificar Oferta");
+            if (1<0) //validarDiponibilidad()
+            { 
+            
+                System.Windows.Forms.MessageBox.Show("No es posible realizar modificaciones a este registro\n La oferta se encuentra en curso hasta: "+ofertaNeg.Oferta.FechaFinalizacion.ToShortDateString(), "Aviso de modificacion de ofertas");
             }
             else {
-                if (camposOfertas.dpFechaFinalizacion.SelectedDate < ofertaNeg.Oferta.FechaFinalizacion)
+                if (1<0) //camposOfertas.dpFechaFinalizacion.SelectedDate < ofertaNeg.Oferta.FechaFinalizacion
                 {
                     System.Windows.Forms.MessageBox.Show("No se permite \n adelantar la finalizacion", "Modificar Oferta");
                 }
                 else
                 {
-                    string descripcion = txtDescripcion.Text.ToString();
-                    string condiciones = txtCondiciones.Text.ToString();
+                    String descripcion = txtDescripcion.Text.ToString();
+                    String condiciones = txtCondiciones.Text.ToString();
                     Rubro rubro = (Rubro)camposOfertas.cbxRubro.SelectionBoxItem;
                     Local local = (Local)camposOfertas.cbxLocal.SelectionBoxItem;
                     Estado estado = (Estado)camposOfertas.cbxEstado.SelectionBoxItem;
@@ -235,27 +246,28 @@ namespace View
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Oferta", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Está seguro de eliminar de la lista este producto?", "Eliminar registro asociado", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                if (validarDiponibilidad())
+                if (1<0)//validarDiponibilidad()
                 {
                     
-                    System.Windows.Forms.MessageBox.Show("Oferta en curso", "Modificar Oferta");
+                    System.Windows.Forms.MessageBox.Show("No es posible eliminar este producto de la lista \n ya que, la oferta se encuentra en curso actualmente", "Eliminar registro asociado");
 
                 }
                 else
                 {
                     DetalleOferta detalle = (DetalleOferta)dtDetalle.SelectedItems[0];
-                    Boolean res = detalleOfertaNeg.EliminarDetalle(detalle);
+                    Boolean res = detalleOfertaNeg.EliminarDetalleList(detalle);
                     if (res)
                     {
-                        System.Windows.MessageBox.Show("Detalle Eliminado", "Eliminar Detalle");
+                        detalleOfertaNeg.EliminarDetalle(detalle);
+                        System.Windows.MessageBox.Show("Registro eliminado de la lista exitosamente", "Eliminar registro asociado");
                         cargarDtDetalle();
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("Detalle No Se Elimino", "Eliminar Detalle");
+                        System.Windows.MessageBox.Show("se ha generado un enconveniente en la eliminacion del registro", "Eliminar registro asociado");
                     }
                 }
                 cargarDtDetalle();
@@ -270,10 +282,10 @@ namespace View
         {
             if (validarCamposDetalle())
             {
-                if (validarDiponibilidad())
+                if (1 < 0)//validarDiponibilidad()
                 {
 
-                    System.Windows.Forms.MessageBox.Show("Oferta en curso", "Modificar Oferta");
+                    System.Windows.Forms.MessageBox.Show("No es posible agregar nuevos productos a la lista actual \n La oferta se encuentra en curso actualmente", "Modificacion de registro asociado");
 
                 }
                 else
@@ -284,18 +296,18 @@ namespace View
                     Boolean res = detalleOfertaNeg.RegistrarDetalle(producto, minimo, maximo, ofertaNeg.Oferta);
                     if (res)
                     {
-                        System.Windows.MessageBox.Show("Agregado Correctamente");
+                        System.Windows.MessageBox.Show("Registro agregado exitosamente a la lista actual", "Modificacion de registro asociado");
                         txtCantidadMaxima.Text = "";
                         txtCantidadMinima.Text = "";
                         cargarDtDetalle();
                     }
-                    else { System.Windows.MessageBox.Show("No se agrego"); }
+                    else { System.Windows.MessageBox.Show("No se ha podido agregar exitosamente el registro a la lista actual \n Intente nuevamente", "Modificacion de registro asociado"); }
                 }
                 
             }
             else
             {
-                System.Windows.MessageBox.Show("Ingrese todos los campos");
+                System.Windows.MessageBox.Show("Para agregar un producto a la lista actual \n se requiere de completar todos los campos requeridos");
             }
         }
         private void validarIngresosNumeros(object sender, System.Windows.Input.KeyEventArgs e)

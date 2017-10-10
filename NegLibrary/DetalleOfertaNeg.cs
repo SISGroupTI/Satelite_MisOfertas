@@ -83,5 +83,10 @@ namespace NegLibrary
         {
             return daoDetalleOferta.EliminarDetalle(detalle);
         }
+
+        public bool EliminarListDetalle(List<DetalleOferta> listaDetalle)
+        {
+            return daoDetalleOferta.EliminarListDetalle(listaDetalle);
+        }
     }
 }

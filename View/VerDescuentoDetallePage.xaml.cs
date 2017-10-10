@@ -51,6 +51,10 @@ namespace View
             camposDescuento.txtDescuento.Text = descuento.Descuentos.ToString();
             camposDescuento.txtPuntos.Text = descuento.Puntos.ToString();
             camposDescuento.txtRubros.Text = descuento.Rubros.ToString();
+            camposDescuento.rtbCondiciones.AppendText(descuento.Condiciones);
+            camposDescuento.dpFechaEmision.SelectedDate = descuento.FechaEmision;
+            camposDescuento.dpFechaEmision.DisplayDateStart = descuento.FechaEmision;
+            txbNumero.Text = descuento.IdDescuento.ToString();
         }
 
         private void CamposConsumidorControl_Loaded(object sender, RoutedEventArgs e)
