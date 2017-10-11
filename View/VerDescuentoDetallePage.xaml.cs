@@ -39,6 +39,7 @@ namespace View
         {
             descuento = descuentoIn;
             setDatosDescuento();
+            bloquearElementosConsumidor();
         }
 
         public void setDatosDescuento()
@@ -51,15 +52,31 @@ namespace View
             camposDescuento.txtDescuento.Text = descuento.Descuentos.ToString();
             camposDescuento.txtPuntos.Text = descuento.Puntos.ToString();
             camposDescuento.txtRubros.Text = descuento.Rubros.ToString();
-            camposDescuento.rtbCondiciones.AppendText(descuento.Condiciones);
             camposDescuento.dpFechaEmision.SelectedDate = descuento.FechaEmision;
             camposDescuento.dpFechaEmision.DisplayDateStart = descuento.FechaEmision;
             txbNumero.Text = descuento.IdDescuento.ToString();
+
+
+            FlowDocument document = new FlowDocument();
+            document.Blocks.Add(new Paragraph(new Run(descuento.Condiciones)));
+            camposDescuento.rtbCondiciones.Document = document;
         }
 
         private void CamposConsumidorControl_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void camposDescuento_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void bloquearElementosConsumidor()
+        {
+            camposConsumidor.txtRut.IsEnabled = false;
+            camposConsumidor.txtNombre.IsEnabled = false;
+            camposConsumidor.txtCorreo.IsEnabled = false;
         }
     }
 }

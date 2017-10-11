@@ -97,7 +97,6 @@ namespace BusinessLibrary
                 cmd.CommandText = "SP_ELIMINAR_IMGOFERTA_POR_IDOF";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("p_ID_OFERTA", OracleDbType.Int32).Value = idOferta;
-                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 if (conexion.Obtener().State == ConnectionState.Closed)
                 {
 

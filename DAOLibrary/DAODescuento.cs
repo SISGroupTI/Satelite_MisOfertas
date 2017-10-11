@@ -48,6 +48,7 @@ namespace BusinessLibrary
                     descuento.Tope = dr.GetInt32(4);
                     descuento.FechaEmision = dr.GetDateTime(5);
                     descuento.Rubros = dr.GetString(1);
+                    descuento.Condiciones = dr.GetString(14);
                     //DATOS CONSUMIDOR
                     consumidor.IdConsumidor = dr.GetInt32(8);
                     consumidor.Nombre = dr.GetString(9);

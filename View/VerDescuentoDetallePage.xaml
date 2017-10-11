@@ -8,11 +8,11 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      d:DesignHeight="549" d:DesignWidth="1000"
+      d:DesignHeight="742.5" d:DesignWidth="1000"
       Title="VerDescuentoDetallePage">
 
     <ScrollViewer >
-        <Grid Height="700">
+        <Grid Height="750">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40*"/>
                 <ColumnDefinition Width="394*"/>
@@ -38,12 +38,12 @@
                 <TextBlock Margin="10,16,0,16" TextWrapping="Wrap" FontSize="36"><Run Text="Descuento"/><Run Text="  #"/></TextBlock>
             </Grid>
             <Label Content="Datos del Consumidor" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Width="310" FontSize="22"/>
-            <local:CamposConsumidorControl x:Name="camposConsumidor" Grid.Column="1" Margin="10,0,480,0" Grid.Row="2" Loaded="CamposConsumidorControl_Loaded"/>
+            <local:CamposConsumidorControl x:Name="camposConsumidor" Grid.Column="1" Margin="10,0,334,0" Grid.Row="2" Loaded="CamposConsumidorControl_Loaded"/>
             <Separator Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="0" Grid.Row="3" VerticalAlignment="Top" Width="320"/>
             <Label Content="Datos del descuento" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" Width="310" FontSize="22"/>
-            <local:CamposDatosDescuentoControl x:Name="camposDescuento" Grid.Column="1" Margin="10,0,480,0" Grid.Row="5"/>
-            <Button x:Name="btnVolver" Content="Volver" Command="{x:Static NavigationCommands.BrowseBack}" Grid.Column="1" Margin="220,7,480,7" Grid.Row="6" Background="#FFCFCFCF" FontSize="14" Height="30"/>
-            <Button x:Name="btnVolver2" Content="Volver" Command="{x:Static NavigationCommands.BrowseBack}" Grid.Column="2" Margin="10,25,10,15" Background="#FFCFCFCF" FontSize="18" Height="40"/>
+            <local:CamposDatosDescuentoControl x:Name="camposDescuento" Grid.Column="1" Margin="10,0,334,0" Grid.Row="5" Loaded="camposDescuento_Loaded"/>
+            <Button x:Name="btnVolver" Content="Volver" Command="{x:Static NavigationCommands.BrowseBack}" Grid.Column="1" Margin="350,5,352,10" Grid.Row="6" Background="#FFCFCFCF" FontSize="13"/>
+            <Button x:Name="btnVolver2" Content="Volver" Command="{x:Static NavigationCommands.BrowseBack}" Grid.Column="2" Margin="10,25,10,15" Background="#FFCFCFCF" FontSize="18"/>
         </Grid>
     </ScrollViewer>
 </Page>
