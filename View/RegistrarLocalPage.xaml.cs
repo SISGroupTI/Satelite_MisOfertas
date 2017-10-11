@@ -61,23 +61,23 @@ namespace View
                     Boolean res=localNeg.RegistrarLocal(local,empresa);
                     if (res)
                     {
-                        MessageBox.Show("Registrado Correctamente", "Registro Local");
+                        MessageBox.Show("Local ingresado exitosamente al sistema", "Ingreso de registro - Local");
                         cbxEmpresa.SelectedIndex = -1;
                         controlesLocal.txtDireccionLocal.Text = "";
                         controlesLocal.txtNumeroLocal.Text = "";
 
                     }
-                    else { MessageBox.Show("No se completo el registro", "Registro Local"); }
+                    else { MessageBox.Show("Se ha generado un inconveniento al momento de ingresar este registro\n Intente nuevamente", "Ingreso de registro - Local"); }
                     //MessageBox.Show("" + empresa.IdEmpresa);
 
                 }
                 else
                 {
-                    MessageBox.Show("Campos Obligatorios");
+                    MessageBox.Show("Para un ingresar un registro local, es necesario completar todos los campos requeridos", "Ingreso de registro - Local");
                 }
 
             }
-            else { MessageBox.Show("Seleccione Empresa"); }
+            else { MessageBox.Show("Para ingresar un registro Local, es necesario seleccionar la empresa objetivo", "Ingreso de registro - Local"); }
         }
         
     }

@@ -61,7 +61,7 @@ namespace NegLibrary
         {
             return daoOferta.EliminarOferta(oferta);
         }
-        public Boolean ModificarOferta(String descripcion, String condiciones, Rubro rubro, Local local, Estado estado, DateTime fechaFinalizacion, DateTime fechaPublicacion, String titulo, int codigoOferta, int precio, int isDiponible)
+        public Oferta ModificarOferta(String descripcion, String condiciones, Rubro rubro, Local local, Estado estado, DateTime fechaFinalizacion, DateTime fechaPublicacion, String titulo, int codigoOferta, int precio, int isDiponible)
         {
             Oferta oferta = new Oferta();
             oferta.CodigoOferta = codigoOferta;

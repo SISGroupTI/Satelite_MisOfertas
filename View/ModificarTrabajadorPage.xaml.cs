@@ -85,7 +85,7 @@ namespace View
             {
                 if (CamposNull())
                 {
-                    MessageBox.Show("Todos los campos son requeridos", "Ingreso Personal");
+                    MessageBox.Show("Para modificar un registro Producto es necesario de completar todos los campos requeridos", "Modificacion de registro - Trabajador");
                 }
                 else
                 {
@@ -119,14 +119,14 @@ namespace View
                         camposTrabajador.txtCorreo.Text = "";
                         camposTrabajador.txtNombre.Text = "";
                         camposTrabajador.txtNombreUsuario.Text = "";
-                        MessageBox.Show("Modificacion Exitosa", "Modificacion Personal");
+                        MessageBox.Show("Modificacion realizada exitosamente", "Modificacion de registro - Trabajador");
                     }
-                    else { MessageBox.Show("Modificacion no realizado", "Modificacion Personal"); }
+                    else { MessageBox.Show("Se ha generado un inconveniente al momento de modificar el registro\n Intente nuevamente", "Modificacion de registro - Trabajador"); }
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error Interno", "Modificacion Personal");
+                MessageBox.Show("Se ha generado un inconveniente al momento de modificar el registro\n Intente nuevamente", "Modificacion Personal");
             }
         }
         private bool CamposNull()

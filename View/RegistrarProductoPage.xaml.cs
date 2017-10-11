@@ -113,11 +113,11 @@ namespace View
                     camposProductos.spLocal.SelectedIndex = 0;
                     camposProductos.cbxRubro.SelectedIndex = 0;
 
-                    MessageBox.Show("Producto Guardado");
+                    MessageBox.Show("Producto ingresado exitosamente al sistema", "Ingreso de registro - Producto");
                 }
-                else { MessageBox.Show("Error No se regritro producto"); }
+                else { MessageBox.Show("Se ha generado un inconveniente al momento de ingresar el registro\n Intente nuevamente", "Ingreso de registro - Producto"); }
             }
-            else { MessageBox.Show("Ingrese todos los campos"); }
+            else { MessageBox.Show("Para ingresar un registro Producto se necesario completar todos los campos requeridos", "Ingreso de registro - Producto"); }
         }
 
         private bool validarCampos()

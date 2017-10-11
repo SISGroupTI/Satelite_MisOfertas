@@ -2,6 +2,8 @@
 using NegLibrary;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -30,7 +32,7 @@ namespace View
         RubroNeg rubroNeg;
         OfertaNeg ofertaNeg;
 
-
+        
 
 
         ImagenesOfertaNeg imagenesOfertaNeg;
@@ -222,15 +224,42 @@ namespace View
                     int codigoOferta = int.Parse(camposOfertas.txtCodigoOferta.Text.Trim());
                     int precio = int.Parse(camposOfertas.txtPrecio.Text.Trim());
                     int isDisponible = rbSi.IsChecked == true ? 1 : 0;
-                    bool res = ofertaNeg.ModificarOferta(descripcion, condiciones,
+
+                    Oferta ofertaOut = ofertaNeg.ModificarOferta(descripcion, condiciones,
                         rubro, local, estado, fechaFinalizacion, fechaPublicacion, titulo, codigoOferta, precio, isDisponible);
-                    if (res)
+                    if (ofertaOut != null)
                     {
-                        System.Windows.Forms.MessageBox.Show("Oferta Modificada", "Modificar Oferta");
-                        
+                        if (listaImagenes.Count > 0)
+                        {
+                            imagenesOfertaNeg.eliminarImagenesOfertaPorOferta(ofertaOut);
+                            
+                                String rutaDirectorioOferta = "D:/MisOfertas/Ofertas/Oferta_" + ofertaOut.IdOferta + "_" + ofertaOut.CodigoOferta;
+                                List<ImagenOferta> listaImagenesOferta = new List<ImagenOferta>();
+                                if (!Directory.Exists(rutaDirectorioOferta))
+                                    Directory.CreateDirectory(rutaDirectorioOferta);
+                                int contImagenes = 1;
+                                foreach (object imagenOferta in listaImagenes)
+                                {
+                                    String extension = (String)imagenOferta.GetType().GetProperty("Extension").GetValue(imagenOferta, null);
+                                    BitmapImage bitImagen = (BitmapImage)imagenOferta.GetType().GetProperty("Imagen").GetValue(imagenOferta, null);
+                                    Bitmap img = BitmapImage2Bitmap(bitImagen);
+                                    String rutaImagenOferta = rutaDirectorioOferta + "/Img_" + contImagenes + extension;
+                                    if (File.Exists(rutaImagenOferta))
+                                        File.Delete(rutaImagenOferta);
+                                    img.Save(rutaImagenOferta);
+                                    int is_principal = (contImagenes == 1) ? 1 : 0;
+                                    listaImagenesOferta.Add(new ImagenOferta(rutaImagenOferta, is_principal, ofertaOut));
+                                    contImagenes += 1;
+                                }
+
+                                imagenesOfertaNeg.registrarImagenesOferta(listaImagenesOferta);
+
+                            
+                        }
+                        System.Windows.Forms.MessageBox.Show("Oferta modificada exitosamente", "Modificacion de registro - Ofertas");
                         cargarDtDetalle();
                     }
-                    else { System.Windows.Forms.MessageBox.Show("No se modifico", "Modificar Oferta"); }
+                    else { System.Windows.Forms.MessageBox.Show("Se ha generado un inconveniente al momento de modificar la oferta \n Intente nuevamente", "Modificacion de registro - Ofertas"); }
                 }
             }
         }
@@ -346,10 +375,10 @@ namespace View
             {
                 b.BeginInit();
                 b.UriSource = new Uri(openFile.FileName);
-                b.EndInit();
                 var imagen = new { Ruta = openFile.FileName, Imagen = b, Extension = System.IO.Path.GetExtension(openFile.FileName) }; //custom object
                 listaImagenes.Add(imagen);
             }
+            b.EndInit();
             cargarDtImagenesOferta();
         }
         public void cargarDtImagenesOferta()
@@ -365,6 +394,21 @@ namespace View
                 object imagenOferta = (object)dtImagenesOfertaModificar.SelectedItems[0];
                 listaImagenes.Remove(imagenOferta);
                 cargarDtImagenesOferta();
+            }
+        }
+
+        private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
+        {
+            // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
+
+            using (MemoryStream outStream = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder();
+                enc.Frames.Add(BitmapFrame.Create(bitmapImage));
+                enc.Save(outStream);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(outStream);
+
+                return new Bitmap(bitmap);
             }
         }
 

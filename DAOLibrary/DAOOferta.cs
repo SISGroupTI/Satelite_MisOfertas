@@ -177,7 +177,7 @@ namespace BusinessLibrary
                 return false;
             }
         }
-        public Boolean ModificarOferta(Oferta oferta)
+        public Oferta ModificarOferta(Oferta oferta)
         {
             try
             {
@@ -201,13 +201,13 @@ namespace BusinessLibrary
                 }
                 cmd.ExecuteNonQuery();
                 cone.Obtener().Close();
-                return true;
+                return oferta;
 
             }
             catch (Exception e)
             {
                 cone.Obtener().Close();
-                return false;
+                return null;
             }
         }
     }

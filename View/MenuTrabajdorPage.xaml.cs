@@ -52,7 +52,7 @@ namespace View
             }
             else
             {
-                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Error de carga de datos","Carga Trabajadores",MessageBoxButtons.AbortRetryIgnore);
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Se ha presentado un inconveniente\n La lista de trabajadores no se ha cargado correctamente","Alerta!",MessageBoxButtons.AbortRetryIgnore);
                 switch (dialogResult)
                 {
                     case DialogResult.Abort:
@@ -82,20 +82,18 @@ namespace View
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Trabajador", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Esta seguro de eliminar el registro seleccionado?", "Eliminar registro - Trabajador", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Trabajador trabajador = (Trabajador)dtTrabajador.SelectedItems[0];
                 Boolean res = trabNeg.EliminarTrabajadores(trabajador);
                 if (res)
                 {
-                    System.Windows.MessageBox.Show("Trabajador Eliminado", "Eliminar Trabajador");
+                    System.Windows.MessageBox.Show("Registro eliminado exitosamente del sistema", "Eliminar Trabajador");
                     cargarDataGridTrabajador();
                 }
             }
-            else if (dialogResult == DialogResult.No)
-            {
-            }
+            
         }
 
 

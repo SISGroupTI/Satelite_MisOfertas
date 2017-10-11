@@ -86,7 +86,7 @@ namespace View
              * Se crea un DialogResult para alojar la respuesta del MessageBox 
              * que en este caso se seteo el MessageBoxButtons con YesNo (ctrl+espacio) para mas opc 
              * */
-                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Empresa", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Está seguro de realizar esta accion? \n Eliminar este registro desvinculará automaticamente los locales y ofertas asociadas", "Eliminar registro - Empresa", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     // Se reliza la misma accion de rescatar al item seleccionado del data grid y parcearlo a Empresa
@@ -96,7 +96,7 @@ namespace View
                     if (res)
                     {
                         // Se lanza el mensaje al usuario
-                        System.Windows.MessageBox.Show("Empresa Eliminada", "Eliminar Empresa");
+                        System.Windows.MessageBox.Show("Empresa eliminada del sistema exitosamente", "Eliminar registro - Empresa");
                         // se procede a cargar las empresas nuevamente
                         cargarEmpresas();
                     }

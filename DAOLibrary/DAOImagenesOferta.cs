@@ -86,5 +86,32 @@ namespace BusinessLibrary
                 return null;
             }
         }
+
+        public Boolean eliminarImagenesOfertaPorOferta(Oferta oferta)
+        {
+            try
+            {
+                int idOferta = oferta.IdOferta;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conexion.Obtener();
+                cmd.CommandText = "SP_ELIMINAR_IMGOFERTA_POR_IDOF";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_ID_OFERTA", OracleDbType.Int32).Value = idOferta;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (conexion.Obtener().State == ConnectionState.Closed)
+                {
+
+                    conexion.Obtener().Open();
+                }
+                cmd.ExecuteNonQuery();
+                conexion.Obtener().Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                conexion.Obtener().Close();
+                return false;
+            }
+        }
     }
 }

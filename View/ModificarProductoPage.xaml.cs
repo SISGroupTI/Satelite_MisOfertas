@@ -137,12 +137,12 @@ namespace View
                     controlesProducto.dpFechaCaducidad.IsEnabled = true;
 
 
-                    MessageBox.Show("Producto Modificado","Modificar producto");
+                    MessageBox.Show("Producto modificado exitosamente", "Modificacion de registro - Producto");
                 }
-                else { MessageBox.Show("No se modifico producto","Modificar Producto"); }
+                else { MessageBox.Show("Se ha generado un inconveniente al momento de modificar este registro \n Intente nuevamente", "Modificacion de registro - Producto"); }
 
             }
-            else { MessageBox.Show("Todos los campos son requeridos", "Modificar Producto"); }
+            else { MessageBox.Show("Para modificar un registro Producto es necesario de completar todos los campos requeridos", "Modificacion de registro - Producto"); }
         }
 
         private bool ValidarCampos()

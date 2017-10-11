@@ -84,7 +84,7 @@ namespace View
                     res = empresaNeg.RegistrarEmpresa(rut, dv, nombre, localNeg);
                     if (res)
                     {
-                        MessageBox.Show("Empresa ingresada al sistema");
+                        MessageBox.Show("Empresa ingresada al sistema exitosamente", "Ingreso de registro - Empresas");
                         controlesEmpresa.txtNombreEmpresa.Text = "";
                         controlesEmpresa.txtRutEmpresa.Text = "";
                         dtgLocales.Items.Refresh();
@@ -92,7 +92,7 @@ namespace View
                     }
                     else
                     {
-                        MessageBox.Show("Se ha presentado un inconveniente \n verifique los datos e intente nuevamente");
+                        MessageBox.Show("Se ha presentado un inconveniente \n verifique los datos e intente nuevamente", "Ingreso de registro - Empresas");
                     }
 
                 }
@@ -103,14 +103,14 @@ namespace View
             }
             else
             {
-                MessageBox.Show("Se requiere ingresar todos los datos \n para ingresar este registro al sistema");
+                MessageBox.Show("Se requiere ingresar todos los datos \n para ingresar este registro al sistema", "Ingreso de registro - Empresas");
             }
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             Local local = (Local)dtgLocales.SelectedItems[0];
-            if (localNeg.EliminarLocalList(local)) { MessageBox.Show("Local Descartado", "Registrar Empresa");
+            if (localNeg.EliminarLocalList(local)) { MessageBox.Show("Local seleccionado descartado de la lista actual", "Ingreso de registro - Empresas");
                 var locales = localNeg.Locales;
                 dtgLocales.ItemsSource = locales.ToList();
                 dtgLocales.Items.Refresh();

@@ -26,5 +26,10 @@ namespace NegLibrary
         {
             return imagenesOfertaDao.listarImagenesOfertaPorOferta(oferta);
         }
+
+        public Boolean eliminarImagenesOfertaPorOferta(Oferta oferta)
+        {
+            return imagenesOfertaDao.eliminarImagenesOfertaPorOferta(oferta);
+        }
     }
 }
