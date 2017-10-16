@@ -22,11 +22,14 @@ namespace View
     public partial class VerOfertasPage : Page
     {
         OfertaNeg ofertaNeg;
+        ImagenesOfertaNeg imagenesOfertaNeg;
         public VerOfertasPage()
         {
             InitializeComponent();
             if (ofertaNeg == null)
                 ofertaNeg = new OfertaNeg();
+            if (imagenesOfertaNeg == null)
+                imagenesOfertaNeg = new ImagenesOfertaNeg();
             caragarDtOfertas();
             
         }
@@ -41,7 +44,9 @@ namespace View
         {
             Oferta oferta = (Oferta)dtOfertas.SelectedItems[0];
             VerOfertaDetallePage verOferta = new VerOfertaDetallePage();
-            verOferta.ObtenerOferta(oferta);
+            List<ImagenOferta> listaImagenes = imagenesOfertaNeg.listarImagenesOfertaPorOferta(oferta);
+            ValoracionOferta valoracionOferta = new ValoracionOfertaNeg().listarCantValoracionesPorOferta(oferta.IdOferta);
+            verOferta.ObtenerOferta(oferta, listaImagenes,valoracionOferta);
             NavigationService.Navigate(verOferta);
         }
     }

@@ -470,3 +470,17 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\obj\Debug\
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\obj\Debug\View.pdb
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\Helpers.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\Helpers.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.barcodes.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.forms.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.io.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.kernel.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.layout.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.pdfa.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.sign.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.barcodes.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.forms.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.io.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.kernel.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.layout.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.pdfa.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.sign.xml

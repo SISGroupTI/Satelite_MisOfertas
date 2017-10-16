@@ -49,14 +49,17 @@
     <Compile Include="DAODescuento.cs" />
     <Compile Include="DAODetalleOferta.cs" />
     <Compile Include="DAOEmpresa.cs" />
+    <Compile Include="DAOEscala.cs" />
     <Compile Include="DAOEstado.cs" />
     <Compile Include="DAOImagenesOferta.cs" />
     <Compile Include="DAOLocal.cs" />
     <Compile Include="DAOOferta.cs" />
     <Compile Include="DAOPerfil.cs" />
     <Compile Include="DAOProducto.cs" />
+    <Compile Include="DAOReporteValoracion.cs" />
     <Compile Include="DAORubro.cs" />
     <Compile Include="DAOTrabajador.cs" />
+    <Compile Include="DAOValoracionOferta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

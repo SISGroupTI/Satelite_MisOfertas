@@ -49,9 +49,11 @@
     <Compile Include="OfertaNeg.cs" />
     <Compile Include="PerfilNeg.cs" />
     <Compile Include="ProductoNeg.cs" />
+    <Compile Include="ReporteValoracionNeg.cs" />
     <Compile Include="RubroNeg.cs" />
     <Compile Include="TrabajadorNeg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValoracionOfertaNeg.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAOLibrary\DAOLibrary.csproj">

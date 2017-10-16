@@ -59,7 +59,7 @@ namespace View
                 listaImagenes = new List<object>();
             if (listaImagenesOferta == null)
                 listaImagenesOferta = new List<ImagenOferta>();
-           
+            
         }
         private void cargarcbxRubro()
         {
@@ -102,8 +102,8 @@ namespace View
         }
         private void cargarcbxLocal()
         {
-            List<Local> locales = new List<Local>();
-            locales = localNeg.ListarLocales();
+            List<Local> locales = localNeg.ListarLocales(); //new List<Local>();
+            //locales = localNeg.ListarLocales();
             camposOfertas.cbxLocal.ItemsSource = locales;
             camposOfertas.cbxLocal.DisplayMemberPath = "Direccion";
             camposOfertas.cbxLocal.SelectedValuePath = "IdLocal";
@@ -121,11 +121,11 @@ namespace View
             detalleOfertaNeg.DetalleOfertasList = detalleList;
             listaImagenesOferta = listaImagenesOfertaIn;
             ofertaNeg.Oferta = oferta;
-            cargarDtDetalle();
             cargarcbxLocal();
             caragrcbxEstado();
             cargarcbxRubro();
             cargarCampos();
+            cargarDtDetalle();
             cargarImagenes();
 
 
@@ -202,13 +202,13 @@ namespace View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (1<0) //validarDiponibilidad()
+            if (validarDiponibilidad()) //validarDiponibilidad()
             { 
             
                 System.Windows.Forms.MessageBox.Show("No es posible realizar modificaciones a este registro\n La oferta se encuentra en curso hasta: "+ofertaNeg.Oferta.FechaFinalizacion.ToShortDateString(), "Aviso de modificacion de ofertas");
             }
             else {
-                if (1<0) //camposOfertas.dpFechaFinalizacion.SelectedDate < ofertaNeg.Oferta.FechaFinalizacion
+                if (camposOfertas.dpFechaFinalizacion.SelectedDate < ofertaNeg.Oferta.FechaFinalizacion) //camposOfertas.dpFechaFinalizacion.SelectedDate < ofertaNeg.Oferta.FechaFinalizacion
                 {
                     System.Windows.Forms.MessageBox.Show("No se permite \n adelantar la finalizacion", "Modificar Oferta");
                 }
@@ -297,7 +297,7 @@ namespace View
             DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Está seguro de eliminar de la lista este producto?", "Eliminar registro asociado", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                if (1<0)//validarDiponibilidad()
+                if (validarDiponibilidad())
                 {
                     
                     System.Windows.Forms.MessageBox.Show("No es posible eliminar este producto de la lista \n ya que, la oferta se encuentra en curso actualmente", "Eliminar registro asociado");
@@ -330,7 +330,7 @@ namespace View
         {
             if (validarCamposDetalle())
             {
-                if (1 < 0)//validarDiponibilidad()
+                if (validarDiponibilidad())//validarDiponibilidad()
                 {
 
                     System.Windows.Forms.MessageBox.Show("No es posible agregar nuevos productos a la lista actual \n La oferta se encuentra en curso actualmente", "Modificacion de registro asociado");
@@ -384,21 +384,29 @@ namespace View
 
         private void BtnAbrirFolderModificar_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            //string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
-            openFile.InitialDirectory = @"C:\Users\%USERPROFILE%\Pictures";
-            BitmapImage b = new BitmapImage();
-            openFile.Title = "Seleccione Imagen";
-            openFile.Filter = "Imagenes |*.jpeg; *.jpg; *.gif; *.png; *.bmp";
-            if (openFile.ShowDialog() == DialogResult.OK)
+            if (validarDiponibilidad())
             {
-                b.BeginInit();
-                b.UriSource = new Uri(openFile.FileName);
-                var imagen = new { Ruta = openFile.FileName, Imagen = b, Extension = System.IO.Path.GetExtension(openFile.FileName) }; //custom object
-                listaImagenes.Add(imagen);
+                System.Windows.Forms.MessageBox.Show("No es posible agregar nuevas imagenes a la lista actual \n La oferta se encuentra en curso actualmente", "Modificacion de registro asociado");
             }
-            b.EndInit();
-            cargarDtImagenesOferta();
+            else
+            {
+                OpenFileDialog openFile = new OpenFileDialog();
+                //string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+                openFile.InitialDirectory = @"C:\Users\%USERPROFILE%\Pictures";
+                BitmapImage b = new BitmapImage();
+                openFile.Title = "Seleccione Imagen";
+                openFile.Filter = "Imagenes |*.jpeg; *.jpg; *.gif; *.png; *.bmp";
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    b.BeginInit();
+                    b.UriSource = new Uri(openFile.FileName);
+                    var imagen = new { Ruta = openFile.FileName, Imagen = b, Extension = System.IO.Path.GetExtension(openFile.FileName) }; //custom object
+                    listaImagenes.Add(imagen);
+                }
+                b.EndInit();
+                cargarDtImagenesOferta();
+            }
+            
         }
         public void cargarDtImagenesOferta()
         {

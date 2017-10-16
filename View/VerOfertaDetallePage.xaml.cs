@@ -1,7 +1,11 @@
 ﻿using EntityLibrary;
+using LiveCharts;
+using LiveCharts.Wpf;
 using NegLibrary;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +32,12 @@ namespace View
         EstadoNeg estadoNeg;
         RubroNeg rubroNeg;
         DetalleOfertaNeg detalleOfertaNeg;
+
+        ImagenesOfertaNeg imagenesOfertaNeg;
+        List<object> listaImagenes; //----------LISTA CUSTOM PARA LA AGREGACION DE NUEVAS IMAGENES
+        List<ImagenOferta> listaImagenesOferta;
+        ValoracionOfertaNeg valoracionOfertaNeg;
+        ValoracionOferta valoracionOferta;
         public VerOfertaDetallePage()
         {
             InitializeComponent();
@@ -43,16 +53,29 @@ namespace View
                 rubroNeg = new RubroNeg();
             if (detalleOfertaNeg == null)
                 detalleOfertaNeg = new DetalleOfertaNeg();
+            if (imagenesOfertaNeg == null)
+                imagenesOfertaNeg = new ImagenesOfertaNeg();
+            if (listaImagenes == null)
+                listaImagenes = new List<object>();
+            if (listaImagenesOferta == null)
+                listaImagenesOferta = new List<ImagenOferta>();
+            if (valoracionOfertaNeg == null)
+                valoracionOfertaNeg = new ValoracionOfertaNeg();
+            
         }
 
-        public void ObtenerOferta(Oferta oferta)
+        public void ObtenerOferta(Oferta oferta, List<ImagenOferta> listaImagenesIn, ValoracionOferta valoracionOfertaIn)
         {
             ofertaNeg.Oferta = oferta;
+            listaImagenesOferta = listaImagenesIn;
+            valoracionOferta = valoracionOfertaIn;
             cargarDtDetalle();
             cargarcbxLocal();
             caragrcbxEstado();
             cargarcbxRubro();
             cargarCampos();
+            cargarImagenes();
+            
         }
 
         private void cargarcbxRubro()
@@ -114,8 +137,83 @@ namespace View
             camposOfertas.cbxEstado.IsEnabled = false;
             camposOfertas.txtPrecio.IsEnabled = false;
             camposOfertas.txtPrecio.IsEnabled = false;
-            lblCantidad.Content = ofertaNeg.Oferta.Visitas;
             txbNumero.Text = ofertaNeg.Oferta.CodigoOferta.ToString();
+            lblCantidad.Content = (valoracionOferta.CantTotalValoraciones.ToString() == null)? valoracionOferta.CantTotalValoraciones.ToString(): "0" ;
+
         }
+
+
+        public void cargarImagenes()
+        {
+            if (listaImagenesOferta.Count > 0)
+            {
+
+                foreach (ImagenOferta imagenOferta in listaImagenesOferta)
+                {
+                    BitmapImage b = new BitmapImage();
+                    b.BeginInit();
+                    b.CacheOption = BitmapCacheOption.OnLoad;
+                    b.UriSource = new Uri(imagenOferta.Imagen);
+                    b.EndInit();
+                    var imagen = new { Ruta = imagenOferta.Imagen, Imagen = b, Extension = System.IO.Path.GetExtension(imagenOferta.Imagen) }; //custom object
+                    listaImagenes.Add(imagen);
+                }
+                cargarDtImagenesOferta();
+            }
+        }
+
+        public void cargarDtImagenesOferta()
+        {
+            dtVerImagenesOferta.ItemsSource = listaImagenes;
+            dtVerImagenesOferta.Items.Refresh();
+        }
+
+        private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
+        {
+            // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
+
+            using (MemoryStream outStream = new MemoryStream())
+            {
+                BitmapEncoder enc = new BmpBitmapEncoder();
+                enc.Frames.Add(BitmapFrame.Create(bitmapImage));
+                enc.Save(outStream);
+                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(outStream);
+
+                return new Bitmap(bitmap);
+            }
+        }
+
+        private void CartesianChart_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //ValoracionOferta valoracionOferta = valoracionOfertaNeg.listarCantValoracionesPorOferta(ofertaNeg.Oferta.IdOferta);
+                if (valoracionOferta != null)
+                {
+                    SeriesCollection = new SeriesCollection
+                    {
+                        new ColumnSeries
+                        {
+                            Title = "Valoraciones",
+                            Values = new ChartValues<double> {valoracionOferta.CantValoracionesNegativas, valoracionOferta.CantValoracionMedias, valoracionOferta.CantValoracionesPositivas }
+                        }
+                    };
+                    //SeriesCollection[0].Values.Add(valoracionOferta.CantValoracionMedias);
+                    //SeriesCollection[0].Values.Add(valoracionOferta.CantValoracionesPositivas);
+                    Labels = new[] { "Negativas", "Medias", "Positivas"};
+                    Formatter = value => value.ToString("N");
+                    DataContext = this;
+                }
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> Formatter { get; set; }
     }
+
+    
 }
