@@ -54,9 +54,9 @@
                   CanUserDeleteRows="False"
                   CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Empresa" Binding="{Binding Empresa.NombreEmpresa}"/>
-                <DataGridTextColumn  Header="Local" Binding="{Binding Direccion}"/>
-                <DataGridTextColumn  Header="Fecha Ingreso" Binding="{Binding FechaRegistro}"/>
+                <DataGridTextColumn  Header="Empresa" Binding="{Binding Empresa.NombreEmpresa}" Width="250"/>
+                <DataGridTextColumn  Header="Local" Binding="{Binding Direccion}" Width="330"/>
+                <DataGridTextColumn  Header="Fecha Ingreso" Binding="{Binding FechaRegistro}"  Width="160"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>
                         <TextBlock  Text="Editar"  />

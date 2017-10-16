@@ -56,6 +56,7 @@
     <Compile Include="DAOOferta.cs" />
     <Compile Include="DAOPerfil.cs" />
     <Compile Include="DAOProducto.cs" />
+    <Compile Include="DAOReporteTiendas.cs" />
     <Compile Include="DAOReporteValoracion.cs" />
     <Compile Include="DAORubro.cs" />
     <Compile Include="DAOTrabajador.cs" />

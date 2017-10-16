@@ -49,7 +49,7 @@
                   >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Codigo" Binding="{Binding CodigoOferta}" Width="70"></DataGridTextColumn>
-                <DataGridTextColumn Header="Titulo" Binding="{Binding TituloOferta}" Width="190"></DataGridTextColumn>
+                <DataGridTextColumn Header="Titulo" Binding="{Binding TituloOferta}" Width="270"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha creacion" Binding="{Binding FechaCreacion}" Width="120"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha Publicacion" Binding="{Binding FechaInicio}" Width="140"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha Finalizacion" Binding="{Binding FechaFinalizacion}" Width="150"></DataGridTextColumn>

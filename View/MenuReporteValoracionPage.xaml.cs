@@ -70,25 +70,25 @@ namespace View
                 document.Add(new iText.Layout.Element.Paragraph("Reporte valoracion de ofertas").SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetFontSize(20));
                 document.Add(new iText.Layout.Element.Paragraph(DateTime.Now.ToShortDateString()+" "+ DateTime.Now.ToShortTimeString()).SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetFontSize(18));
 
-                float[] columnWidths = { 20f, 60f, 60f, 30f, 50f, 80f, 50f, 50f, 50f, 50f };//{1,1,10,10,5,5,1,1,1,1,1,1};
+                float[] columnWidths = { 20f, 60f, 120f, 30f, 50f, 80f, 50f, 50f, 50f, 50f };//{1,1,10,10,5,5,1,1,1,1,1,1};
               
                 iText.Layout.Element.Table tableRegistros = new iText.Layout.Element.Table(columnWidths).SetFontSize(12);
-                //tableRegistros.SetWidthPercent(100);
+                tableRegistros.SetWidthPercent(100);
                 
                 float fontCell = 11;
                 float fontCellData = 9;
 
                 Cell[] headerFooter = new Cell[] {
-                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("#").SetFontSize(fontCell),
+                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("#").SetFontSize(fontCell).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER),
                 new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Oferta").SetFontSize(fontCell),
                 new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Inicio").SetFontSize(fontCell),
                 new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Finalizacion").SetFontSize(fontCell),
                 new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Rubro").SetFontSize(fontCell),
                 new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Empresa").SetFontSize(fontCell),
-                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Val. Negativas").SetFontSize(fontCell),
-                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Val. Medias").SetFontSize(fontCell),
-                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Val. Positivas").SetFontSize(fontCell),
-                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Total").SetFontSize(fontCell) };
+                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Val. Negativas").SetFontSize(fontCell).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER),
+                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Val. Medias").SetFontSize(fontCell).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER),
+                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Val. Positivas").SetFontSize(fontCell).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER),
+                new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Total").SetFontSize(fontCell).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER) };
                 //new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Productos").SetFontSize(fontCell),
                 //new Cell().SetBackgroundColor(new DeviceGray(0.75f)).Add("Imagenes").SetFontSize(fontCell)};
 
@@ -103,16 +103,16 @@ namespace View
                     Oferta oferta = reporte.Oferta;
                     Rubro rubro = reporte.Rubro;
                     Empresa empresa = reporte.Empresa;
-                    tableRegistros.AddCell(oferta.IdOferta.ToString()).SetFontSize(fontCellData).SetWidth(5);
+                    tableRegistros.AddCell(oferta.IdOferta.ToString()).SetFontSize(fontCellData).SetWidth(5).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
                     tableRegistros.AddCell(oferta.TituloOferta).SetFontSize(fontCellData).SetWidth(5);
                     tableRegistros.AddCell(oferta.FechaInicio.ToShortDateString()).SetFontSize(fontCellData).SetWidth(700);
                     tableRegistros.AddCell(oferta.FechaFinalizacion.ToShortDateString()).SetFontSize(fontCellData).SetWidth(7);
                     tableRegistros.AddCell(rubro.DescripcionRubro).SetFontSize(fontCellData);
                     tableRegistros.AddCell(empresa.NombreEmpresa).SetFontSize(fontCellData);
-                    tableRegistros.AddCell(reporte.CantValoracionNegativas.ToString()).SetFontSize(fontCellData);
-                    tableRegistros.AddCell(reporte.CantValoracionMedia.ToString()).SetFontSize(fontCellData);
-                    tableRegistros.AddCell(reporte.CantValoracionPositiva.ToString()).SetFontSize(fontCellData);
-                    tableRegistros.AddCell(reporte.CantValoracionTotal.ToString()).SetFontSize(fontCellData);
+                    tableRegistros.AddCell(reporte.CantValoracionNegativas.ToString()).SetFontSize(fontCellData).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                    tableRegistros.AddCell(reporte.CantValoracionMedia.ToString()).SetFontSize(fontCellData).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                    tableRegistros.AddCell(reporte.CantValoracionPositiva.ToString()).SetFontSize(fontCellData).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                    tableRegistros.AddCell(reporte.CantValoracionTotal.ToString()).SetFontSize(fontCellData).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
                     
                 }
 

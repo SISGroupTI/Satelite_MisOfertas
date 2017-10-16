@@ -101,10 +101,7 @@ namespace View
                         cargarEmpresas();
                     }
                 }
-                else if (dialogResult == DialogResult.No)
-                {
-                    // Nada aqui
-                }
+               
             
         }
 

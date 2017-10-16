@@ -9,7 +9,7 @@ namespace NegLibrary
 {
     public class LocalNeg
     {
-        private List<Local> locales;
+        protected List<Local> locales;
         DAOLocal daoLocal;
         public LocalNeg()
         {

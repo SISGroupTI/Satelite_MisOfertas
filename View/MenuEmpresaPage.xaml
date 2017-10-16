@@ -58,9 +58,9 @@
                 <!-- 0-->
                 <DataGridTextColumn x:Name="campoRut" Header="rut" Binding="{Binding RutEmpresa}" Width="100"/>
                 <!-- 0-->
-                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding NombreEmpresa}" Width="200"/>
+                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding NombreEmpresa}" Width="260"/>
                 <!--1-->
-                <DataGridTextColumn x:Name="campoFecha" Header="Fecha de Incorporacion" Binding="{Binding FechaIncorporacion}" Width="150"/>
+                <DataGridTextColumn x:Name="campoFecha" Header="Fecha de Incorporacion" Binding="{Binding FechaIncorporacion}" Width="180"/>
                 <!--2-->
                 <DataGridTextColumn x:Name="compoLocal" Header="Locales" Binding="{Binding CantidadLocales}" Width="120"/>
                 <!--3-->

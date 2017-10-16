@@ -109,8 +109,9 @@ namespace View
             camposOfertas.cbxLocal.DisplayMemberPath = "Direccion";
             camposOfertas.cbxLocal.SelectedValuePath = "IdLocal";
             camposOfertas.cbxLocal.Items.Refresh();
-            camposOfertas.cbxLocal.SelectedValue = ofertaNeg.Oferta.Local.IdLocal;
-            camposOfertas.cbxLocal.SelectedIndex = 0;
+            Local local = ofertaNeg.Oferta.Local;
+            camposOfertas.cbxLocal.SelectedValue = local.IdLocal;
+            //camposOfertas.cbxLocal.SelectedIndex = 0;
             camposOfertas.cbxLocal.IsEnabled = false;
 
         }
@@ -138,7 +139,15 @@ namespace View
             camposOfertas.txtPrecio.IsEnabled = false;
             camposOfertas.txtPrecio.IsEnabled = false;
             txbNumero.Text = ofertaNeg.Oferta.CodigoOferta.ToString();
-            lblCantidad.Content = (valoracionOferta.CantTotalValoraciones.ToString() == null)? valoracionOferta.CantTotalValoraciones.ToString(): "0" ;
+            if (valoracionOferta == null)
+            {
+                lblCantidad.Content = "0";
+            }
+            else
+            {
+                lblCantidad.Content = (valoracionOferta.CantTotalValoraciones.ToString().Length > 0) ? valoracionOferta.CantTotalValoraciones.ToString() : "0";
+            }
+            
 
         }
 
@@ -150,13 +159,17 @@ namespace View
 
                 foreach (ImagenOferta imagenOferta in listaImagenesOferta)
                 {
-                    BitmapImage b = new BitmapImage();
-                    b.BeginInit();
-                    b.CacheOption = BitmapCacheOption.OnLoad;
-                    b.UriSource = new Uri(imagenOferta.Imagen);
-                    b.EndInit();
-                    var imagen = new { Ruta = imagenOferta.Imagen, Imagen = b, Extension = System.IO.Path.GetExtension(imagenOferta.Imagen) }; //custom object
-                    listaImagenes.Add(imagen);
+                    if (File.Exists(imagenOferta.Imagen))
+                    {
+                        BitmapImage b = new BitmapImage();
+                        b.BeginInit();
+                        b.CacheOption = BitmapCacheOption.OnLoad;
+                        b.UriSource = new Uri(imagenOferta.Imagen);
+                        b.EndInit();
+                        var imagen = new { Ruta = imagenOferta.Imagen, Imagen = b, Extension = System.IO.Path.GetExtension(imagenOferta.Imagen) }; //custom object
+                        listaImagenes.Add(imagen);
+                    }
+                    
                 }
                 cargarDtImagenesOferta();
             }

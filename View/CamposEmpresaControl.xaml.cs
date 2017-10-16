@@ -60,7 +60,7 @@ namespace View
                 }
                 if (!validacion)
                 {
-                    MessageBox.Show("Rut invalido");
+                    MessageBox.Show("El rut que has ingresado no es válido", "Validacion de RUT");
                     txtRutEmpresa.Clear();
                     CamposLlenos = false;
                 }
@@ -69,7 +69,11 @@ namespace View
 
         private void txtRutEmpresa_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.K || e.Key==Key.Subtract || e.Key==Key.OemQuotes)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || 
+                e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || 
+                e.Key == Key.K || 
+                e.Key==Key.Subtract || 
+                e.Key==Key.OemQuotes)
             {
                 e.Handled = false;
             }

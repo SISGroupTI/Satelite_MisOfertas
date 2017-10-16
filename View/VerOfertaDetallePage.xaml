@@ -71,11 +71,11 @@
                       
                           >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Codigo" Binding="{Binding Producto.CodigoProducto}"/>
-                    <DataGridTextColumn Header="Nombre" Binding="{Binding Producto.Descripcion}" />
-                    <DataGridTextColumn Header="Precio Normal" Binding="{Binding Producto.PrecioNormal}"/>
-                    <DataGridTextColumn Header="Cantidad Minima" Binding="{Binding CantidadMinima}" />
-                    <DataGridTextColumn Header="Cantidad Maxima" Binding="{Binding CantidadMaxima}" />
+                    <DataGridTextColumn Header="Codigo" Binding="{Binding Producto.CodigoProducto}" Width="100"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Producto.Descripcion}" Width="130" />
+                    <DataGridTextColumn Header="Precio Normal" Binding="{Binding Producto.PrecioNormal}" Width="120"/>
+                    <DataGridTextColumn Header="Cantidad Minima" Binding="{Binding CantidadMinima}" Width="140"/>
+                    <DataGridTextColumn Header="Cantidad Maxima" Binding="{Binding CantidadMaxima}" Width="140"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="13" Width="630" Height="390" VerticalAlignment="Top">

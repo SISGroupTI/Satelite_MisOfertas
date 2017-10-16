@@ -53,6 +53,7 @@
     <Compile Include="Permiso.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteTiendas.cs" />
     <Compile Include="ReporteValoracion.cs" />
     <Compile Include="Rubro.cs" />
     <Compile Include="TipoRubro.cs" />

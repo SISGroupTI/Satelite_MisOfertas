@@ -60,12 +60,13 @@ namespace View
                 controlesLocal.txtDireccionLocal.Text = "";
                 controlesLocal.txtNumeroLocal.Text = "";
                 btnRegistrar.IsEnabled = true;
-                List<Local> locales = localNeg.Locales;
-                dtgLocales.ItemsSource = locales.ToList();
+                dtgLocales.ItemsSource = localNeg.Locales;
                 dtgLocales.Items.Refresh();
                 
             }
-            else { MessageBox.Show("Error interno"); }
+            else {
+                MessageBox.Show("Se ha presentado un inconveniente al agregar el registro a la lista \n Intente nuevamente");
+            }
         
         }
 
@@ -112,7 +113,7 @@ namespace View
             Local local = (Local)dtgLocales.SelectedItems[0];
             if (localNeg.EliminarLocalList(local)) { MessageBox.Show("Local seleccionado descartado de la lista actual", "Ingreso de registro - Empresas");
                 var locales = localNeg.Locales;
-                dtgLocales.ItemsSource = locales.ToList();
+                dtgLocales.ItemsSource = locales;
                 dtgLocales.Items.Refresh();
             }
         }
