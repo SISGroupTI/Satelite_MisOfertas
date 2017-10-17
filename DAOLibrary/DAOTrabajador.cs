@@ -94,11 +94,16 @@ namespace DAOLibrary
                     trabajador.Nombre = dr.GetString(4);
                     trabajador.Rut = dr.GetInt32(2);
                     trabajador.Dv = dr.GetString(3);
+
                     local = new Local();
                     local.IdLocal = dr.GetInt32(9);
+                    local.NumeroLocal = dr.GetInt32(10);
                     trabajador.CorreoCorporativo = dr.GetString(6);
+
                     perfil = new Perfil();
                     perfil.IdPerfil = dr.GetInt32(12);
+                    perfil.NombrePerfil = dr.GetString(13);
+
                     trabajador.NombreUsuario = dr.GetString(1);
                     trabajador.Apellidos = dr.GetString(5);
                     trabajador.Perfil = perfil;

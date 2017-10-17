@@ -79,5 +79,10 @@ namespace NegLibrary
             oferta.IdOferta = Oferta.IdOferta;
             return daoOferta.ModificarOferta(oferta);
         }
+
+        public List<Oferta> listarOfertasMasVisitadas()
+        {
+            return daoOferta.listarOfertasMasVisitadas();
+        }
     }
 }

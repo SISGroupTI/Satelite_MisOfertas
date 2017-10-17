@@ -19,5 +19,10 @@ namespace NegLibrary
         {
             return daoRubro.ListarRubros();
         }
+
+        public List<Rubro> listarRubrosMasVisitados()
+        {
+            return daoRubro.listarRubrosMasVisitados();
+        }
     }
 }

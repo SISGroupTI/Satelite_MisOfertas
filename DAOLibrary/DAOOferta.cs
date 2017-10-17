@@ -210,5 +210,39 @@ namespace BusinessLibrary
                 return null;
             }
         }
+
+        public List<Oferta> listarOfertasMasVisitadas()
+        {
+            try
+            {
+                Oferta oferta;
+                List<Oferta> listaOfertas = new List<Oferta>();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_OFT_MAS_VISITADAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    oferta = new Oferta();
+                    oferta.IdOferta = dr.GetInt32(0);
+                    oferta.TituloOferta = dr.GetString(1);
+                    oferta.Visitas = dr.GetInt32(2);
+                    listaOfertas.Add(oferta);
+                }
+
+                cone.Obtener().Close();
+                return listaOfertas;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

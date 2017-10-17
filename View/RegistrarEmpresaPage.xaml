@@ -31,7 +31,10 @@
         <Label Content="Administrador de Empresas" Margin="10,15,105,10" FontSize="36" Grid.ColumnSpan="4" Grid.Column="1"/>
         <Label Content="Ingresar nuevo registro" Margin="10,0,305,0" FontSize="22" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="1"/>
         <DataGrid x:Name="dtgLocales" Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1"
-                  AutoGenerateColumns="False">
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserReorderColumns="False"
+                AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>

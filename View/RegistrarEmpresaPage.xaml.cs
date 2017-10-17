@@ -82,6 +82,7 @@ namespace View
                     int rut = int.Parse(rutCompleto.Substring(0, 8));
                     char dv = char.Parse(rutCompleto.Substring(9, 1));
                     nombre = controlesEmpresa.txtNombreEmpresa.Text;
+
                     res = empresaNeg.RegistrarEmpresa(rut, dv, nombre, localNeg);
                     if (res)
                     {
@@ -111,7 +112,8 @@ namespace View
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             Local local = (Local)dtgLocales.SelectedItems[0];
-            if (localNeg.EliminarLocalList(local)) { MessageBox.Show("Local seleccionado descartado de la lista actual", "Ingreso de registro - Empresas");
+            if (localNeg.Locales.Remove(local)) {
+                MessageBox.Show("Local seleccionado descartado de la lista actual", "Ingreso de registro - Empresas");
                 var locales = localNeg.Locales;
                 dtgLocales.ItemsSource = locales;
                 dtgLocales.Items.Refresh();

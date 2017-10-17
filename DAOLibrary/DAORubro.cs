@@ -59,5 +59,42 @@ namespace BusinessLibrary
                 return null;
             }
         }
+
+        public List<Rubro> listarRubrosMasVisitados()
+        {
+            try
+            {
+
+                List<Rubro> listaRubrosMasVisitados = new List<Rubro>();
+                Rubro rubro;
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_RUBROS_MAS_VISITADOS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State == ConnectionState.Closed)
+                {
+                    cone.Obtener().Open();
+                }
+
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    rubro = new Rubro();
+                    rubro.IdRubro = dr.GetInt32(0);
+                    rubro.DescripcionRubro = dr.GetString(1);
+                    rubro.Visitas = dr.GetInt32(2);
+                    listaRubrosMasVisitados.Add(rubro);
+
+
+                }
+                cone.Obtener().Close();
+                return listaRubrosMasVisitados;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

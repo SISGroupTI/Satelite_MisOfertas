@@ -1,6 +1,8 @@
-﻿using LiveCharts;
+﻿using EntityLibrary;
+using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using NegLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +31,9 @@ namespace View
         private double _lastLecture;
         private double _trend;
         private RegistrarProductoPage registrarProductoPage;
+        private OfertaNeg ofertaNeg;
+        private RubroNeg rubroNeg;
+
 
         public SeriesCollection LastHourSeries { get; set; }
 
@@ -38,6 +43,15 @@ namespace View
             InitializeComponent();
             setCartesianChart();
             setSeriesCollection();
+
+            if (ofertaNeg == null)
+                ofertaNeg = new OfertaNeg();
+            if (rubroNeg == null)
+                rubroNeg = new RubroNeg();
+
+            listarOfertasMasVisitadas();
+            listarRubrosMasVisitados();
+
         }
         private void setSeriesCollection()
         {
@@ -152,6 +166,29 @@ namespace View
         {
             if (registrarProductoPage == null) { registrarProductoPage = new RegistrarProductoPage(); }
             NavigationService.Navigate(registrarProductoPage);
+        }
+
+
+        //_--------------------------------------------------------------------------------
+
+        public void listarOfertasMasVisitadas()
+        {
+
+            List<Oferta> listaOfertasMasVisitadas = ofertaNeg.listarOfertasMasVisitadas();
+            listOfertas.ItemsSource = listaOfertasMasVisitadas;
+            listOfertas.Items.Refresh();
+        }
+
+        public void listarRubrosMasVisitados()
+        {
+            List<Rubro> listaRubrosMasVisitados = rubroNeg.listarRubrosMasVisitados();
+            listRubros.ItemsSource = listaRubrosMasVisitados;
+            listRubros.Items.Refresh();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     } 
 }

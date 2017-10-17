@@ -160,10 +160,17 @@
             <StackPanel Margin="5">
                 <TextBlock TextWrapping="Wrap" Text="Rubros más visitados" TextAlignment="Left" Height="13"/>
             </StackPanel>
-            <ListView Margin="20,10,10,10" Grid.Row="1" BorderThickness="0,1">
+            <ListView Margin="20,10,10,10" Grid.Row="1" BorderThickness="0,1" Name="listRubros">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn/>
+                        <GridViewColumn Header="Rubro" Width="125">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding DescripcionRubro}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Visitas" Width="70" DisplayMemberBinding="{Binding Visitas}" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -176,10 +183,17 @@
             <StackPanel Margin="5">
                 <Label Content="Ofertas más visitadas"/>
             </StackPanel>
-            <ListView Margin="10" Grid.Row="1" BorderThickness="0,1">
+            <ListView Margin="10" Grid.Row="1" BorderThickness="0,1" SelectionChanged="ListView_SelectionChanged" Name="listOfertas">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn/>
+                        <GridViewColumn Header="Oferta" Width="125">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding TituloOferta}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Visitas" Width="70" DisplayMemberBinding="{Binding Visitas}" />
                     </GridView>
                 </ListView.View>
             </ListView>
