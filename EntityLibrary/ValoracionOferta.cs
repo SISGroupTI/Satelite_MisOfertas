@@ -13,6 +13,8 @@ namespace EntityLibrary
         private Escala escala;
         private String rutaFotoValoracion;
         private DateTime fechaValoracion;
+        private Local local;
+        private Empresa empresa;
 
         //Atributos asignados al conteo de las valoraciones realizadas
         private int cantValoracionesNegativas;
@@ -42,5 +44,8 @@ namespace EntityLibrary
         public int CantValoracionMedias { get => cantValoracionMedias; set => cantValoracionMedias = value; }
         public int CantValoracionesPositivas { get => cantValoracionesPositivas; set => cantValoracionesPositivas = value; }
         public int CantTotalValoraciones { get => cantTotalValoraciones; set => cantTotalValoraciones = value; }
+
+        public Local Local { get => local; set => local = value; }
+        public Empresa Empresa { get => empresa; set => empresa = value; }
     }
 }

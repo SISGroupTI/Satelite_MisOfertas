@@ -17,9 +17,9 @@ namespace NegLibrary
                 historialCorreoDao = new DAOHistorialCorreo();
         }
 
-        public List<HistorialCorreo> listarCantCorreosEnviados()
+        public List<HistorialCorreo> listarCantCorreosEnviados(DateTime? fechaInicioEnvio, DateTime? fechaTerminoEnvio)
         {
-            return historialCorreoDao.listaCantidadCorreosEnviados();
+            return historialCorreoDao.listaCantidadCorreosEnviados(fechaInicioEnvio, fechaTerminoEnvio);
         }
     }
 }

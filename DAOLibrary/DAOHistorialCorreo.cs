@@ -18,7 +18,7 @@ namespace BusinessLibrary
                 conexion = new Conexion();
         }
 
-        public List<HistorialCorreo> listaCantidadCorreosEnviados()
+        public List<HistorialCorreo> listaCantidadCorreosEnviados(DateTime? fechaInicioEnvio, DateTime? fechaTerminoEnvio)
         {
             try
             {
@@ -33,6 +33,8 @@ namespace BusinessLibrary
                 cmd.Connection = conexion.Obtener();
                 cmd.CommandText = "SP_SELECT_REPORTE_CORREOS_ENV";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_FECHA_ENVIO_INICIO", OracleDbType.Date).Value = fechaInicioEnvio;
+                cmd.Parameters.Add("p_FECHA_ENVIO_TERMINO", OracleDbType.Date).Value = fechaTerminoEnvio;
                 cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 if (conexion.Obtener().State.Equals(ConnectionState.Closed))
                 {
