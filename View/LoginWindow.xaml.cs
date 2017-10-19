@@ -58,7 +58,7 @@ namespace View
                     case 3:
                         principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
                         principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
-                        principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
+                        //principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
                         principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
                         MenuBIPage menuBIPage = new MenuBIPage();
                         principalWindow.setNavigationService(menuBIPage);

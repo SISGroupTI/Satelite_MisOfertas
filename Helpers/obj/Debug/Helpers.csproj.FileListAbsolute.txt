@@ -1,6 +1,5 @@
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\Helpers.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\Helpers.pdb
-D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.pdb

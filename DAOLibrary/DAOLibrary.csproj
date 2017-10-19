@@ -51,6 +51,7 @@
     <Compile Include="DAOEmpresa.cs" />
     <Compile Include="DAOEscala.cs" />
     <Compile Include="DAOEstado.cs" />
+    <Compile Include="DAOHistorialCorreo.cs" />
     <Compile Include="DAOImagenesOferta.cs" />
     <Compile Include="DAOLocal.cs" />
     <Compile Include="DAOOferta.cs" />

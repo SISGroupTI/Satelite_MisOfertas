@@ -84,5 +84,10 @@ namespace NegLibrary
         {
             return daoOferta.listarOfertasMasVisitadas();
         }
+
+        public List<Oferta> listarOfertasMasVisitadasMenuPrincipal(Oferta oferta)
+        {
+            return daoOferta.listarOfertasMasVisitadasMenuPrincipal(oferta);
+        }
     }
 }

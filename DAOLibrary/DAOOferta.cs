@@ -213,6 +213,7 @@ namespace BusinessLibrary
 
         public List<Oferta> listarOfertasMasVisitadas()
         {
+            //metodo para generar reporete de visitas
             try
             {
                 Oferta oferta;
@@ -233,6 +234,44 @@ namespace BusinessLibrary
                     oferta.IdOferta = dr.GetInt32(0);
                     oferta.TituloOferta = dr.GetString(1);
                     oferta.Visitas = dr.GetInt32(2);
+                    listaOfertas.Add(oferta);
+                }
+
+                cone.Obtener().Close();
+                return listaOfertas;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+
+        public List<Oferta> listarOfertasMasVisitadasMenuPrincipal(Oferta ofertaInput)
+        {
+            //metodo para generar el grafico de ofertas mas visitadas en la pagina principal
+            try
+            {
+                Oferta oferta;
+                List<Oferta> listaOfertas = new List<Oferta>();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_OFT_MASVISIT_MENU";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_FECHA_PUBLICACION", OracleDbType.Date).Value = ofertaInput.FechaInicio;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    oferta = new Oferta();
+                    oferta.IdOferta = dr.GetInt32(0);
+                    oferta.TituloOferta = dr.GetString(1);
+                    oferta.CodigoOferta = dr.GetInt32(2);
+                    oferta.Visitas = dr.GetInt32(3);
                     listaOfertas.Add(oferta);
                 }
 

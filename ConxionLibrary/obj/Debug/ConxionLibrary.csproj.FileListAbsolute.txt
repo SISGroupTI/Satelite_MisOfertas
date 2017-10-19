@@ -33,4 +33,3 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csproj.CoreCompileInputs.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.pdb
-D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\ConxionLibrary\obj\Debug\ConxionLibrary.csprojResolveAssemblyReference.cache

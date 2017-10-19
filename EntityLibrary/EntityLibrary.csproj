@@ -45,6 +45,7 @@
     <Compile Include="Empresa.cs" />
     <Compile Include="Escala.cs" />
     <Compile Include="Estado.cs" />
+    <Compile Include="HistorialCorreo.cs" />
     <Compile Include="ImagenOferta.cs" />
     <Compile Include="Local.cs" />
     <Compile Include="Modulo.cs" />

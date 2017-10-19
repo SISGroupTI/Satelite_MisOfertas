@@ -17,7 +17,7 @@ namespace NegLibrary
 
         }
 
-        public List<ReporteValoracion> listaRegistrosReporteValoracion(DateTime fechaInicio, DateTime fechaFin)
+        public List<ReporteValoracion> listaRegistrosReporteValoracion(DateTime? fechaInicio, DateTime? fechaFin)
         {
             return reporteValoracionDao.listaRegistroValoracion(fechaInicio, fechaFin);
         }

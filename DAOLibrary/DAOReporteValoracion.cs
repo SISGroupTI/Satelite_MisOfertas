@@ -19,7 +19,7 @@ namespace BusinessLibrary
                 conexion = new Conexion();
         }
 
-        public List<ReporteValoracion> listaRegistroValoracion(DateTime fechaInicio, DateTime fechaFin)
+        public List<ReporteValoracion> listaRegistroValoracion(DateTime? fechaInicio, DateTime? fechaFin)
         {
             try
             {
@@ -36,6 +36,8 @@ namespace BusinessLibrary
                 cmd.Connection = conexion.Obtener();
                 cmd.CommandText = "SP_SELECT_REPORTE_VALORACIONES";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_FECHA_PUBLICACION_INICIO", OracleDbType.Date).Value = fechaInicio;
+                cmd.Parameters.Add("p_FECHA_PUBLICACION_TERMINO", OracleDbType.Date).Value = fechaFin;
                 cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 if (conexion.Obtener().State.Equals(ConnectionState.Closed))
                 {

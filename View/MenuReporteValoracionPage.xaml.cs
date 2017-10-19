@@ -25,6 +25,7 @@ using System.IO;
 using iText.Kernel.Colors;
 using iText.Kernel.Geom;
 using iText.IO.Image;
+using System.Reflection;
 
 namespace View
 {
@@ -46,18 +47,28 @@ namespace View
         {
             try
             {
+                Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+                List<ReporteValoracion> listaRegistros = new List<ReporteValoracion>();
 
-                DateTime fechaInicio = (DateTime)dpFechaInicio.SelectedDate;
-                DateTime fechaFin = (DateTime)dpFechaTermino.SelectedDate;
-
-                List<ReporteValoracion> listaRegistros = reporteValoracionNeg.listaRegistrosReporteValoracion(fechaInicio, fechaFin);
-                //Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+                if (dpFechaInicio.SelectedDate == null && dpFechaTermino.SelectedDate == null)
+                {
+                    listaRegistros = reporteValoracionNeg.listaRegistrosReporteValoracion(null, null);
+                }
+                else
+                {
+                    listaRegistros = reporteValoracionNeg.listaRegistrosReporteValoracion(
+                        dpFechaInicio.SelectedDate,
+                        dpFechaTermino.SelectedDate);
+                }
+            
 
                 String rutaDirectorioOferta = "D:/MisOfertas/Reportes/";
                 List<ImagenOferta> listaImagenesOferta = new List<ImagenOferta>();
                 if (!Directory.Exists(rutaDirectorioOferta))
                     Directory.CreateDirectory(rutaDirectorioOferta);
-                String rutaReporte = rutaDirectorioOferta + "/ReporteValoracion" + DateTime.Now.ToShortDateString()+".pdf";
+
+                DateTime fechaCreacionReporte = DateTime.Now;
+                String rutaReporte = rutaDirectorioOferta + "/ReporteValoracion" + fechaCreacionReporte.ToString("ddMMyyyyHHmm")+".pdf";
 
                 PdfWriter writer = new PdfWriter(rutaReporte);  
                 PdfDocument pdf = new PdfDocument(writer);
@@ -65,15 +76,24 @@ namespace View
                 PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
 
 
-                //iText.IO.Image.ImageDataFactory.Create("D:/Portafolio 2017/MisOfertasEscritorio/Seba/Satelite_MisOfertas/View/img/MisOfertas-Letras.png", false);
+                string _filePath = System.IO.Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
+                _filePath = Directory.GetParent(_filePath).FullName;
+                _filePath = Directory.GetParent(_filePath).FullName;
+                _filePath += @"\img\MisOfertas-Letras.png";
+               
+                //string ruta_imagen = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"img\MisOfertas-Letras.png");
+                //String ruta_imagen = "D:/Portafolio 2017/MisOfertasEscritorio/Seba/Satelite_MisOfertas/View/img/MisOfertas-Letras.png";
+                document.Add(new iText.Layout.Element.Image(ImageDataFactory.Create(_filePath)).SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.RIGHT).SetWidth(40).SetHeight(40));
+
 
                 document.Add(new iText.Layout.Element.Paragraph("Reporte valoracion de ofertas").SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetFontSize(20));
                 document.Add(new iText.Layout.Element.Paragraph(DateTime.Now.ToShortDateString()+" "+ DateTime.Now.ToShortTimeString()).SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetFontSize(18));
 
-                float[] columnWidths = { 20f, 60f, 120f, 30f, 50f, 80f, 50f, 50f, 50f, 50f };//{1,1,10,10,5,5,1,1,1,1,1,1};
+                float[] columnWidths = {1,5,6,5,5,5,5,5,5,5};//{1,1,10,10,5,5,1,1,1,1,1,1};
               
-                iText.Layout.Element.Table tableRegistros = new iText.Layout.Element.Table(columnWidths).SetFontSize(12);
+                iText.Layout.Element.Table tableRegistros = new iText.Layout.Element.Table(10).SetFontSize(12);
                 tableRegistros.SetWidthPercent(100);
+                tableRegistros.SetFixedLayout();
                 
                 float fontCell = 11;
                 float fontCellData = 9;
@@ -103,10 +123,10 @@ namespace View
                     Oferta oferta = reporte.Oferta;
                     Rubro rubro = reporte.Rubro;
                     Empresa empresa = reporte.Empresa;
-                    tableRegistros.AddCell(oferta.IdOferta.ToString()).SetFontSize(fontCellData).SetWidth(5).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
-                    tableRegistros.AddCell(oferta.TituloOferta).SetFontSize(fontCellData).SetWidth(5);
-                    tableRegistros.AddCell(oferta.FechaInicio.ToShortDateString()).SetFontSize(fontCellData).SetWidth(700);
-                    tableRegistros.AddCell(oferta.FechaFinalizacion.ToShortDateString()).SetFontSize(fontCellData).SetWidth(7);
+                    tableRegistros.AddCell(oferta.IdOferta.ToString()).SetFontSize(fontCellData).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                    tableRegistros.AddCell(oferta.TituloOferta).SetFontSize(fontCellData);
+                    tableRegistros.AddCell(oferta.FechaInicio.ToShortDateString()).SetFontSize(fontCellData);
+                    tableRegistros.AddCell(oferta.FechaFinalizacion.ToShortDateString()).SetFontSize(fontCellData);
                     tableRegistros.AddCell(rubro.DescripcionRubro).SetFontSize(fontCellData);
                     tableRegistros.AddCell(empresa.NombreEmpresa).SetFontSize(fontCellData);
                     tableRegistros.AddCell(reporte.CantValoracionNegativas.ToString()).SetFontSize(fontCellData).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
@@ -121,10 +141,15 @@ namespace View
                 document.Add(tableRegistros);
                 document.Close();
 
+                Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                MessageBox.Show("Reporte generado correctamente \n en la ruta: "+rutaReporte,"Reporteria - Mis Ofertas");
+
+                //Uri test = new Uri(rutaReporte);
+                //WebBrowser.Navigate(rutaReporte);
             }
             catch (Exception err)
             {
-
+                MessageBox.Show("Error: " + err.Message);
             }
 
         }
