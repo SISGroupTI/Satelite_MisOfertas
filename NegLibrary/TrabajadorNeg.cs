@@ -82,5 +82,10 @@ namespace NegLibrary
             trabajador.Perfil = perfil;
             return daoTrabajador.ModificarTrabajador(trabajador);
         }
+
+        public int cantidadTotalTrabajadores()
+        {
+            return daoTrabajador.cantidadTotalTrabajadores();
+        }
     }
 }

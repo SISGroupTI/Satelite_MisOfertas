@@ -50,6 +50,7 @@
     <Compile Include="Local.cs" />
     <Compile Include="Modulo.cs" />
     <Compile Include="Oferta.cs" />
+    <Compile Include="OfertaBI.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Producto.cs" />

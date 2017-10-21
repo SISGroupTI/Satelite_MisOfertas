@@ -32,6 +32,8 @@ namespace View
         private double _trend;
         private RegistrarProductoPage registrarProductoPage;
         private OfertaNeg ofertaNeg;
+        private ProductoNeg productoNeg;
+        private TrabajadorNeg trabajadorNeg;
         private RubroNeg rubroNeg;
         private List<Oferta> listaOfertasMasVisitadas;
 
@@ -41,7 +43,7 @@ namespace View
         public PrincipalPage()
         {
             InitializeComponent();
-            
+
             setSeriesCollection();
 
             dtFechaOfertaVisitada.SelectedDate = DateTime.Now;
@@ -52,11 +54,17 @@ namespace View
                 rubroNeg = new RubroNeg();
             if (listaOfertasMasVisitadas == null)
                 listaOfertasMasVisitadas = new List<Oferta>();
+            if (trabajadorNeg == null)
+                trabajadorNeg = new TrabajadorNeg();
+            if (productoNeg == null)
+                productoNeg = new ProductoNeg();
 
+            txtCantOfertas.Text = ofertaNeg.cantidadTotalOfertas().ToString();
+            txtCantTrabajadores.Text = trabajadorNeg.cantidadTotalTrabajadores().ToString();
+            txtCantProductos.Text = productoNeg.cantidadTotalProductos().ToString();
 
             listarOfertasMasVisitadas();
             listarRubrosMasVisitados();
-            
             setCartesianChart();
 
         }
@@ -134,6 +142,13 @@ namespace View
                 OnPropertyChanged("LastLecture");
             }
         }
+
+
+        //---------------------GRAFICO DE OFERTAS MAS VISITADAS---------------------------
+        //--------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------
+
+
         private void setCartesianChart()
         {
 
@@ -155,18 +170,20 @@ namespace View
                         Values = new ChartValues<double> { 0 }
                     });
 
-                    string[] arrayTitulos = new string[5];
+                    string[] arrayTitulos = new string[6];
                     arrayTitulos[0] = "";
                     int aux = 1;
                     foreach (Oferta oferta in listaOfertasMasVisitadas)
                     {
-                        arrayTitulos[aux] = "Cod: "+oferta.CodigoOferta.ToString();
+                        arrayTitulos[aux] = "Cod: " + oferta.CodigoOferta.ToString();
                         SeriesCollection[0].Values.Add((double)oferta.Visitas);
                         aux += 1;
-                        Labels = arrayTitulos;
-                        Formatter = value => value.ToString("N");
-                        DataContext = this;
                     }
+
+                    Labels = arrayTitulos;
+                    Formatter = value => value.ToString("N");
+                    DataContext = this;
+
                 }
             }
             catch (Exception exception)
@@ -214,15 +231,51 @@ namespace View
 
         private void CartesianChart_Loaded(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            /*if (dtFechaOfertaVisitada.SelectedDate.Value.Date != DateTime.Now.Date)
+            if (this.IsLoaded)
             {
-                MessageBox.Show("cambio");
+
+                DateTime fechaPublicacion = dtFechaOfertaVisitada.SelectedDate.Value.Date;
+                Oferta ofertaIn = new Oferta();
+                ofertaIn.FechaInicio = fechaPublicacion;
+                listaOfertasMasVisitadas = ofertaNeg.listarOfertasMasVisitadasMenuPrincipal(ofertaIn);
+                MessageBox.Show("CARGADA" + listaOfertasMasVisitadas.Count);
+
+
+                SeriesCollection = null;
+
+                //setCartesianChart();
+                if (listaOfertasMasVisitadas != null)
+                {
+                    SeriesCollection = new SeriesCollection { };
+                    SeriesCollection.Add(new RowSeries
+                    {
+                        Title = "Ofertas mas visitadas",
+                        Values = new ChartValues<double> { 0 }
+                    });
+
+                    string[] arrayTitulos = new string[6];
+                    arrayTitulos[0] = "";
+                    int aux = 1;
+                    foreach (Oferta oferta in listaOfertasMasVisitadas)
+                    {
+                        arrayTitulos[aux] = "Cod: " + oferta.CodigoOferta.ToString();
+                        SeriesCollection[0].Values.Add((double)oferta.Visitas);
+                        aux += 1;
+
+                    }
+                    Labels = arrayTitulos;
+                    Formatter = value => value.ToString("N");
+                    DataContext = this;
+                }
+
+
             }
+            /*
             try
             {
                 DateTime fechaPublicacion = dtFechaOfertaVisitada.SelectedDate.Value.Date;
@@ -260,7 +313,7 @@ namespace View
 
             }*/
         }
-    } 
+    }
 
 
 }

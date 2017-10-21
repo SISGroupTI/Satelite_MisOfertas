@@ -242,6 +242,7 @@ namespace BusinessLibrary
             }
             catch (Exception e)
             {
+                cone.Obtener().Close();
                 return null;
             }
         }
@@ -280,6 +281,84 @@ namespace BusinessLibrary
             }
             catch (Exception e)
             {
+                cone.Obtener().Close();
+                return null;
+            }
+        }
+        
+        public int cantidadTotalOfertas()
+        {
+            try
+            {
+                
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_CANTTOTAL_OFERTAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                int total = 0;
+                while (dr.Read())
+                {
+                    total = dr.GetInt32(0);
+                }
+                cone.Obtener().Close();
+                return total;
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return 0;
+            }
+        }
+
+        public List<OfertaBI> listaOfertasBI()
+        {
+            try
+            {
+                OfertaBI ofertaBI;
+                List<OfertaBI> listaOfertasBI = new List<OfertaBI>();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_CANTTOTAL_OFERTAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ofertaBI = new OfertaBI();
+                    ofertaBI.NombreEmpresa = dr.GetString(0);
+                    ofertaBI.NumeroLocal = dr.GetInt32(1);
+                    ofertaBI.Rubro = dr.GetString(2);
+                    ofertaBI.IdOferta = dr.GetInt32(3);
+                    ofertaBI.TituloOferta = dr.GetString(5);
+                    ofertaBI.PrecioOferta = dr.GetInt32(6);
+                    ofertaBI.FechaCreacion = dr.GetDateTime(7);
+                    ofertaBI.FechaPublicacion = dr.GetDateTime(8);
+                    ofertaBI.FechaFinalizacion = dr.GetDateTime(9);
+                    ofertaBI.CantValoracionNegativas = dr.GetInt32(10);
+                    ofertaBI.CantValoracionMedias = dr.GetInt32(11);
+                    ofertaBI.CantValoracionPositivas = dr.GetInt32(12);
+                    ofertaBI.CantValoracionTotal = dr.GetInt32(13);
+                    ofertaBI.NombreProducto = dr.GetString(14);
+                    ofertaBI.CantVisitas = dr.GetInt32(15);
+                    listaOfertasBI.Add(ofertaBI);
+                }
+
+                cone.Obtener().Close();
+                return listaOfertasBI;
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
                 return null;
             }
         }

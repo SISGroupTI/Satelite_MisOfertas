@@ -105,6 +105,12 @@ namespace View {
             return;
             case 3:
             this.btnArchivoBI = ((System.Windows.Controls.Button)(target));
+            
+            #line 43 "..\..\MenuBIPage.xaml"
+            this.btnArchivoBI.Click += new System.Windows.RoutedEventHandler(this.btnArchivoBI_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

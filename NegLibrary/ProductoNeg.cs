@@ -84,5 +84,10 @@ namespace NegLibrary
         {
             return daoProducto.ListarProductoPorRubro(rubro);
         }
+
+        public int cantidadTotalProductos()
+        {
+            return daoProducto.cantidadTotalProductos();
+        }
     }
 }

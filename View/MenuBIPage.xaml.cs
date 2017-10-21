@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntityLibrary;
+using NegLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,21 @@ namespace View
     /// </summary>
     public partial class MenuBIPage : Page
     {
+        OfertaNeg ofertaNeg;
         public MenuBIPage()
         {
+            if (ofertaNeg == null)
+                ofertaNeg = new OfertaNeg();
             InitializeComponent();
+        }
+
+        private void btnArchivoBI_Click(object sender, RoutedEventArgs e)
+        {
+            List<OfertaBI> listaOfertasBI = ofertaNeg.listaOfertasBI();
+            if (listaOfertasBI!=null)
+            {
+
+            }
         }
     }
 }
