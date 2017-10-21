@@ -94,9 +94,9 @@ namespace NegLibrary
         {
             return daoOferta.cantidadTotalOfertas();
         }
-        public List<OfertaBI> listaOfertasBI()
+        public List<OfertaBI> listaOfertasBI(DateTime? fechaCreacionInicio, DateTime? fechaCreacionTermino)
         {
-            return daoOferta.listaOfertasBI();
+            return daoOferta.listaOfertasBI(fechaCreacionInicio, fechaCreacionTermino);
         }
     }
 }

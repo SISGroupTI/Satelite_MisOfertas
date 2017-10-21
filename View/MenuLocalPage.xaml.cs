@@ -24,17 +24,20 @@ namespace View
     {
         RegistrarLocalPage registrarLocalPage;
         LocalNeg localNeg;
+        List<Local> listaLocales;
         public MenuLocalPage()
         {
             InitializeComponent();
             if (localNeg == null)
                 localNeg = new LocalNeg();
+            if(listaLocales==null)
+                listaLocales = localNeg.ListarLocales(); 
             cargarDataGridLocal();
         }
 
         private void cargarDataGridLocal()
         {
-            dtLocal.ItemsSource = localNeg.ListarLocales();
+            dtLocal.ItemsSource = listaLocales;
             dtLocal.Items.Refresh();
         }
 
@@ -94,6 +97,19 @@ namespace View
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             goToEditar();
+        }
+
+        private void txtBuscarLocal_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarLocal.Text.Length>0)
+            {
+                dtLocal.ItemsSource = listaLocales.Where(local=>local.Direccion.Contains(txtBuscarLocal.Text));
+                dtLocal.Items.Refresh();
+            }
+            else
+            {
+                cargarDataGridLocal();
+            }
         }
     }
 }

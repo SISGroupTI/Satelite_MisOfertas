@@ -32,15 +32,14 @@
         </StackPanel>
         <Image Margin="10" Source="img/oferta-ic.png" Grid.Column="1"/>
         <TextBox 
+                Name="txtBuscarDescuentos"
+            KeyUp="txtBuscarDescuentos_KeyUp"
                 Controls:TextBoxHelper.ClearTextButton="True"
                 Controls:TextBoxHelper.Watermark="Buscar Descuentos"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 
         </TextBox>
         <TextBlock TextAlignment="Center" Margin="10" TextWrapping="Wrap" Text="Buscar" FontSize="18" Grid.Column="1" Grid.Row="2"/>
-        <TextBlock Grid.Column="2" Margin="355,10,10,10" Grid.Row="2" TextWrapping="Wrap" Text="Ordenar por" FontSize="18"/>
-        <ComboBox Grid.Column="3" Margin="10,10,10,6" Grid.Row="2" Width="140"/>
-        <ComboBox Grid.Column="4" Margin="11,10,10,6" Grid.Row="2" Width="140"/>
         <DataGrid x:Name="dtDescuentos" Grid.ColumnSpan="4" Grid.Column="1" Margin="10" Grid.Row="3"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"

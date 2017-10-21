@@ -2,6 +2,7 @@
 using NegLibrary;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -29,10 +30,70 @@ namespace View
             InitializeComponent();
         }
 
+        public bool validarFechas()
+        {
+            if (dpFechaInicio.SelectedDate!=null && dpFechaTermino.SelectedDate!=null)
+            {
+                if (dpFechaInicio.SelectedDate < dpFechaTermino.SelectedDate)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+            
+        }
+
         private void btnArchivoBI_Click(object sender, RoutedEventArgs e)
         {
-            List<OfertaBI> listaOfertasBI = ofertaNeg.listaOfertasBI();
-            if (listaOfertasBI!=null)
+            try
+            {
+                if (!validarFechas())
+                {
+                    MessageBox.Show("La fecha de inicio debe ser menor a la de termino\n Ingrese nuevamente", "Generacion archivo BI");
+                    dpFechaInicio.Focus();
+                }
+                else
+                {
+                    String rutaDirectorioOferta = "D:/MisOfertas/BI";
+                    DateTime fechaCreacionArchivo = DateTime.Now;
+                    String rutaArchivo = rutaDirectorioOferta + "/ArchivoBI" + fechaCreacionArchivo.ToString("ddMMyyyyHHmm") + ".csv";
+
+                    try
+                    {
+                        Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+                        List<OfertaBI> listaOfertasBI;
+
+                        if (dpFechaInicio.SelectedDate == null && dpFechaTermino.SelectedDate == null)
+                        {
+                            listaOfertasBI = ofertaNeg.listaOfertasBI(null,null);
+                        }
+                        else
+                        {
+                            listaOfertasBI = ofertaNeg.listaOfertasBI(dpFechaInicio.SelectedDate, dpFechaTermino.SelectedDate);
+                        }
+
+                        if (listaOfertasBI != null)
+                        {
+                            if (!Directory.Exists(rutaDirectorioOferta))
+                                Directory.CreateDirectory(rutaDirectorioOferta);
+                            string csv = String.Join("", listaOfertasBI.Select(x => x.ToString()).ToArray());
+                            File.WriteAllText(rutaArchivo, csv);
+                            Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                            MessageBox.Show("Archivo generado correctamente en la ruta:\n" + rutaArchivo, "Generacion archivo BI");
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Se ha presentado un inconveniente al generar el archivo csv\n Intente nuevamente", "Generacion archivo BI");
+                        File.Delete(rutaArchivo);
+                    }
+                }
+            }
+            catch (Exception err)
             {
 
             }

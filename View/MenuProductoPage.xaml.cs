@@ -24,19 +24,21 @@ namespace View
     {
         RegistrarProductoPage registrarProductoPage;
         ProductoNeg productoNeg;
+        List<Producto> listaProductos;
+
         public MenuProductoPage()
         {
             InitializeComponent();
             if (productoNeg == null)
                 productoNeg = new ProductoNeg();
+            if(listaProductos==null)
+                listaProductos = productoNeg.listarProducto();
             cargarProductos();
         }
 
         private void cargarProductos()
-        {
-            List<Producto> productos = new List<Producto>();
-            productos = productoNeg.listarProducto();
-            dtProducto.ItemsSource = productos;
+        {  
+            dtProducto.ItemsSource = listaProductos;
             dtProducto.Items.Refresh();
         }
 
@@ -81,6 +83,19 @@ namespace View
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             goToRegistrar();
+        }
+
+        private void txtBuscarProducto_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarProducto.Text.Length>0)
+            {
+                dtProducto.ItemsSource = listaProductos.Where(producto=>producto.Descripcion.Contains(txtBuscarProducto.Text));
+                dtProducto.Items.Refresh();
+            }
+            else
+            {
+                cargarProductos();
+            }
         }
     }
 }

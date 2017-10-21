@@ -31,7 +31,7 @@ namespace NegLibrary
             return daoTrabajador.ListarTrabajadores();
         }
 
-        public long validarCredenciales(String usuario, String contrasena)
+        public Trabajador validarCredenciales(String usuario, String contrasena)
         {
             Trabajador trabajador = new Trabajador();
             trabajador.NombreUsuario = usuario;
@@ -45,22 +45,23 @@ namespace NegLibrary
                 {
                     try
                     {
-                        long idPerfil = trabajador.Perfil.IdPerfil;
-                        return idPerfil;
+                        //long idPerfil = trabajador.Perfil.IdPerfil;
+                        //return idPerfil;
+                        return trabajador;
                     }
                     catch
                     {
-                        return 0;
+                        return null;
                     }
                 }
                 else
                 {
-                    return 0;
+                    return null;
                 }
             }
             else
             {
-                return 0;
+                return null;
             }
         }
 

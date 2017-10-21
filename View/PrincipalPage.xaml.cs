@@ -31,6 +31,9 @@ namespace View
         private double _lastLecture;
         private double _trend;
         private RegistrarProductoPage registrarProductoPage;
+        private RegistrarOfertaPage registrarOfertaPage;
+        private MenuTrabajdorPage menuTrabajdorPage;
+
         private OfertaNeg ofertaNeg;
         private ProductoNeg productoNeg;
         private TrabajadorNeg trabajadorNeg;
@@ -205,6 +208,19 @@ namespace View
             if (registrarProductoPage == null) { registrarProductoPage = new RegistrarProductoPage(); }
             NavigationService.Navigate(registrarProductoPage);
         }
+        private void TextBlock_PreviewMouseDown_Trabajador(object sender, MouseButtonEventArgs e)
+        {
+            if (menuTrabajdorPage == null)
+                menuTrabajdorPage = new MenuTrabajdorPage();
+            NavigationService.Navigate(menuTrabajdorPage);
+        }
+
+        private void TextBlock_PreviewMouseDown_Ofertas(object sender, MouseButtonEventArgs e)
+        {
+            if (registrarOfertaPage == null)
+                registrarOfertaPage = new RegistrarOfertaPage();
+            NavigationService.Navigate(registrarOfertaPage);
+        }
 
 
         //_--------------------------------------------------------------------------------
@@ -313,6 +329,8 @@ namespace View
 
             }*/
         }
+
+        
     }
 
 

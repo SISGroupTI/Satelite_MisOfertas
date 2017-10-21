@@ -28,18 +28,18 @@ namespace View
     {
         RegistrarEmpresaPage registrarEmpresaPage;
         EmpresaNeg empresaNeg;
-        List<Empresa> lista = new List<Empresa>();
+        List<Empresa> lista;
         public MenuEmpresaPage()
         {
             InitializeComponent();
             if (empresaNeg == null)
                 empresaNeg = new EmpresaNeg();
+            if (lista == null)
+                lista = empresaNeg.ListarEmpresas();
             cargarEmpresas();
         }
         private void cargarEmpresas()
         {
-            
-            lista = empresaNeg.ListarEmpresas();
             dtEmpresa.ItemsSource = lista;
             dtEmpresa.Items.Refresh();
         }
@@ -108,6 +108,19 @@ namespace View
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             gotoAgregarEmpresa();
+        }
+
+        private void txtBuscarEmpresa_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarEmpresa.Text.Length>0)
+            {
+                dtEmpresa.ItemsSource = lista.Where(empresa=>empresa.NombreEmpresa.Contains(txtBuscarEmpresa.Text));
+                dtEmpresa.Items.Refresh();
+            }
+            else
+            {
+                cargarEmpresas();
+            }
         }
     }
 }

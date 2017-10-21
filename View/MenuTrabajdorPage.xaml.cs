@@ -30,12 +30,14 @@ namespace View
         RegistrarTrabajadorPage registrarTrabajadorPage;
         ModificarTrabajadorPage modificarTrabajadorPage;
         TrabajadorNeg trabNeg;
-        List<Trabajador> lista = new List<Trabajador>();
+        List<Trabajador> lista;
         public MenuTrabajdorPage()
         {
             InitializeComponent();
             if (trabNeg == null)
                 trabNeg = new TrabajadorNeg();
+            if (lista == null)
+                lista = trabNeg.listarTrabajadores();
             cargarDataGridTrabajador();
         }
 
@@ -44,7 +46,6 @@ namespace View
 
         private void cargarDataGridTrabajador()
         {
-            lista = trabNeg.listarTrabajadores();
             if (lista != null)
             {
                 dtTrabajador.ItemsSource = lista;
@@ -110,6 +111,18 @@ namespace View
         {
             toToRegistrar();
 
+        }
+
+        private void txtBuscarTrabajador_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarTrabajador.Text.Length>0)
+            {
+                dtTrabajador.ItemsSource = lista.Where(trabajador => trabajador.Apellidos.Contains(txtBuscarTrabajador.Text));
+            }
+            else
+            {
+                cargarDataGridTrabajador();
+            }
         }
     }
 

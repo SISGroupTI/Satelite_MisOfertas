@@ -44,15 +44,24 @@ namespace View
 
         public bool validarFechas()
         {
-            if (dpFechaInicio.SelectedDate < dpFechaTermino.SelectedDate)
+            if (dpFechaInicio.SelectedDate != null && dpFechaTermino.SelectedDate != null)
             {
-                return true;
+                if (dpFechaInicio.SelectedDate < dpFechaTermino.SelectedDate)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                return false;
-            }        
+                return true;
+            }
         }
+
+
         private void btnReporteTienda_Click(object sender, RoutedEventArgs e)
         {
             if (!validarFechas())

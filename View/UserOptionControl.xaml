@@ -10,10 +10,11 @@
     <Grid>
         <Controls:DropDownButton 
             VerticalContentAlignment="Center"
-            DisplayMemberPath="Title" Margin="20,0" Background="{x:Null}" ArrowBrush="{x:Null}">
+            Name="dropNombreUsuario"
+            DisplayMemberPath="Title" Margin="20,0" Background="{x:Null}">
             <Controls:DropDownButton.Items>
                 <StackPanel>
-                    <TextBlock Text="Hola"></TextBlock>
+                    <TextBlock Text="Salir"></TextBlock>
                 </StackPanel>
             </Controls:DropDownButton.Items>
         </Controls:DropDownButton>

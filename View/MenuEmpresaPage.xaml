@@ -41,6 +41,8 @@
         <TextBox
                 Controls:TextBoxHelper.ClearTextButton="True"
                 Controls:TextBoxHelper.Watermark="Nombre Empresa"
+            Name="txtBuscarEmpresa"
+            KeyUp="txtBuscarEmpresa_KeyUp"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 
         </TextBox>

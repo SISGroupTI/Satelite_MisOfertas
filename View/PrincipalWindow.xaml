@@ -26,7 +26,7 @@
         <local:UserOptionControl Grid.Column="3" Margin="0,25,0,0" Height="26" VerticalAlignment="Top"/>
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="53"/>
         <Label x:Name="lblNombreUsuario" Content="Nombre Usurio" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="91"/>
-        <Label Name="lblTimer" Grid.Column="3" HorizontalAlignment="Left" Margin="126,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="85"/>
+        <Label Name="lblTimer" Grid.Column="3" HorizontalAlignment="Left" Margin="57,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="154"/>
         <Frame x:Name="frame" Grid.ColumnSpan="4" Content="" Grid.Row="1" NavigationUIVisibility="Hidden"/>
         <DockPanel Grid.Column="1" Margin="0" Grid.ColumnSpan="2">
             <Menu IsMainMenu="True" DockPanel.Dock="Top" VerticalAlignment="Center">
@@ -41,7 +41,7 @@
                     <MenuItem Header="Productos" x:Name="menu_producto" Click="menu_producto_Click">
                     </MenuItem>
                     <MenuItem Header="Ofertas" x:Name="menu_oferta" Click="menu_oferta_Click">
-                        
+
                     </MenuItem>
                     <Separator x:Name="separador1"/>
                     <MenuItem x:Name="menu_empresa" Header="Empresas" Click="menu_empresa_Click">
@@ -53,7 +53,7 @@
                     <MenuItem Header="Development" Visibility="Collapsed">
                         <MenuItem Header="Productos">
                             <MenuItem x:Name="menu_modificar_producto" Header="Modificar" Click="menu_modificar_producto_Click" >
-                                
+
                             </MenuItem>
                         </MenuItem>
                         <MenuItem Header="Ofertas">
@@ -86,14 +86,14 @@
                 </MenuItem>
                 <MenuItem x:Name="menu_reportes" Header="Reportes" Margin="0,0,30,0" >
                     <MenuItem Header="Tiendas" x:Name="menu_reporte_tienda" Click="menu_reporte_tienda_Click">
-                        
+
                     </MenuItem>
                     <MenuItem Header="Valoraciones" x:Name="menu_reporte_valoracion" Click="menu_reporte_valoracion_Click">
-                        
+
                     </MenuItem>
                 </MenuItem>
                 <MenuItem x:Name="menu_archivos" Header="Archivo" Margin="0,0,20,0"  Click="menu_archivos_Click">
-                    
+
                 </MenuItem>
             </Menu>
         </DockPanel>

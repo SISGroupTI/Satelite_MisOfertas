@@ -77,7 +77,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0,2,0,0" Grid.Row="1" Background="#FFCFCFCF" Grid.RowSpan="2" HorizontalAlignment="Left" Width="217">
-                        <TextBlock Foreground="#303030" FontSize="18" Margin="75,6,0,6" Text="Ver Más" HorizontalAlignment="Left" Width="66"/>
+                        <TextBlock PreviewMouseDown="TextBlock_PreviewMouseDown_Trabajador" Foreground="#303030" FontSize="18" Margin="75,6,0,6" Text="Ver Más" HorizontalAlignment="Left" Width="66"/>
                     </StackPanel>
                     <Grid Width="215" Margin="1,0">
                         <Grid.RowDefinitions>
@@ -117,7 +117,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0,2,0,0" Grid.Row="1" Background="#FFCFCFCF" Grid.RowSpan="2">
-                        <TextBlock Foreground="#303030" TextAlignment="Center" FontSize="18" Margin="30,6" Text="Nueva Oferta"/>
+                        <TextBlock PreviewMouseDown="TextBlock_PreviewMouseDown_Ofertas" Foreground="#303030" TextAlignment="Center" FontSize="18" Margin="30,6" Text="Nueva Oferta"/>
                     </StackPanel>
                     <Grid Width="215" Margin="0,0,-5,0">
                         <Grid.RowDefinitions>

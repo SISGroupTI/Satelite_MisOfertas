@@ -316,7 +316,7 @@ namespace BusinessLibrary
             }
         }
 
-        public List<OfertaBI> listaOfertasBI()
+        public List<OfertaBI> listaOfertasBI(DateTime? fechaCreacionInicio, DateTime? fechaCreacionTermino)
         {
             try
             {
@@ -324,8 +324,10 @@ namespace BusinessLibrary
                 List<OfertaBI> listaOfertasBI = new List<OfertaBI>();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = cone.Obtener();
-                cmd.CommandText = "SP_SELECT_CANTTOTAL_OFERTAS";
+                cmd.CommandText = "SP_SELECT_OFERTAS_BI";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_FECHA_CREACION_INICIO", OracleDbType.Date).Value = fechaCreacionInicio;
+                cmd.Parameters.Add("p_FECHA_CREACION_TERMINO", OracleDbType.Date).Value = fechaCreacionTermino;
                 cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
                 if (cone.Obtener().State.Equals(ConnectionState.Closed))
                 {
@@ -341,9 +343,9 @@ namespace BusinessLibrary
                     ofertaBI.IdOferta = dr.GetInt32(3);
                     ofertaBI.TituloOferta = dr.GetString(5);
                     ofertaBI.PrecioOferta = dr.GetInt32(6);
-                    ofertaBI.FechaCreacion = dr.GetDateTime(7);
-                    ofertaBI.FechaPublicacion = dr.GetDateTime(8);
-                    ofertaBI.FechaFinalizacion = dr.GetDateTime(9);
+                    ofertaBI.FechaCreacion = dr.GetString(7);
+                    ofertaBI.FechaPublicacion = dr.GetString(8);
+                    ofertaBI.FechaFinalizacion = dr.GetString(9);
                     ofertaBI.CantValoracionNegativas = dr.GetInt32(10);
                     ofertaBI.CantValoracionMedias = dr.GetInt32(11);
                     ofertaBI.CantValoracionPositivas = dr.GetInt32(12);

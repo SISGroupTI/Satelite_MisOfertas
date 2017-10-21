@@ -40,6 +40,8 @@
         </Button>
         <TextBox
                 Controls:TextBoxHelper.ClearTextButton="True"
+            Name="txtBuscarTrabajador"
+            KeyUp="txtBuscarTrabajador_KeyUp"
                 Controls:TextBoxHelper.Watermark="Nombre Trabajador"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 

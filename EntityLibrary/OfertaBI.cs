@@ -19,9 +19,9 @@ namespace EntityLibrary
         private String nombreProducto;
         private String tituloOferta;
         private int  precioOferta;
-        private DateTime fechaCreacion;
-        private DateTime fechaPublicacion;
-        private DateTime fechaFinalizacion;
+        private String fechaCreacion;
+        private String fechaPublicacion;
+        private String fechaFinalizacion;
         private int cantValoracionNegativas;
         private int cantValoracionMedias;
         private int cantValoracionPositivas;
@@ -36,14 +36,23 @@ namespace EntityLibrary
         public String NombreProducto { get => nombreProducto; set => nombreProducto = value; }
         public String TituloOferta { get => tituloOferta; set => tituloOferta = value; }
         public int PrecioOferta { get => precioOferta; set => precioOferta = value; }
-        public DateTime FechaCreacion { get => fechaCreacion; set => fechaCreacion = value; }
-        public DateTime FechaPublicacion { get => fechaPublicacion; set => fechaPublicacion = value; }
-        public DateTime FechaFinalizacion { get => fechaFinalizacion; set => fechaFinalizacion = value; }
+        public String FechaCreacion { get => fechaCreacion; set => fechaCreacion = value; }
+        public String FechaPublicacion { get => fechaPublicacion; set => fechaPublicacion = value; }
+        public String FechaFinalizacion { get => fechaFinalizacion; set => fechaFinalizacion = value; }
         public int CantValoracionNegativas { get => cantValoracionNegativas; set => cantValoracionNegativas = value; }
         public int CantValoracionMedias { get => cantValoracionMedias; set => cantValoracionMedias = value; }
         public int CantValoracionPositivas { get => cantValoracionPositivas; set => cantValoracionPositivas = value; }
         public int CantValoracionTotal { get => cantValoracionTotal; set => cantValoracionTotal = value; }
         public int CantVisitas { get => cantVisitas; set => cantVisitas = value; }
+
+        public override string ToString() {
+            return NombreEmpresa + "," + NumeroLocal + "," + Rubro + "," + NombreProducto + "," +
+                IdOferta + "," + TituloOferta + "," + PrecioOferta + "," +
+                FechaCreacion + "," + FechaPublicacion + "," +
+                FechaFinalizacion + "," + CantValoracionNegativas + "," +
+                CantValoracionMedias + "," + cantValoracionPositivas + "," +
+                CantValoracionTotal + "," + CantVisitas+"\n";
+        }
 
     }
 }
