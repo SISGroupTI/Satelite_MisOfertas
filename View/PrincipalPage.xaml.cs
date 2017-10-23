@@ -259,13 +259,10 @@ namespace View
                 Oferta ofertaIn = new Oferta();
                 ofertaIn.FechaInicio = fechaPublicacion;
                 listaOfertasMasVisitadas = ofertaNeg.listarOfertasMasVisitadasMenuPrincipal(ofertaIn);
-                MessageBox.Show("CARGADA" + listaOfertasMasVisitadas.Count);
-
-
-                SeriesCollection = null;
+                MessageBox.Show("CARGADA: " + listaOfertasMasVisitadas.Count);
 
                 //setCartesianChart();
-                if (listaOfertasMasVisitadas != null)
+                /*if (listaOfertasMasVisitadas != null)
                 {
                     SeriesCollection = new SeriesCollection { };
                     SeriesCollection.Add(new RowSeries
@@ -288,9 +285,10 @@ namespace View
                     Formatter = value => value.ToString("N");
                     DataContext = this;
                 }
-
+                 */
 
             }
+
             /*
             try
             {
@@ -330,7 +328,7 @@ namespace View
             }*/
         }
 
-        
+
     }
 
 

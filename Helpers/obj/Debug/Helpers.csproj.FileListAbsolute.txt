@@ -3,3 +3,11 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Deb
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.dll
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\Microsoft.Win32.TaskScheduler.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\Microsoft.Win32.TaskScheduler.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\de\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\es\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\fr\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\it\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\bin\Debug\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache

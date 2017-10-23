@@ -8,15 +8,8 @@
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              d:DesignHeight="45" d:DesignWidth="300">
     <Grid>
-        <Controls:DropDownButton 
-            VerticalContentAlignment="Center"
-            Name="dropNombreUsuario"
-            DisplayMemberPath="Title" Margin="20,0" Background="{x:Null}">
-            <Controls:DropDownButton.Items>
-                <StackPanel>
-                    <TextBlock Text="Salir"></TextBlock>
-                </StackPanel>
-            </Controls:DropDownButton.Items>
-        </Controls:DropDownButton>
+        <Grid>
+            <ComboBox x:Name="dropUsuarioLogueado" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="194" Height="26" ToolTip="" />
+        </Grid>
     </Grid>
 </UserControl>

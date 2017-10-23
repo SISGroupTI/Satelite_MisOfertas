@@ -484,3 +484,10 @@ D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.layout.xml
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.pdfa.xml
 D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\itext.sign.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\Microsoft.Win32.TaskScheduler.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\Microsoft.Win32.TaskScheduler.xml
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\de\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\es\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\fr\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\it\Microsoft.Win32.TaskScheduler.resources.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\View\bin\Debug\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll

@@ -86,7 +86,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="Local Asignado" Binding="{Binding Local.NumeroLocal}" Width="130"/>
+                <DataGridTextColumn Header="N° Local Asignado" Binding="{Binding Local.NumeroLocal}" Width="130"/>
                 <DataGridTextColumn x:Name="campoCorreo" Header="Correo" Binding="{Binding CorreoCorporativo}" Width="100"/>
                 <DataGridTextColumn Header="Perfil" Binding="{Binding Perfil.NombrePerfil}" Width="100"/>
                 <DataGridTextColumn x:Uid="campoFechaIngreso" Header="Fecha de Ingreso" Binding="{Binding FechaIngreso}" Width="120"/>

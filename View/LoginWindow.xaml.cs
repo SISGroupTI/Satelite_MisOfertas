@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NegLibrary;
 using EntityLibrary;
+using System.Collections.ObjectModel;
 
 namespace View
 {
@@ -24,6 +25,7 @@ namespace View
         TrabajadorNeg trabajadorNeg;
         PrincipalWindow principalWindow;
         UserOptionControl userOptionControl;
+        List<object> listaDatosUsuario;
         public LoginWindow()
         {
             InitializeComponent();
@@ -45,6 +47,10 @@ namespace View
             {
                 userOptionControl = new UserOptionControl();
             }
+            if (listaDatosUsuario == null)
+                listaDatosUsuario = new List<object>();
+
+
             if (txtUsuario.Text.Trim().Length > 0 && txtContrasena.Password.Trim().Length > 0)
             {
 
@@ -54,8 +60,22 @@ namespace View
                 {
                     principalWindow.lblNombreUsuario.Content = txtUsuario.Text.Trim();
                     DateTime fechaActual = DateTime.Now;
-                    principalWindow.lblTimer.Content = fechaActual.ToString("dd MMMM, yyyy");    
-                    userOptionControl.dropNombreUsuario.Content = trabajador.Nombre+" "+trabajador.Apellidos;
+                    principalWindow.lblTimer.Content = fechaActual.ToString("dd MMMM, yyyy");
+                    
+                    String nombreCompleto = trabajador.Nombre + " " + trabajador.Apellidos;
+
+                    var dropTrabajador = new {Nombre =  nombreCompleto};
+                    var dropSesion = new { Nombre = "Cerrar Sesion" };
+                    listaDatosUsuario.Add(dropTrabajador);
+                    listaDatosUsuario.Add(dropSesion);
+
+                    userOptionControl.dropUsuarioLogueado.ItemsSource = listaDatosUsuario;
+                    userOptionControl.dropUsuarioLogueado.DisplayMemberPath = "Nombre";
+                    userOptionControl.dropUsuarioLogueado.SelectedValuePath = "Nombre";
+                    userOptionControl.dropUsuarioLogueado.SelectedIndex = 0;
+
+
+
 
                     switch (trabajador.Perfil.IdPerfil)
                     {

@@ -23,7 +23,7 @@
             <RowDefinition Height="49*"/>
         </Grid.RowDefinitions>
         <Image Margin="10" Source="img/Imagen-ms SinLogo.png"/>
-        <local:UserOptionControl Grid.Column="3" Margin="0,25,0,0" Height="26" VerticalAlignment="Top"/>
+        <local:UserOptionControl Grid.Column="3" Margin="0,11,0,0" Height="55" VerticalAlignment="Top"/>
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="53"/>
         <Label x:Name="lblNombreUsuario" Content="Nombre Usurio" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="91"/>
         <Label Name="lblTimer" Grid.Column="3" HorizontalAlignment="Left" Margin="57,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="154"/>
