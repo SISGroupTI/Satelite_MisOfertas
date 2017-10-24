@@ -40,7 +40,7 @@
             <DatePicker x:Name="dpFechaInicio" Grid.Column="1" Margin="10,5,20,4"/>
             <DatePicker x:Name="dpFechaTermino" Grid.Column="1" Margin="10,5,20,4" Grid.Row="1"/>
         </Grid>
-        <Button x:Name="btnArchivoBI" Content="Generar" HorizontalAlignment="Left" Width="100" Grid.Column="1" Margin="220,5,0,5" Grid.Row="3" Background="#FFCFCFCF"/>
+        <Button x:Name="btnArchivoBI" Content="Generar" HorizontalAlignment="Left" Width="100" Grid.Column="1" Margin="220,5,0,5" Grid.Row="3" Background="#FFCFCFCF" Click="btnArchivoBI_Click"/>
 
     </Grid>
 </Page>

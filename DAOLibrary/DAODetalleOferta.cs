@@ -122,5 +122,35 @@ namespace BusinessLibrary
                 return false;
             }
         }
+
+
+        public Boolean EliminarListDetalle(List<DetalleOferta> listaDetalle)
+        {
+            try
+            {
+                foreach (DetalleOferta detalle in listaDetalle)
+                {
+                    Int32 IdDetalle = detalle.IdDetalle;
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = cone.Obtener();
+                    cmd.CommandText = "SP_ELIMINAR_DETALLE_OFERTA";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("p_ID_DETALLE_OFERTA", OracleDbType.Int32).Value = IdDetalle;
+                    if (cone.Obtener().State == ConnectionState.Closed)
+                    {
+                        cone.Obtener().Open();
+                    }
+                    cmd.ExecuteNonQuery();
+                    cone.Obtener().Close();
+                }
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return false;
+            }
+        }
     }
 }

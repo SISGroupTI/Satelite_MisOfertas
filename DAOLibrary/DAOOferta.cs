@@ -18,7 +18,7 @@ namespace BusinessLibrary
                 cone = new Conexion();
         }
 
-        public Boolean RegistrarOferta(Oferta oferta) {
+        public Oferta RegistrarOferta(Oferta oferta) {
             try
             {
 
@@ -38,20 +38,23 @@ namespace BusinessLibrary
                 cmd.Parameters.Add("p_DESCRIPCION_OFERTA", OracleDbType.Varchar2).Value = oferta.DescripcionOferta;
                 cmd.Parameters.Add("p_CONDICIONES", OracleDbType.Varchar2).Value = oferta.Condiciones;
                 cmd.Parameters.Add("p_IS_DISPONIBLE", OracleDbType.Int16).Value = oferta.IsDisponible;
+                cmd.Parameters.Add("p_out_ID_OFERTA", OracleDbType.Int32).Direction = ParameterDirection.Output;
                 if (cone.Obtener().State == ConnectionState.Closed)
                 {
 
                     cone.Obtener().Open();
                 }
+
                 cmd.ExecuteNonQuery();
+                oferta.IdOferta = Int32.Parse(cmd.Parameters["p_out_ID_OFERTA"].Value.ToString());
                 cone.Obtener().Close();
-                return true;
+                return oferta;
 
             }
             catch (Exception e)
             {
                 cone.Obtener().Close();
-                return false;
+                return null;
             }
         }
         public Oferta BuscarOferta(Oferta ofertaInput)
@@ -174,7 +177,7 @@ namespace BusinessLibrary
                 return false;
             }
         }
-        public Boolean ModificarOferta(Oferta oferta)
+        public Oferta ModificarOferta(Oferta oferta)
         {
             try
             {
@@ -198,13 +201,167 @@ namespace BusinessLibrary
                 }
                 cmd.ExecuteNonQuery();
                 cone.Obtener().Close();
-                return true;
+                return oferta;
 
             }
             catch (Exception e)
             {
                 cone.Obtener().Close();
-                return false;
+                return null;
+            }
+        }
+
+        public List<Oferta> listarOfertasMasVisitadas()
+        {
+            //metodo para generar reporete de visitas
+            try
+            {
+                Oferta oferta;
+                List<Oferta> listaOfertas = new List<Oferta>();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_OFT_MAS_VISITADAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    oferta = new Oferta();
+                    oferta.IdOferta = dr.GetInt32(0);
+                    oferta.TituloOferta = dr.GetString(1);
+                    oferta.Visitas = dr.GetInt32(2);
+                    listaOfertas.Add(oferta);
+                }
+
+                cone.Obtener().Close();
+                return listaOfertas;
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return null;
+            }
+        }
+
+
+        public List<Oferta> listarOfertasMasVisitadasMenuPrincipal(Oferta ofertaInput)
+        {
+            //metodo para generar el grafico de ofertas mas visitadas en la pagina principal
+            try
+            {
+                Oferta oferta;
+                List<Oferta> listaOfertas = new List<Oferta>();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_OFT_MASVISIT_MENU";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_FECHA_PUBLICACION", OracleDbType.Date).Value = ofertaInput.FechaInicio;
+                cmd.Parameters.Add(new OracleParameter("p_CURSOR", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    oferta = new Oferta();
+                    oferta.IdOferta = dr.GetInt32(0);
+                    oferta.TituloOferta = dr.GetString(1);
+                    oferta.CodigoOferta = dr.GetInt32(2);
+                    oferta.Visitas = dr.GetInt32(3);
+                    listaOfertas.Add(oferta);
+                }
+
+                cone.Obtener().Close();
+                return listaOfertas;
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return null;
+            }
+        }
+        
+        public int cantidadTotalOfertas()
+        {
+            try
+            {
+                
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_CANTTOTAL_OFERTAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                int total = 0;
+                while (dr.Read())
+                {
+                    total = dr.GetInt32(0);
+                }
+                cone.Obtener().Close();
+                return total;
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return 0;
+            }
+        }
+
+        public List<OfertaBI> listaOfertasBI(DateTime? fechaCreacionInicio, DateTime? fechaCreacionTermino)
+        {
+            try
+            {
+                OfertaBI ofertaBI;
+                List<OfertaBI> listaOfertasBI = new List<OfertaBI>();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_OFERTAS_BI";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_FECHA_CREACION_INICIO", OracleDbType.Date).Value = fechaCreacionInicio;
+                cmd.Parameters.Add("p_FECHA_CREACION_TERMINO", OracleDbType.Date).Value = fechaCreacionTermino;
+                cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ofertaBI = new OfertaBI();
+                    ofertaBI.NombreEmpresa = dr.GetString(0);
+                    ofertaBI.NumeroLocal = dr.GetInt32(1);
+                    ofertaBI.Rubro = dr.GetString(2);
+                    ofertaBI.IdOferta = dr.GetInt32(3);
+                    ofertaBI.TituloOferta = dr.GetString(5);
+                    ofertaBI.PrecioOferta = dr.GetInt32(6);
+                    ofertaBI.FechaCreacion = dr.GetString(7);
+                    ofertaBI.FechaPublicacion = dr.GetString(8);
+                    ofertaBI.FechaFinalizacion = dr.GetString(9);
+                    ofertaBI.CantValoracionNegativas = dr.GetInt32(10);
+                    ofertaBI.CantValoracionMedias = dr.GetInt32(11);
+                    ofertaBI.CantValoracionPositivas = dr.GetInt32(12);
+                    ofertaBI.CantValoracionTotal = dr.GetInt32(13);
+                    ofertaBI.NombreProducto = dr.GetString(14);
+                    ofertaBI.CantVisitas = dr.GetInt32(15);
+                    listaOfertasBI.Add(ofertaBI);
+                }
+
+                cone.Obtener().Close();
+                return listaOfertasBI;
+            }
+            catch (Exception e)
+            {
+                cone.Obtener().Close();
+                return null;
             }
         }
     }

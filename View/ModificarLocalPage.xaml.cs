@@ -86,11 +86,11 @@ namespace View
             if (res)
             {
                 cargarComboBoxEmpresa(local);
-                MessageBox.Show("Modificado Correctamente", "Modificar Local");
+                MessageBox.Show("Local modificado exitosamente", "Modificar registro - Local");
             }
             else
             {
-                MessageBox.Show("No se Modifico", "Modificar Local");
+                MessageBox.Show("Se ha generado un inconveniente al momento de modificar este registro \n Intente nuevamente", "Modificar registro - Local");
             }
         }
     }

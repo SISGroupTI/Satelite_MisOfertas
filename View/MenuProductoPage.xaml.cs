@@ -24,19 +24,21 @@ namespace View
     {
         RegistrarProductoPage registrarProductoPage;
         ProductoNeg productoNeg;
+        List<Producto> listaProductos;
+
         public MenuProductoPage()
         {
             InitializeComponent();
             if (productoNeg == null)
                 productoNeg = new ProductoNeg();
+            if(listaProductos==null)
+                listaProductos = productoNeg.listarProducto();
             cargarProductos();
         }
 
         private void cargarProductos()
-        {
-            List<Producto> productos = new List<Producto>();
-            productos = productoNeg.listarProducto();
-            dtProducto.ItemsSource = productos;
+        {  
+            dtProducto.ItemsSource = listaProductos;
             dtProducto.Items.Refresh();
         }
 
@@ -53,7 +55,7 @@ namespace View
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Producto", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Esta seguro de eliminar este registro?", "Eliminar registro - Producto", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 // Se reliza la misma accion de rescatar al item seleccionado del data grid y parcearlo a Local
@@ -62,14 +64,11 @@ namespace View
                 Boolean res = productoNeg.EliminarProducto(producto);
                 if (res)
                 {
-                    System.Windows.MessageBox.Show("Producto Eliminado", "Eliminar Producto");
+                    System.Windows.MessageBox.Show("Producto eliminado exitosamente", "Eliminar registro - Producto");
                     cargarProductos();
                 }
             }
-            else if (dialogResult == DialogResult.No)
-            {
-
-            }
+            
         }
 
         private void btnGoEditar_Click(object sender, RoutedEventArgs e)
@@ -84,6 +83,19 @@ namespace View
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             goToRegistrar();
+        }
+
+        private void txtBuscarProducto_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarProducto.Text.Length>0)
+            {
+                dtProducto.ItemsSource = listaProductos.Where(producto=>producto.Descripcion.Contains(txtBuscarProducto.Text));
+                dtProducto.Items.Refresh();
+            }
+            else
+            {
+                cargarProductos();
+            }
         }
     }
 }

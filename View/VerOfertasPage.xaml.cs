@@ -22,18 +22,24 @@ namespace View
     public partial class VerOfertasPage : Page
     {
         OfertaNeg ofertaNeg;
+        ImagenesOfertaNeg imagenesOfertaNeg;
+        List<Oferta> listaOfertas;
         public VerOfertasPage()
         {
             InitializeComponent();
             if (ofertaNeg == null)
                 ofertaNeg = new OfertaNeg();
+            if (imagenesOfertaNeg == null)
+                imagenesOfertaNeg = new ImagenesOfertaNeg();
+            if(listaOfertas==null)
+                listaOfertas = ofertaNeg.ListarOfertas();
             caragarDtOfertas();
             
         }
 
         private void caragarDtOfertas()
         {
-            dtOfertas.ItemsSource = ofertaNeg.ListarOfertas();
+            dtOfertas.ItemsSource = listaOfertas;//ofertaNeg.ListarOfertas();
             dtOfertas.Items.Refresh();
         }
 
@@ -41,8 +47,29 @@ namespace View
         {
             Oferta oferta = (Oferta)dtOfertas.SelectedItems[0];
             VerOfertaDetallePage verOferta = new VerOfertaDetallePage();
-            verOferta.ObtenerOferta(oferta);
+            List<ImagenOferta> listaImagenes = imagenesOfertaNeg.listarImagenesOfertaPorOferta(oferta);
+            ValoracionOferta valoracionOferta = new ValoracionOfertaNeg().listarCantValoracionesPorOferta(oferta.IdOferta);
+            verOferta.ObtenerOferta(oferta, listaImagenes,valoracionOferta);
             NavigationService.Navigate(verOferta);
+        }
+
+        private void TextBox_KeyDown_BuscarOferta(object sender, KeyEventArgs e)
+        {
+            
+           
+        }
+
+        private void txtBuscarOfertas_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtBuscarOfertas.Text.Length > 0)
+            {
+                dtOfertas.ItemsSource = listaOfertas.Where(oferta => oferta.TituloOferta.Contains(txtBuscarOfertas.Text));
+                dtOfertas.Items.Refresh();
+            }
+            else
+            {
+                caragarDtOfertas();
+            }
         }
     }
 }

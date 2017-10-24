@@ -2,6 +2,7 @@
 using DAOLibrary;
 using EntityLibrary;
 using System;
+using Helpers;
 using BusinessLibrary;
 using System.Text;
 using System.Linq;
@@ -30,28 +31,37 @@ namespace NegLibrary
             return daoTrabajador.ListarTrabajadores();
         }
 
-        public long validarCredenciales(String usuario, String contrasena)
+        public Trabajador validarCredenciales(String usuario, String contrasena)
         {
             Trabajador trabajador = new Trabajador();
             trabajador.NombreUsuario = usuario;
-            trabajador.Contrasena = contrasena;
             DAOTrabajador daoTrabajador = new DAOTrabajador();
             trabajador = daoTrabajador.validarTrabajador(trabajador);
             if (trabajador != null)
             {
                 //Devuelve el perfil del trabajador para la validacion del 
                 //LoginWindows.xaml.cs
-                try {
-                    long idPerfil = trabajador.Perfil.IdPerfil;
-                    return idPerfil;
-                } catch {
-                    return 0;
+                if (PasswordStorage.VerifyPassword(contrasena,trabajador.Contrasena))
+                {
+                    try
+                    {
+                        //long idPerfil = trabajador.Perfil.IdPerfil;
+                        //return idPerfil;
+                        return trabajador;
+                    }
+                    catch
+                    {
+                        return null;
+                    }
                 }
-                
+                else
+                {
+                    return null;
+                }
             }
             else
             {
-                return 0;
+                return null;
             }
         }
 
@@ -72,6 +82,11 @@ namespace NegLibrary
             trabajador.Local = local;
             trabajador.Perfil = perfil;
             return daoTrabajador.ModificarTrabajador(trabajador);
+        }
+
+        public int cantidadTotalTrabajadores()
+        {
+            return daoTrabajador.cantidadTotalTrabajadores();
         }
     }
 }

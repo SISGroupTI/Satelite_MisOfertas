@@ -25,6 +25,8 @@ namespace View
         RegistrarOfertaPage registrarOfertaPage;
         OfertaNeg ofertaNeg;
         DetalleOfertaNeg detalleOfertaNeg;
+        ImagenesOfertaNeg imagenesOfertaNeg;
+        List<Oferta> listaOfertas;
         public MenuOfertaPage()
         {
             InitializeComponent();
@@ -32,12 +34,16 @@ namespace View
                 ofertaNeg = new OfertaNeg();
             if (detalleOfertaNeg == null)
                 detalleOfertaNeg = new DetalleOfertaNeg();
+            if (imagenesOfertaNeg == null)
+                imagenesOfertaNeg = new ImagenesOfertaNeg();
+            if(listaOfertas==null)
+                listaOfertas= ofertaNeg.ListarOfertas();
             cargarDtOfertas();
         }
 
         private void cargarDtOfertas()
         {
-            dtOfertas.ItemsSource = ofertaNeg.ListarOfertas();
+            dtOfertas.ItemsSource = listaOfertas;
             dtOfertas.Items.Refresh();
         }
 
@@ -91,8 +97,22 @@ namespace View
             //DetalleOferta detalle = detalleOfertaNeg.
             ModificarOfertaPage modificarOfertaPage = new ModificarOfertaPage();
             List<DetalleOferta> lista= detalleOfertaNeg.BuscarDetalleOferta(oferta);
-            modificarOfertaPage.obtenerDatos(lista,oferta);
+            List<ImagenOferta> listaImagenes = imagenesOfertaNeg.listarImagenesOfertaPorOferta(oferta);
+            modificarOfertaPage.obtenerDatos(lista, oferta, listaImagenes);
             NavigationService.Navigate(modificarOfertaPage);
+        }
+
+        private void txtBuscarOfertas_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarOfertas.Text.Length>0)
+            {
+                dtOfertas.ItemsSource = listaOfertas.Where(oferta=>oferta.TituloOferta.Contains(txtBuscarOfertas.Text));
+                dtOfertas.Items.Refresh();
+            }
+            else
+            {
+                cargarDtOfertas();
+            }
         }
     }
 }

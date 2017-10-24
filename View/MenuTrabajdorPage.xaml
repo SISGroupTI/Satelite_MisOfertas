@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Margin="10,10,153,10" Grid.Column="2" Grid.ColumnSpan="2">
-            <Label Content="Administrador de Trabajadores" FontSize="36" FontWeight="Bold"/>
+            <Label Content="Administrador de Trabajadores" FontSize="36" FontWeight="Bold" Margin="0,0,-78,0"/>
         </StackPanel>
         <Image Margin="10" Source="img/user-ic.png" Grid.Column="1"/>
         <Button x:Name="btnAgregarTrabajador"
@@ -40,6 +40,8 @@
         </Button>
         <TextBox
                 Controls:TextBoxHelper.ClearTextButton="True"
+            Name="txtBuscarTrabajador"
+            KeyUp="txtBuscarTrabajador_KeyUp"
                 Controls:TextBoxHelper.Watermark="Nombre Trabajador"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 
@@ -54,12 +56,39 @@
                   CanUserDeleteRows="False"
                   CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="campoUsurio"  Header="NombreUsuario" Binding="{Binding NombreUsuario}" Width="100"/>
-                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding Nombre}" Width="100"/>
-                <DataGridTextColumn x:Name="campoRut" Header="Rut" Binding="{Binding Rut}" Width="100"/>
-                <DataGridTextColumn Header="Local Asignado" Binding="{Binding Local.IdLocal}" Width="130"/>
+                <DataGridTextColumn x:Name="campoUsurio"  Header="Usuario" Binding="{Binding NombreUsuario}" Width="100"/>
+                <DataGridTemplateColumn Width="190">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="NOMBRE"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                 <Run Text="{Binding Nombre}" />
+                                 <Run Text=" " /> <!-- space -->
+                                 <Run Text="{Binding Apellidos}" />
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="RUT"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                 <Run Text="{Binding Rut}" />
+                                 <Run Text="-" /> <!-- space -->
+                                 <Run Text="{Binding Dv}" />
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="N° Local Asignado" Binding="{Binding Local.NumeroLocal}" Width="130"/>
                 <DataGridTextColumn x:Name="campoCorreo" Header="Correo" Binding="{Binding CorreoCorporativo}" Width="100"/>
-                <DataGridTextColumn Header="Perfil" Binding="{Binding Perfil.IdPerfil}" Width="100"/>
+                <DataGridTextColumn Header="Perfil" Binding="{Binding Perfil.NombrePerfil}" Width="100"/>
                 <DataGridTextColumn x:Uid="campoFechaIngreso" Header="Fecha de Ingreso" Binding="{Binding FechaIngreso}" Width="120"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>

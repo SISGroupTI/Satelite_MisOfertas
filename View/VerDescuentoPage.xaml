@@ -32,25 +32,53 @@
         </StackPanel>
         <Image Margin="10" Source="img/oferta-ic.png" Grid.Column="1"/>
         <TextBox 
+                Name="txtBuscarDescuentos"
+            KeyUp="txtBuscarDescuentos_KeyUp"
                 Controls:TextBoxHelper.ClearTextButton="True"
                 Controls:TextBoxHelper.Watermark="Buscar Descuentos"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 
         </TextBox>
         <TextBlock TextAlignment="Center" Margin="10" TextWrapping="Wrap" Text="Buscar" FontSize="18" Grid.Column="1" Grid.Row="2"/>
-        <TextBlock Grid.Column="2" Margin="355,10,10,10" Grid.Row="2" TextWrapping="Wrap" Text="Ordenar por" FontSize="18"/>
-        <ComboBox Grid.Column="3" Margin="10,10,10,6" Grid.Row="2" Width="140"/>
-        <ComboBox Grid.Column="4" Margin="11,10,10,6" Grid.Row="2" Width="140"/>
-        <DataGrid Grid.ColumnSpan="4" Grid.Column="1" Margin="10" Grid.Row="3">
+        <DataGrid x:Name="dtDescuentos" Grid.ColumnSpan="4" Grid.Column="1" Margin="10" Grid.Row="3"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserReorderColumns="False"
+                  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Codigo" Binding="{Binding CodigoDescuento}" Width="70"></DataGridTextColumn>
-                <DataGridTextColumn Header="Consumidor" Binding="{Binding Consumidor}" Width="190"></DataGridTextColumn>
-                <DataGridTextColumn Header="Rubros" Binding="{Binding Rubros}" Width="190"></DataGridTextColumn>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding IdDescuento}" Width="70"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="190">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="Consumidor"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                 <Run Text="{Binding Consumidor.Nombre}" />
+                                 <Run Text=" " /> <!-- space -->
+                                 <Run Text="{Binding Consumidor.Apellidos}" />
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Rubros" Binding="{Binding Rubros}" Width="220"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha Emision" Binding="{Binding FechaEmision}" Width="110"></DataGridTextColumn>
-                <DataGridTextColumn Header="Puntos" Binding="{Binding Puntos}" Width="80"></DataGridTextColumn>
-                <DataGridTextColumn Header="Descuento" Binding="{Binding Descuento}" Width="90"></DataGridTextColumn>
+                <DataGridTextColumn Header="Puntos" Binding="{Binding Puntos}" Width="70"></DataGridTextColumn>
+                <DataGridTextColumn Header="Descuento" Binding="{Binding Descuentos}" Width="90"></DataGridTextColumn>
                 <DataGridTextColumn Header="Tope" Binding="{Binding Tope}" Width="70"></DataGridTextColumn>
-                <DataGridTextColumn Header="Ver" Width="60"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock  Text="Ver"  />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnGoVerDescuento" Click="btnGoVerDescuento" Width="40" Height="40" >
+                                <Image Source="img/if_Find01_928435.png" Stretch="Fill"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Separator Grid.Column="2" Margin="10,2,0,30" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0" Grid.Row="1"/>

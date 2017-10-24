@@ -24,17 +24,20 @@ namespace View
     {
         RegistrarLocalPage registrarLocalPage;
         LocalNeg localNeg;
+        List<Local> listaLocales;
         public MenuLocalPage()
         {
             InitializeComponent();
             if (localNeg == null)
                 localNeg = new LocalNeg();
+            if(listaLocales==null)
+                listaLocales = localNeg.ListarLocales(); 
             cargarDataGridLocal();
         }
 
         private void cargarDataGridLocal()
         {
-            dtLocal.ItemsSource = localNeg.ListarLocales();
+            dtLocal.ItemsSource = listaLocales;
             dtLocal.Items.Refresh();
         }
 
@@ -75,7 +78,7 @@ namespace View
              * Se crea un DialogResult para alojar la respuesta del MessageBox 
              * que en este caso se seteo el MessageBoxButtons con YesNo (ctrl+espacio) para mas opc 
              * */
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Empresa", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Esta seguro de eliminar el registro seleccionado? \n Eliminar un local desvinculará y eliminará automaticamente todas las ofertas asociadas a este", "Eliminar registro - Local", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 // Se reliza la misma accion de rescatar al item seleccionado del data grid y parcearlo a Local
@@ -84,19 +87,29 @@ namespace View
                 Boolean res = localNeg.EliminarLocal(local);
                 if (res)
                 {
-                    System.Windows.MessageBox.Show("Local Eliminada", "Eliminar Local");
+                    System.Windows.MessageBox.Show("Registro eliminado exitosamente", "Eliminar registro - Local");
                     cargarDataGridLocal();
                 }
             }
-            else if (dialogResult == DialogResult.No)
-            {
-
-            }
+            
         }
         
         private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             goToEditar();
+        }
+
+        private void txtBuscarLocal_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtBuscarLocal.Text.Length>0)
+            {
+                dtLocal.ItemsSource = listaLocales.Where(local=>local.Direccion.Contains(txtBuscarLocal.Text));
+                dtLocal.Items.Refresh();
+            }
+            else
+            {
+                cargarDataGridLocal();
+            }
         }
     }
 }

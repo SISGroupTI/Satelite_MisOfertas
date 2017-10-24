@@ -39,17 +39,28 @@ namespace NegLibrary
                 // Si el registro se realizo procede a la busqueda de la empresa antes ingresada
                 if (registrado)
                 {
-                    //Se busca la empresa y se devuelve a esta
-                    empresa = daoEmpresa.BuscarEmpresaRut(empresa); 
-                    //Si la empresa es distinta a nula la sentencia se realizo correctamente
-                    //y podemos proceder a insertar los locales
-                    if (empresa != null)
+                    if (localNeg.Locales.Count>0)
                     {
-                        return daoLocal.RegistrarLocal(empresa, localNeg.Locales) == true ? true : false;
+                        //Se busca la empresa y se devuelve a esta
+                        empresa = daoEmpresa.BuscarEmpresaRut(empresa);
+                        //Si la empresa es distinta a nula la sentencia se realizo correctamente
+                        //y podemos proceder a insertar los locales
+                        if (empresa != null)
+                        {
+                            return daoLocal.RegistrarLocal(empresa, localNeg.Locales) == true ? true : false;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
-                    else { return false; }
+                    return true;
+                    
                 }
-                else { return false; }
+                else
+                {
+                    return false;
+                }
             }
             catch(Exception e)
             {

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NegLibrary;
+using EntityLibrary;
+using System.Collections.ObjectModel;
+
 namespace View
 {
     /// <summary>
@@ -21,9 +24,13 @@ namespace View
     {
         TrabajadorNeg trabajadorNeg;
         PrincipalWindow principalWindow;
+        UserOptionControl userOptionControl;
+        List<object> listaDatosUsuario;
         public LoginWindow()
         {
             InitializeComponent();
+            txtUsuario.Text = "desarrollador";
+            txtContrasena.Password = "root";
         }
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
@@ -36,61 +43,98 @@ namespace View
             {
                 principalWindow = new PrincipalWindow();
             }
+            if (userOptionControl==null)
+            {
+                userOptionControl = new UserOptionControl();
+            }
+            if (listaDatosUsuario == null)
+                listaDatosUsuario = new List<object>();
+
+
             if (txtUsuario.Text.Trim().Length > 0 && txtContrasena.Password.Trim().Length > 0)
             {
-                principalWindow.lblNombreUsuario.Content = txtUsuario.Text.Trim();
-                switch (trabajadorNeg.validarCredenciales(txtUsuario.Text, txtContrasena.Password.Trim()))
-                {
-                    case 2:
-                        principalWindow.menu_mantenedores.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
-                        principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
-                        principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_reporte_valoracion.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_archivos.Visibility = Visibility.Collapsed;
-                        MenuReporteTiendaPage menuReporteTiendaPage = new MenuReporteTiendaPage();
-                        principalWindow.setNavigationService(menuReporteTiendaPage);
-                        principalWindow.Show();
-                        this.Close();
-                        break;
-                    case 3:
-                        principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
-                        principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
-                        principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
-                        MenuBIPage menuBIPage = new MenuBIPage();
-                        principalWindow.setNavigationService(menuBIPage);
-                        principalWindow.Show();
-                        this.Close();
-                        break;
-                    case 4:
-                        PrincipalPage principalPage = new PrincipalPage();
-                        principalWindow.menu_empresa.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_local.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_trabajor.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_reporte_tienda.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
-                        principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
-                        principalWindow.menu_archivos.Visibility = Visibility.Collapsed;
-                        principalWindow.separador1.Visibility = Visibility.Collapsed;
-                        principalWindow.separador2.Visibility = Visibility.Collapsed;
-                        principalWindow.setNavigationService(principalPage);
-                        principalWindow.Show();
-                        this.Close();
-                        break;
-                    case 1:
-                        PrincipalPage principal = new PrincipalPage();
-                        principalWindow.setNavigationService(principal);
-                        principalWindow.Show();
-                        this.Close();
-                        break;
-                    default:
-                        MessageBox.Show("Credenciales invalidas","Login");
-                        break;
 
+                Trabajador trabajador = trabajadorNeg.validarCredenciales(txtUsuario.Text, txtContrasena.Password.Trim());
+
+                if (trabajador != null)
+                {
+                    principalWindow.lblNombreUsuario.Content = txtUsuario.Text.Trim();
+                    DateTime fechaActual = DateTime.Now;
+                    principalWindow.lblTimer.Content = fechaActual.ToString("dd MMMM, yyyy");
+                    
+                    String nombreCompleto = trabajador.Nombre + " " + trabajador.Apellidos;
+
+                    var dropTrabajador = new {Nombre =  nombreCompleto};
+                    var dropSesion = new { Nombre = "Cerrar Sesion" };
+                    listaDatosUsuario.Add(dropTrabajador);
+                    listaDatosUsuario.Add(dropSesion);
+
+                    userOptionControl.dropUsuarioLogueado.ItemsSource = listaDatosUsuario;
+                    userOptionControl.dropUsuarioLogueado.DisplayMemberPath = "Nombre";
+                    userOptionControl.dropUsuarioLogueado.SelectedValuePath = "Nombre";
+                    userOptionControl.dropUsuarioLogueado.SelectedIndex = 0;
+
+
+
+
+                    switch (trabajador.Perfil.IdPerfil)
+                    {
+                        case 2:
+                            principalWindow.menu_mantenedores.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
+                            principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
+                            principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_reporte_valoracion.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_archivos.Visibility = Visibility.Collapsed;
+                            MenuReporteTiendaPage menuReporteTiendaPage = new MenuReporteTiendaPage();
+                            principalWindow.setNavigationService(menuReporteTiendaPage);
+                            principalWindow.Show();
+                            this.Close();
+                            break;
+                        case 3:
+                            principalWindow.menu_inicio.Visibility = Visibility.Collapsed;
+                            principalWindow.ver_oferta.Visibility = Visibility.Collapsed;
+                            //principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
+                            MenuBIPage menuBIPage = new MenuBIPage();
+                            principalWindow.setNavigationService(menuBIPage);
+                            principalWindow.Show();
+                            this.Close();
+                            break;
+                        case 4:
+                            PrincipalPage principalPage = new PrincipalPage();
+                            principalWindow.menu_empresa.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_local.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_trabajor.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_reporte_tienda.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
+                            principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
+                            principalWindow.menu_archivos.Visibility = Visibility.Collapsed;
+                            principalWindow.separador1.Visibility = Visibility.Collapsed;
+                            principalWindow.separador2.Visibility = Visibility.Collapsed;
+                            principalWindow.setNavigationService(principalPage);
+                            principalWindow.Show();
+                            this.Close();
+                            break;
+                        case 1:
+                            PrincipalPage principal = new PrincipalPage();
+                            principalWindow.setNavigationService(principal);
+                            principalWindow.Show();
+                            this.Close();
+                            break;
+                        default:
+                            MessageBox.Show("Credenciales invalidas", "Login - Mis Ofertas");
+                            break;
+
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Credenciales invalidas", "Login - Mis Ofertas");
+                }
+                
             }
-            else { MessageBox.Show("Ingrese campos", "Login"); }
+            else { MessageBox.Show("Complete los campos solicitados", "Login - Mis Ofertas"); }
             
         }
     }

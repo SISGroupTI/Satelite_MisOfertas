@@ -63,7 +63,7 @@ namespace View
             try {
                 if (CamposNull())
                 {
-                    MessageBox.Show("Todos los campos son requeridos", "Ingreso Personal");
+                    MessageBox.Show("Para ingresar un nuevo registro Trabajador, es necesario de completar todos los campos requeridos", "Ingreso de registro - Trabajador");
                 }
                 else
                 {
@@ -91,14 +91,14 @@ namespace View
                         camposTrabajador.txtCorreo.Text="";
                         camposTrabajador.txtNombre.Text="";
                         camposTrabajador.txtNombreUsuario.Text="";
-                        MessageBox.Show("Registro Exitoso", "Ingreso Personal");
+                        MessageBox.Show("Registro ingresado exitosamente al sistema", "Ingreso de registro - Trabajador");
                     }
-                    else { MessageBox.Show("Registro no realizado", "Ingreso Personal"); }
+                    else { MessageBox.Show("Se ha generado un inconveniente al momento de ingresar el registro\n Intente nuevamente", "Ingreso de registro - Trabajador"); }
                 }
             }
             catch
             {
-                MessageBox.Show("Error Interno", "Ingreso Personal");
+                MessageBox.Show("Se ha generado un inconveniente al momento de ingresar el registro\n Intente nuevamente", "Ingreso de registro - Trabajador");
             }
 
         }

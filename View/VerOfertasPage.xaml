@@ -33,6 +33,9 @@
         <Image Margin="10" Source="img/oferta-ic.png" Grid.Column="1"/>
         <TextBox 
                 Controls:TextBoxHelper.ClearTextButton="True"
+            KeyDown="TextBox_KeyDown_BuscarOferta"
+            KeyUp="txtBuscarOfertas_KeyUp"
+            Name="txtBuscarOfertas"
                 Controls:TextBoxHelper.Watermark="Buscar Oferta"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 
@@ -49,7 +52,7 @@
                   >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Codigo" Binding="{Binding CodigoOferta}" Width="70"></DataGridTextColumn>
-                <DataGridTextColumn Header="Titulo" Binding="{Binding TituloOferta}" Width="190"></DataGridTextColumn>
+                <DataGridTextColumn Header="Titulo" Binding="{Binding TituloOferta}" Width="270"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha creacion" Binding="{Binding FechaCreacion}" Width="120"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha Publicacion" Binding="{Binding FechaInicio}" Width="140"></DataGridTextColumn>
                 <DataGridTextColumn Header="Fecha Finalizacion" Binding="{Binding FechaFinalizacion}" Width="150"></DataGridTextColumn>

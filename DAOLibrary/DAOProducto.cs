@@ -281,6 +281,37 @@ namespace BusinessLibrary
                 return null;
             }
         }
+
+        public int cantidadTotalProductos()
+        {
+            try
+            {
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = cone.Obtener();
+                cmd.CommandText = "SP_SELECT_CANTTOTAL_PRODUCTOS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                if (cone.Obtener().State.Equals(ConnectionState.Closed))
+                {
+                    cone.Obtener().Open();
+                }
+                OracleDataReader dr = cmd.ExecuteReader();
+                int total = 0;
+                while (dr.Read())
+                {
+                    total = dr.GetInt32(0);
+                }
+                cone.Obtener().Close();
+                return total;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+
     }
 }
 

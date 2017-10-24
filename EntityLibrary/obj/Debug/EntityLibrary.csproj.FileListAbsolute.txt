@@ -22,3 +22,9 @@ C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csprojRes
 C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
 C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.dll
 C:\ultimoSis\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\EntityLibrary\bin\Debug\EntityLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\EntityLibrary\bin\Debug\EntityLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csproj.CoreCompileInputs.cache
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.dll
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.pdb
+D:\Portafolio 2017\MisOfertasEscritorio\Seba\Satelite_MisOfertas\EntityLibrary\obj\Debug\EntityLibrary.csprojResolveAssemblyReference.cache

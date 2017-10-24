@@ -20,7 +20,7 @@ namespace NegLibrary
                 daoOferta = new DAOOferta();
         }
 
-        public Boolean RegistrarOferta(String descripcion,String condiciones,Rubro rubro,Local local,Estado estado,DateTime fechaFinalizacion,DateTime fechaPublicacion,String titulo,int codigoOferta,int precio,int isVisible,int isDiponible)
+        public Oferta RegistrarOferta(String descripcion,String condiciones,Rubro rubro,Local local,Estado estado,DateTime fechaFinalizacion,DateTime fechaPublicacion,String titulo,int codigoOferta,int precio,int isVisible,int isDiponible)
         {
             Oferta oferta = new Oferta();
             oferta.CodigoOferta = codigoOferta;
@@ -61,7 +61,7 @@ namespace NegLibrary
         {
             return daoOferta.EliminarOferta(oferta);
         }
-        public Boolean ModificarOferta(String descripcion, String condiciones, Rubro rubro, Local local, Estado estado, DateTime fechaFinalizacion, DateTime fechaPublicacion, String titulo, int codigoOferta, int precio, int isDiponible)
+        public Oferta ModificarOferta(String descripcion, String condiciones, Rubro rubro, Local local, Estado estado, DateTime fechaFinalizacion, DateTime fechaPublicacion, String titulo, int codigoOferta, int precio, int isDiponible)
         {
             Oferta oferta = new Oferta();
             oferta.CodigoOferta = codigoOferta;
@@ -78,6 +78,25 @@ namespace NegLibrary
             oferta.IsDisponible = isDiponible;
             oferta.IdOferta = Oferta.IdOferta;
             return daoOferta.ModificarOferta(oferta);
+        }
+
+        public List<Oferta> listarOfertasMasVisitadas()
+        {
+            return daoOferta.listarOfertasMasVisitadas();
+        }
+
+        public List<Oferta> listarOfertasMasVisitadasMenuPrincipal(Oferta oferta)
+        {
+            return daoOferta.listarOfertasMasVisitadasMenuPrincipal(oferta);
+        }
+
+        public int cantidadTotalOfertas()
+        {
+            return daoOferta.cantidadTotalOfertas();
+        }
+        public List<OfertaBI> listaOfertasBI(DateTime? fechaCreacionInicio, DateTime? fechaCreacionTermino)
+        {
+            return daoOferta.listaOfertasBI(fechaCreacionInicio, fechaCreacionTermino);
         }
     }
 }

@@ -118,7 +118,7 @@ namespace View
             resLocal= localNeg.EliminarLocales();
             if (resLocal)
             {
-                System.Windows.MessageBox.Show("Empresa Modificada", "Modificar Empresa");
+                System.Windows.MessageBox.Show("Empresa modificada exitosamente", "Modificar registro - Empresa");
                 if (resLocal)
                 {
                     cargarDataGridLocales(empresa);
@@ -131,7 +131,7 @@ namespace View
                 controlesLocal.txtNumeroLocal.Text.ToString().Equals("")))
             {
 
-                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Añadir Local", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Esta seguro de añadir este registro a la lista actual de locales? \n Este será añadido a los locales asociados", "Añadir registro Local a Empresa", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     Local local = new Local();
@@ -142,7 +142,7 @@ namespace View
                     {
                         controlesLocal.txtNumeroLocal.Text = "";
                         controlesLocal.txtDireccionLocal.Text="";
-                        System.Windows.MessageBox.Show("Local Ingresada", "Ingresar Local");
+                        System.Windows.MessageBox.Show("Local ingresado exitosamente", "Ingreso de registro - Local");
                         cargarDataGridLocales(empresa);
                     }
                 }
@@ -151,7 +151,7 @@ namespace View
 
                 }
             }
-            else { System.Windows.MessageBox.Show("Ingrese los campos"); }
+            else { System.Windows.MessageBox.Show("Para agregar un registro local a la lista actual \n se requiere de completar los campos requeridos", "Alerta!"); }
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -170,11 +170,11 @@ namespace View
                         listaAux.Add(loc);
                     }
                 }
-                System.Windows.MessageBox.Show("Para confirma presione\nModificar Empresa");
+                System.Windows.MessageBox.Show("Local eliminado exitosamente de la lista actual de asociados", "Eliminacion de Local asociado - Empresa");
                 dtLocal.ItemsSource = listaAux;
                 dtLocal.Items.Refresh();
             }
-            else { System.Windows.MessageBox.Show("No sepudo Eliminar"); }
+            else { System.Windows.MessageBox.Show("Se ha generado un inconveniente al momento de eliminar el registro seleccionado\n Intente nuevamente", "Eliminacion de Local asociado - Empresa"); }
         }
     }
 }

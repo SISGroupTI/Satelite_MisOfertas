@@ -46,15 +46,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coleccion.cs" />
+    <Compile Include="DAODescuento.cs" />
     <Compile Include="DAODetalleOferta.cs" />
     <Compile Include="DAOEmpresa.cs" />
+    <Compile Include="DAOEscala.cs" />
     <Compile Include="DAOEstado.cs" />
+    <Compile Include="DAOHistorialCorreo.cs" />
+    <Compile Include="DAOImagenesOferta.cs" />
     <Compile Include="DAOLocal.cs" />
     <Compile Include="DAOOferta.cs" />
     <Compile Include="DAOPerfil.cs" />
     <Compile Include="DAOProducto.cs" />
+    <Compile Include="DAOReporteTiendas.cs" />
+    <Compile Include="DAOReporteValoracion.cs" />
     <Compile Include="DAORubro.cs" />
     <Compile Include="DAOTrabajador.cs" />
+    <Compile Include="DAOValoracionOferta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +72,10 @@
     <ProjectReference Include="..\EntityLibrary\EntityLibrary.csproj">
       <Project>{ba76d726-bd99-4daf-aea0-ec319fceadad}</Project>
       <Name>EntityLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{3791240a-73ac-4122-b85c-aa2a57d54173}</Project>
+      <Name>Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

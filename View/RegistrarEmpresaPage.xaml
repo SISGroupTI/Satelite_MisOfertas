@@ -31,11 +31,14 @@
         <Label Content="Administrador de Empresas" Margin="10,15,105,10" FontSize="36" Grid.ColumnSpan="4" Grid.Column="1"/>
         <Label Content="Ingresar nuevo registro" Margin="10,0,305,0" FontSize="22" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="1"/>
         <DataGrid x:Name="dtgLocales" Margin="0,0,0,6" Grid.Row="3" Grid.ColumnSpan="4" Grid.Column="1"
-                  AutoGenerateColumns="False">
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserReorderColumns="False"
+                AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>
-                        <TextBlock  Text="Local N°" />
+                        <TextBlock  Text="Local N°" Width="70" />
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -45,7 +48,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.Header>
-                        <TextBlock  Text="Direccion" />
+                        <TextBlock  Text="Direccion" Width="400" />
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -55,7 +58,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn >
                     <DataGridTemplateColumn.Header>
-                        <TextBlock  Text="Eliminar"  />
+                        <TextBlock  Text="Eliminar" Width="70"  />
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

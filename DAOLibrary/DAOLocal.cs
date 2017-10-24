@@ -29,14 +29,14 @@ namespace BusinessLibrary
                 int idEmpresa = empresa.IdEmpresa;
                 int numeroLocal;
                 String direccion;
-                // Se instancia un OracleCommand encargado de armar la consulta y ejecutarla
-                OracleCommand cmd = new OracleCommand();
-                // Se le asigna la conexion
-                cmd.Connection = cone.Obtener();
-                // En este caso se recorre una lista de locales que por medio de un siglo
-                // Se va ejecutando la query
                 foreach (Local local in locales)
                 {
+                    // Se instancia un OracleCommand encargado de armar la consulta y ejecutarla
+                    OracleCommand cmd = new OracleCommand();
+                    // Se le asigna la conexion
+                    cmd.Connection = cone.Obtener();
+                    // En este caso se recorre una lista de locales que por medio de un siglo
+                    // Se va ejecutando la query
                     numeroLocal = local.NumeroLocal;
                     direccion = local.Direccion;
                     // Se le asigna el nombre del SP (Ojo tiene que ser igual a la BD sin comillas)

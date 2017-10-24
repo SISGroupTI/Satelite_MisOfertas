@@ -41,6 +41,8 @@
         <TextBox
                 Controls:TextBoxHelper.ClearTextButton="True"
                 Controls:TextBoxHelper.Watermark="Nombre Empresa"
+            Name="txtBuscarEmpresa"
+            KeyUp="txtBuscarEmpresa_KeyUp"
                 Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Grid.Row="2">
 
         </TextBox>
@@ -58,9 +60,9 @@
                 <!-- 0-->
                 <DataGridTextColumn x:Name="campoRut" Header="rut" Binding="{Binding RutEmpresa}" Width="100"/>
                 <!-- 0-->
-                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding NombreEmpresa}" Width="200"/>
+                <DataGridTextColumn x:Name="campoNombre" Header="Nombre" Binding="{Binding NombreEmpresa}" Width="260"/>
                 <!--1-->
-                <DataGridTextColumn x:Name="campoFecha" Header="Fecha de Incorporacion" Binding="{Binding FechaIncorporacion}" Width="150"/>
+                <DataGridTextColumn x:Name="campoFecha" Header="Fecha de Incorporacion" Binding="{Binding FechaIncorporacion}" Width="180"/>
                 <!--2-->
                 <DataGridTextColumn x:Name="compoLocal" Header="Locales" Binding="{Binding CantidadLocales}" Width="120"/>
                 <!--3-->
