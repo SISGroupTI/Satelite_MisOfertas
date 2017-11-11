@@ -27,6 +27,7 @@ namespace View
         DetalleOfertaNeg detalleOfertaNeg;
         ImagenesOfertaNeg imagenesOfertaNeg;
         List<Oferta> listaOfertas;
+        PrincipalWindow principalWindow;
         public MenuOfertaPage()
         {
             InitializeComponent();
@@ -38,7 +39,16 @@ namespace View
                 imagenesOfertaNeg = new ImagenesOfertaNeg();
             if(listaOfertas==null)
                 listaOfertas= ofertaNeg.ListarOfertas();
+            if (principalWindow == null)
+                principalWindow = new PrincipalWindow();
             cargarDtOfertas();
+
+            int idPerfil = Int32.Parse(System.Windows.Application.Current.Resources["idPerfilTrabajador"].ToString());
+            if (idPerfil == 4)
+            {
+                colOfertaEliminar.Visibility = Visibility.Collapsed;
+            }
+            
         }
 
         private void cargarDtOfertas()
@@ -106,7 +116,7 @@ namespace View
         {
             if (txtBuscarOfertas.Text.Length>0)
             {
-                dtOfertas.ItemsSource = listaOfertas.Where(oferta=>oferta.TituloOferta.Contains(txtBuscarOfertas.Text));
+                dtOfertas.ItemsSource = listaOfertas.Where(oferta=>oferta.TituloOferta.ToLower().Contains(txtBuscarOfertas.Text.ToLower()));
                 dtOfertas.Items.Refresh();
             }
             else

@@ -63,7 +63,7 @@ namespace View
         {
             if (txtBuscarOfertas.Text.Length > 0)
             {
-                dtOfertas.ItemsSource = listaOfertas.Where(oferta => oferta.TituloOferta.Contains(txtBuscarOfertas.Text));
+                dtOfertas.ItemsSource = listaOfertas.Where(oferta => oferta.TituloOferta.ToLower().Contains(txtBuscarOfertas.Text.ToLower()));
                 dtOfertas.Items.Refresh();
             }
             else

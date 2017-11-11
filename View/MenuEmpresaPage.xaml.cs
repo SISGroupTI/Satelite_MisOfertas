@@ -114,7 +114,7 @@ namespace View
         {
             if (txtBuscarEmpresa.Text.Length>0)
             {
-                dtEmpresa.ItemsSource = lista.Where(empresa=>empresa.NombreEmpresa.Contains(txtBuscarEmpresa.Text));
+                dtEmpresa.ItemsSource = lista.Where(empresa=>empresa.NombreEmpresa.ToLower().Contains(txtBuscarEmpresa.Text.ToLower()));
                 dtEmpresa.Items.Refresh();
             }
             else

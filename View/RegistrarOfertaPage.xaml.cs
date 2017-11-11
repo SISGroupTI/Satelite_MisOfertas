@@ -349,6 +349,7 @@ namespace View
                 b.BeginInit();
                 b.UriSource = new Uri(openFile.FileName);
                 b.EndInit();
+                
                 var imagen = new { Ruta = openFile.FileName, Imagen = b, Extension = System.IO.Path.GetExtension(openFile.FileName) }; //custom object
                 listaImagenes.Add(imagen);
             }

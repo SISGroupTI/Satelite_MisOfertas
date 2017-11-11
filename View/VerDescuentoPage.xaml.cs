@@ -52,7 +52,7 @@ namespace View
             if (txtBuscarDescuentos.Text.Length>0)
             {
 
-                dtDescuentos.ItemsSource = listaDescuento.Where(descuento => descuento.Consumidor.Nombre.Contains(txtBuscarDescuentos.Text));
+                dtDescuentos.ItemsSource = listaDescuento.Where(descuento => descuento.Consumidor.Apellidos.ToLower().Contains(txtBuscarDescuentos.Text.ToLower()));
                 dtDescuentos.Items.Refresh();
             }
             else

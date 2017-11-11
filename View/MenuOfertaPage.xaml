@@ -77,7 +77,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <!--4-->
-                <DataGridTemplateColumn >
+                <DataGridTemplateColumn x:Name="colOfertaEliminar">
                     <DataGridTemplateColumn.Header>
                         <TextBlock  Text="Eliminar"  />
                     </DataGridTemplateColumn.Header>

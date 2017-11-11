@@ -39,14 +39,10 @@ namespace NegLibrary
             trabajador = daoTrabajador.validarTrabajador(trabajador);
             if (trabajador != null)
             {
-                //Devuelve el perfil del trabajador para la validacion del 
-                //LoginWindows.xaml.cs
                 if (PasswordStorage.VerifyPassword(contrasena,trabajador.Contrasena))
                 {
                     try
                     {
-                        //long idPerfil = trabajador.Perfil.IdPerfil;
-                        //return idPerfil;
                         return trabajador;
                     }
                     catch

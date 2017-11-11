@@ -103,7 +103,7 @@ namespace View
         {
             if (txtBuscarLocal.Text.Length>0)
             {
-                dtLocal.ItemsSource = listaLocales.Where(local=>local.Direccion.Contains(txtBuscarLocal.Text));
+                dtLocal.ItemsSource = listaLocales.Where(local=>local.Direccion.ToLower().Contains(txtBuscarLocal.Text.ToLower()));
                 dtLocal.Items.Refresh();
             }
             else

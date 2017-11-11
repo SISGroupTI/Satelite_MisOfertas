@@ -30,7 +30,7 @@
         <Label Content="Nombre de Producto:" Margin="10,7" RenderTransformOrigin="0.307,-0.556" Grid.Row="2"/>
         <Label Content="Precio Normal:" Margin="10,7" RenderTransformOrigin="0.307,-0.556" Grid.Row="3"/>
         <Label Content="Precio Oferta:" Margin="10,7" RenderTransformOrigin="0.307,-0.556" Grid.Row="4"/>
-        <Label Content="Fecha Coducidad:" Margin="10,7,10,7" RenderTransformOrigin="0.307,-0.556" Grid.Row="5"/>
+        <Label Content="Fecha Caducidad:" Margin="10,7,10,7" RenderTransformOrigin="0.307,-0.556" Grid.Row="5"/>
 
         <TextBox
             Controls:TextBoxHelper.Watermark="2000035698748"

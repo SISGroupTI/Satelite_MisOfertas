@@ -35,6 +35,11 @@ namespace DAOLibrary
                     cone.Obtener().Open();
                 }
                 OracleDataReader dr = cmd.ExecuteReader();
+                if (!dr.HasRows)
+                {
+                    cone.Obtener().Close();
+                    return null;
+                }
                 while (dr.Read())
                 {
                     trabajador.IdTrabajador = dr.GetInt32(0);
@@ -44,7 +49,7 @@ namespace DAOLibrary
                     trabajador.Apellidos = dr.GetString(5);
                     trabajador.CorreoCorporativo = dr.GetString(6);
                     trabajador.FechaIngreso = dr.GetDateTime(7);
-                    trabajador.Nombre = dr.GetString(8);
+                    //trabajador.Nombre = dr.GetString(8);
                     trabajador.Perfil = new Perfil(dr.GetInt32(9), dr.GetString(8));
                     trabajador.Contrasena = dr.GetString(14);
                     Empresa empresa = new Empresa();
@@ -65,8 +70,7 @@ namespace DAOLibrary
                 cone.Obtener().Close();
                 return null;
             }
-            cone.Obtener().Close();
-            return null;
+
         }
 
        public List<Trabajador> ListarTrabajadores()

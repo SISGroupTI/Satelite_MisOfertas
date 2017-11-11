@@ -117,7 +117,7 @@ namespace View
         {
             if (txtBuscarTrabajador.Text.Length>0)
             {
-                dtTrabajador.ItemsSource = lista.Where(trabajador => trabajador.Apellidos.Contains(txtBuscarTrabajador.Text));
+                dtTrabajador.ItemsSource = lista.Where(trabajador => trabajador.Apellidos.ToLower().Contains(txtBuscarTrabajador.Text.ToLower()));
             }
             else
             {

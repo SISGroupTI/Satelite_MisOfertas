@@ -25,7 +25,7 @@ namespace View
         TrabajadorNeg trabajadorNeg;
         PrincipalWindow principalWindow;
         UserOptionControl userOptionControl;
-        List<object> listaDatosUsuario;
+        List<Trabajador> listaDatosUsuario;
         public LoginWindow()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace View
                 userOptionControl = new UserOptionControl();
             }
             if (listaDatosUsuario == null)
-                listaDatosUsuario = new List<object>();
+                listaDatosUsuario = new List<Trabajador>();
 
 
             if (txtUsuario.Text.Trim().Length > 0 && txtContrasena.Password.Trim().Length > 0)
@@ -64,19 +64,23 @@ namespace View
                     
                     String nombreCompleto = trabajador.Nombre + " " + trabajador.Apellidos;
 
-                    var dropTrabajador = new {Nombre =  nombreCompleto};
-                    var dropSesion = new { Nombre = "Cerrar Sesion" };
-                    listaDatosUsuario.Add(dropTrabajador);
-                    listaDatosUsuario.Add(dropSesion);
+                    Trabajador trabajador1 = new Trabajador();
+                    trabajador1.Nombre = nombreCompleto;
+                    Perfil perfilTrabajador = new Perfil();
+                    perfilTrabajador.IdPerfil = trabajador.Perfil.IdPerfil;
+                    perfilTrabajador.NombrePerfil = trabajador.Perfil.NombrePerfil;
+                    trabajador1.Perfil = perfilTrabajador;
 
-                    userOptionControl.dropUsuarioLogueado.ItemsSource = listaDatosUsuario;
-                    userOptionControl.dropUsuarioLogueado.DisplayMemberPath = "Nombre";
-                    userOptionControl.dropUsuarioLogueado.SelectedValuePath = "Nombre";
-                    userOptionControl.dropUsuarioLogueado.SelectedIndex = 0;
+                    Trabajador trabajador2 = new Trabajador();trabajador2.Nombre = "Cerrar Sesion";
+                    listaDatosUsuario.Add(trabajador1);
+                    listaDatosUsuario.Add(trabajador2);
 
+                    Application.Current.Resources["idPerfilTrabajador"] = trabajador.Perfil.IdPerfil;
 
-
-
+                    principalWindow.dropMenuUsuarioLogueado.ItemsSource = listaDatosUsuario;
+                    principalWindow.dropMenuUsuarioLogueado.DisplayMemberPath = "Nombre";
+                    principalWindow.dropMenuUsuarioLogueado.SelectedValuePath = "Nombre";
+                    principalWindow.dropMenuUsuarioLogueado.SelectedIndex = 0;
                     switch (trabajador.Perfil.IdPerfil)
                     {
                         case 2:
@@ -97,7 +101,7 @@ namespace View
                             //principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
                             principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
                             MenuBIPage menuBIPage = new MenuBIPage();
-                            principalWindow.setNavigationService(menuBIPage);
+                            principalWindow.setNavigationService(menuBIPage);                          
                             principalWindow.Show();
                             this.Close();
                             break;
@@ -107,7 +111,7 @@ namespace View
                             principalWindow.menu_local.Visibility = Visibility.Collapsed;
                             principalWindow.menu_trabajor.Visibility = Visibility.Collapsed;
                             principalWindow.menu_reporte_tienda.Visibility = Visibility.Collapsed;
-                            principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
+                            //principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
                             principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
                             principalWindow.menu_archivos.Visibility = Visibility.Collapsed;
                             principalWindow.separador1.Visibility = Visibility.Collapsed;

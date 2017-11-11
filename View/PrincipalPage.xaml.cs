@@ -166,16 +166,18 @@ namespace View
 
                 if (listaOfertasMasVisitadas != null)
                 {
-                    SeriesCollection = new SeriesCollection { };
-                    SeriesCollection.Add(new RowSeries
-                    {
-                        Title = "Ofertas mas visitadas",
-                        Values = new ChartValues<double> { 0 }
-                    });
+                    SeriesCollection = new SeriesCollection {
+                        new StackedColumnSeries
+                        {
+                            Values = new ChartValues<double> {},
+                            StackMode = StackMode.Values, 
+                            DataLabels = true
+                        }
+                    };
+                    
 
-                    string[] arrayTitulos = new string[6];
-                    arrayTitulos[0] = "";
-                    int aux = 1;
+                    string[] arrayTitulos = new string[5];
+                    int aux = 0;
                     foreach (Oferta oferta in listaOfertasMasVisitadas)
                     {
                         arrayTitulos[aux] = "Cod: " + oferta.CodigoOferta.ToString();
@@ -184,14 +186,14 @@ namespace View
                     }
 
                     Labels = arrayTitulos;
-                    Formatter = value => value.ToString("N");
+                    Formatter = value => value + " Visitas";
                     DataContext = this;
 
                 }
             }
             catch (Exception exception)
             {
-
+                MessageBox.Show("Ha ocurrido un error al generar el grafico,\nIntente nuevamente actualizando la fecha","Mis Ofertas");
             }
         }
         public SeriesCollection SeriesCollection { get; set; }
@@ -259,76 +261,40 @@ namespace View
                 Oferta ofertaIn = new Oferta();
                 ofertaIn.FechaInicio = fechaPublicacion;
                 listaOfertasMasVisitadas = ofertaNeg.listarOfertasMasVisitadasMenuPrincipal(ofertaIn);
-                MessageBox.Show("CARGADA: " + listaOfertasMasVisitadas.Count);
-
-                //setCartesianChart();
-                /*if (listaOfertasMasVisitadas != null)
-                {
-                    SeriesCollection = new SeriesCollection { };
-                    SeriesCollection.Add(new RowSeries
-                    {
-                        Title = "Ofertas mas visitadas",
-                        Values = new ChartValues<double> { 0 }
-                    });
-
-                    string[] arrayTitulos = new string[6];
-                    arrayTitulos[0] = "";
-                    int aux = 1;
-                    foreach (Oferta oferta in listaOfertasMasVisitadas)
-                    {
-                        arrayTitulos[aux] = "Cod: " + oferta.CodigoOferta.ToString();
-                        SeriesCollection[0].Values.Add((double)oferta.Visitas);
-                        aux += 1;
-
-                    }
-                    Labels = arrayTitulos;
-                    Formatter = value => value.ToString("N");
-                    DataContext = this;
-                }
-                 */
-
-            }
-
-            /*
-            try
-            {
-                DateTime fechaPublicacion = dtFechaOfertaVisitada.SelectedDate.Value.Date;
-                Oferta ofertaIn = new Oferta();
-                ofertaIn.FechaInicio = fechaPublicacion;
-                listaOfertasMasVisitadas = ofertaNeg.listarOfertasMasVisitadasMenuPrincipal(ofertaIn);
-
-
+                
 
                 if (listaOfertasMasVisitadas != null)
                 {
-                    SeriesCollection = new SeriesCollection { };
-                    SeriesCollection.Add(new RowSeries
-                    {
-                        Title = "Ofertas mas visitadas",
-                        Values = new ChartValues<double> { 0 }
-                    });
+                    SeriesCollection = null;
+                    chartOfertas.Series.Clear();
+                    chartOfertas.AxisX.Clear();
+
+                    SeriesCollection = new SeriesCollection {
+                        new StackedColumnSeries
+                        {
+                            Values = new ChartValues<double> {},
+                            StackMode = StackMode.Values,
+                            DataLabels = true
+                        }
+                    };
 
                     string[] arrayTitulos = new string[5];
-                    arrayTitulos[0] = "";
-                    int aux = 1;
+                    int aux = 0;
                     foreach (Oferta oferta in listaOfertasMasVisitadas)
                     {
                         arrayTitulos[aux] = "Cod: " + oferta.CodigoOferta.ToString();
                         SeriesCollection[0].Values.Add((double)oferta.Visitas);
                         aux += 1;
-                        Labels = arrayTitulos;
-                        Formatter = value => value.ToString("N");
-                        DataContext = this;
                     }
+
+                    chartOfertas.Series = SeriesCollection;
+                    chartOfertas.Update();
+                    chartOfertas.UpdateLayout();
                 }
+                 
+
             }
-            catch (Exception exception)
-            {
-
-            }*/
         }
-
-
     }
 
 

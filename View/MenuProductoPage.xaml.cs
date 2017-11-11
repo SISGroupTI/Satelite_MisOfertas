@@ -89,7 +89,7 @@ namespace View
         {
             if (txtBuscarProducto.Text.Length>0)
             {
-                dtProducto.ItemsSource = listaProductos.Where(producto=>producto.Descripcion.Contains(txtBuscarProducto.Text));
+                dtProducto.ItemsSource = listaProductos.Where(producto=>producto.Descripcion.ToLower().Contains(txtBuscarProducto.Text.ToLower()));
                 dtProducto.Items.Refresh();
             }
             else

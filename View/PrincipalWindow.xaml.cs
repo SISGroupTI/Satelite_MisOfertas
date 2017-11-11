@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 using System.Threading;
 using System.Diagnostics;
+using EntityLibrary;
 
 namespace View
 {
@@ -39,10 +40,16 @@ namespace View
         MenuReporteTiendaPage menuReporteTiendaPage;
         MenuReporteValoracionPage menuReporteValoracionPage;
         MenuBIPage menuBIPage;
+        UserOptionControl userOptionControl;
+        LoginWindow loginWindow = new LoginWindow();
+
         public PrincipalWindow()
         {
             InitializeComponent();
             //initFristPage();
+            if (userOptionControl == null)
+                userOptionControl = new UserOptionControl();
+            
             
         }
 
@@ -124,14 +131,7 @@ namespace View
             setNavigationService(menuBIPage);
         }
 
-
-        /** 
-         * A partir de este punto todas las acciones realizadas con
-         * respecto al menu de inicio son con fines de demostracion en 
-         * proceso de desarrollo, estos posteriormente se comentaran
-         * para su no uso 
-         * **/
-
+   
         ModificarProductoPage modificarProducto;
         private void menu_modificar_producto_Click(object sender, RoutedEventArgs e)
         {
@@ -174,7 +174,16 @@ namespace View
             if (verDescuentoDetallePage == null) { verDescuentoDetallePage = new VerDescuentoDetallePage(); }
             setNavigationService(verDescuentoDetallePage);
         }
-        
+
+        private void dropMenuUsuarioLogueado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int seleccion = (sender as ComboBox).SelectedIndex;
+            if (seleccion==1)
+            {
+                this.Close();
+                loginWindow.Show();
+            }
+        }
     }
 
 }
