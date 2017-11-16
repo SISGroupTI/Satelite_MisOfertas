@@ -42,7 +42,10 @@ namespace View
         }
 
 
-
+        private void updateListGridTrabajador()
+        {
+            lista = trabNeg.listarTrabajadores();
+        }
 
         private void cargarDataGridTrabajador()
         {
@@ -57,7 +60,6 @@ namespace View
                 switch (dialogResult)
                 {
                     case DialogResult.Abort:
-
                         break;
                     case DialogResult.Retry:
                         cargarDataGridTrabajador();
@@ -91,6 +93,7 @@ namespace View
                 if (res)
                 {
                     System.Windows.MessageBox.Show("Registro eliminado exitosamente del sistema", "Eliminar Trabajador");
+                    updateListGridTrabajador();
                     cargarDataGridTrabajador();
                 }
             }

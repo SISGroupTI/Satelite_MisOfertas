@@ -17,10 +17,13 @@
                 <TextBox
                     Controls:TextBoxHelper.ClearTextButton="True"
                     Controls:TextBoxHelper.Watermark="Nombre Usuario"
-                    x:Name="txtUsuario" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Margin="60,20,60,0" VerticalContentAlignment="Stretch">
+                    MaxLength="25"
+                    x:Name="txtUsuario" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Margin="60,20,60,0" VerticalContentAlignment="Stretch" TextChanged="txtUsuario_TextChanged">
  
                 </TextBox>
-                <PasswordBox x:Name="txtContrasena" VerticalAlignment="Center" Margin="60,20,60,0"
+                <PasswordBox x:Name="txtContrasena"
+                             MaxLength="25"
+                             VerticalAlignment="Center" Margin="60,20,60,0"
                              Controls:TextBoxHelper.ClearTextButton="True"/>
                 <Button x:Name="btnIngresar" Content="Ingresar" Margin="219,20,60,0" Height="28" Click="btnIngresar_Click"/>
 

@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         <Label Content="Fecha de Emision:" Margin="10,5"/>
         <Label Content="Rubros:" Margin="10,5" Grid.Row="1"/>
-        <Label Content="Puntos Acomulados:" Margin="10,5" Grid.Row="2"/>
+        <Label Content="Puntos Acumulados:" Margin="10,5" Grid.Row="2"/>
         <Label Content="Descuento:" Margin="10,5" Grid.Row="3"/>
         <Label Content="Tope:" Margin="10,5" Grid.Row="4"/>
         <DatePicker x:Name="dpFechaEmision" Grid.Column="1" Margin="10,7" IsEnabled="False"/>

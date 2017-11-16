@@ -36,6 +36,11 @@ namespace View
             cargarProductos();
         }
 
+        private void updateListGridProducto()
+        {
+            listaProductos = productoNeg.listarProducto(); 
+        }
+
         private void cargarProductos()
         {  
             dtProducto.ItemsSource = listaProductos;
@@ -65,6 +70,7 @@ namespace View
                 if (res)
                 {
                     System.Windows.MessageBox.Show("Producto eliminado exitosamente", "Eliminar registro - Producto");
+                    updateListGridProducto();
                     cargarProductos();
                 }
             }

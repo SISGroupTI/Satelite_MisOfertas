@@ -37,11 +37,11 @@
         <TextBox x:Name="txtCorreo"
             Controls:TextBoxHelper.Watermark="Ej: ju.perez@corporacion.com"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" Grid.Row="4" TextWrapping="Wrap" Text=""/>
+            Grid.Column="1" Margin="10,7" Grid.Row="4" MaxLength="100" TextWrapping="Wrap" Text=""/>
         <TextBox x:Name="txtNombreUsuario"
             Controls:TextBoxHelper.Watermark="Ej: ju.perez"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" Grid.Row="3" TextWrapping="Wrap" Text=""/>
+            Grid.Column="1" Margin="10,7" Grid.Row="3" MaxLength="30" TextWrapping="Wrap" Text=""/>
         <TextBox x:Name="txtRut"
             Controls:TextBoxHelper.Watermark="12345678-9"
             Controls:TextBoxHelper.ClearTextButton="True"
@@ -49,12 +49,12 @@
         <TextBox x:Name="txtApellidos"
             Controls:TextBoxHelper.Watermark="Ej: Perez Rosales"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" Grid.Row="1" TextWrapping="Wrap" Text="" KeyDown="txtApellidos_KeyDown"/>
+            Grid.Column="1" Margin="10,7" Grid.Row="1" TextWrapping="Wrap" MaxLength="100" Text="" KeyDown="txtApellidos_KeyDown"/>
         <TextBox x:Name="txtNombre"
             Controls:TextBoxHelper.Watermark="Ej: Juan"
             Controls:TextBoxHelper.ClearTextButton="True"
-            Grid.Column="1" Margin="10,7" TextWrapping="Wrap" Text="" KeyDown="txtNombre_KeyDown"/>
-        <PasswordBox x:Name="txtContrasena" Grid.Column="1" Margin="10,7" Grid.Row="5"/>
+            Grid.Column="1" Margin="10,7" TextWrapping="Wrap" Text="" MaxLength="100" KeyDown="txtNombre_KeyDown"/>
+        <PasswordBox x:Name="txtContrasena" Grid.Column="1" Margin="10,7" MaxLength="50" Grid.Row="5"/>
         <TextBox x:Name="etIdTrabajador" HorizontalAlignment="Left" Height="23" Margin="55,28,0,0" Grid.Row="6" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.RowSpan="2" Visibility="Collapsed"/>
 
     </Grid>

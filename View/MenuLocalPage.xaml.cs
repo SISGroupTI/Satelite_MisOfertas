@@ -35,6 +35,10 @@ namespace View
             cargarDataGridLocal();
         }
 
+        private void updateListGridLocales()
+        {
+            listaLocales = localNeg.ListarLocales();
+        }
         private void cargarDataGridLocal()
         {
             dtLocal.ItemsSource = listaLocales;
@@ -88,6 +92,7 @@ namespace View
                 if (res)
                 {
                     System.Windows.MessageBox.Show("Registro eliminado exitosamente", "Eliminar registro - Local");
+                    updateListGridLocales();
                     cargarDataGridLocal();
                 }
             }

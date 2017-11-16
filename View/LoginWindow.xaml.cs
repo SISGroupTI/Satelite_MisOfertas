@@ -81,6 +81,8 @@ namespace View
                     principalWindow.dropMenuUsuarioLogueado.DisplayMemberPath = "Nombre";
                     principalWindow.dropMenuUsuarioLogueado.SelectedValuePath = "Nombre";
                     principalWindow.dropMenuUsuarioLogueado.SelectedIndex = 0;
+                    PrincipalPage principalPage = new PrincipalPage();
+
                     switch (trabajador.Perfil.IdPerfil)
                     {
                         case 2:
@@ -101,12 +103,13 @@ namespace View
                             //principalWindow.ver_descuento.Visibility = Visibility.Collapsed;
                             principalWindow.menu_reportes.Visibility = Visibility.Collapsed;
                             MenuBIPage menuBIPage = new MenuBIPage();
+                            VerOfertasPage verOfertasPage = new VerOfertasPage();
                             principalWindow.setNavigationService(menuBIPage);                          
                             principalWindow.Show();
                             this.Close();
                             break;
                         case 4:
-                            PrincipalPage principalPage = new PrincipalPage();
+                            
                             principalWindow.menu_empresa.Visibility = Visibility.Collapsed;
                             principalWindow.menu_local.Visibility = Visibility.Collapsed;
                             principalWindow.menu_trabajor.Visibility = Visibility.Collapsed;
@@ -140,6 +143,11 @@ namespace View
             }
             else { MessageBox.Show("Complete los campos solicitados", "Login - Mis Ofertas"); }
             
+        }
+
+        private void txtUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

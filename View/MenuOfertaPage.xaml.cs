@@ -51,6 +51,10 @@ namespace View
             
         }
 
+        private void updateListGridOferta()
+        {
+            listaOfertas = ofertaNeg.ListarOfertas();
+        }
         private void cargarDtOfertas()
         {
             dtOfertas.ItemsSource = listaOfertas;
@@ -77,19 +81,20 @@ namespace View
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Confirmar accion", "Eliminar Oferta", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("¿Está seguro de eliminar este registro del sistema?", "Eliminar Oferta", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Oferta oferta = (Oferta)dtOfertas.SelectedItems[0];
                 if (oferta.IsDisponible == 1)
                 {
-                    System.Windows.MessageBox.Show("Error: Oferta en curso", "Eliminar Oferta");
+                    System.Windows.MessageBox.Show("No es posible eliminar este registro\nDebido a que se encuentra disponible para su visualizacion en el sistema WEB", "Eliminar Oferta");
                 }
                 else {
                     Boolean res = ofertaNeg.EliminarOferta(oferta);
                     if (res)
                     {
-                        System.Windows.MessageBox.Show("Oferta Eliminado", "Eliminar Detalle");
+                        System.Windows.MessageBox.Show("Oferta eliminada exitosamente", "Eliminar Detalle");
+                        updateListGridOferta();
                         cargarDtOfertas();
                     }
                 }

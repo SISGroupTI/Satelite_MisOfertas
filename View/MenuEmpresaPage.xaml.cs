@@ -38,6 +38,12 @@ namespace View
                 lista = empresaNeg.ListarEmpresas();
             cargarEmpresas();
         }
+
+        private void updateListGridEmpresas()
+        {
+            lista = empresaNeg.ListarEmpresas();
+        }
+
         private void cargarEmpresas()
         {
             dtEmpresa.ItemsSource = lista;
@@ -98,6 +104,7 @@ namespace View
                         // Se lanza el mensaje al usuario
                         System.Windows.MessageBox.Show("Empresa eliminada del sistema exitosamente", "Eliminar registro - Empresa");
                         // se procede a cargar las empresas nuevamente
+                        updateListGridEmpresas();
                         cargarEmpresas();
                     }
                 }

@@ -48,10 +48,10 @@
             <Separator Grid.Column="1" Margin="10,254,280,2" Grid.Row="3" Grid.RowSpan="2"/>
             <Label Content="Titulo:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Grid.Row="5" RenderTransformOrigin="0.474,0.288" Width="549" FontSize="18"/>
             <Label Content="Descripcion:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,0,5" Grid.Row="7" RenderTransformOrigin="0.474,0.288" Width="549" FontSize="18"/>
-            <TextBox x:Name="tbxTitulo" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,21" Grid.Row="6" TextWrapping="Wrap" Width="630"/>
-            <TextBox x:Name="tbxDescripcion" Grid.Column="1" Margin="10,10,280,10" Grid.Row="8">
+            <TextBox x:Name="tbxTitulo" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,21" Grid.Row="6" TextWrapping="Wrap" Width="630" MaxLength="255"/>
+            <TextBox x:Name="tbxDescripcion" Grid.Column="1" Margin="10,10,280,10" Grid.Row="8" MaxLength="255">
             </TextBox>
-            <TextBox x:Name="tbxCondiciones" Grid.Column="1" Margin="10,10,280,10" Grid.Row="10">
+            <TextBox x:Name="tbxCondiciones" Grid.Column="1" Margin="10,10,280,10" Grid.Row="10" MaxLength="255">
                 
             </TextBox>
             <Label Content="Condiciones" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="9" Width="503" FontSize="18"/>

@@ -44,52 +44,78 @@ namespace View
                 }
             }
             return true;
-            
+        }
+
+        public bool validarFechasVacias()
+        {
+            if (dpFechaInicio.SelectedDate!=null && dpFechaTermino.SelectedDate==null)
+            {
+                return true;
+            }
+            else if (dpFechaInicio.SelectedDate == null && dpFechaTermino.SelectedDate != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void btnArchivoBI_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (!validarFechas())
+                if (validarFechasVacias())
                 {
-                    MessageBox.Show("La fecha de inicio debe ser menor a la de termino\n Ingrese nuevamente", "Generacion archivo BI");
+                    MessageBox.Show("Debes seleccionar una fecha de inicio y termino para generar el reporte\n a partir de una rango de fechas", "Generacion archivo BI");
                     dpFechaInicio.Focus();
                 }
                 else
                 {
-                    String rutaDirectorioOferta = "D:/MisOfertas/BI";
-                    DateTime fechaCreacionArchivo = DateTime.Now;
-                    String rutaArchivo = rutaDirectorioOferta + "/ArchivoBI" + fechaCreacionArchivo.ToString("ddMMyyyyHHmm") + ".csv";
-
-                    try
+                    if (!validarFechas())
                     {
-                        Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
-                        List<OfertaBI> listaOfertasBI;
-
-                        if (dpFechaInicio.SelectedDate == null && dpFechaTermino.SelectedDate == null)
-                        {
-                            listaOfertasBI = ofertaNeg.listaOfertasBI(null,null);
-                        }
-                        else
-                        {
-                            listaOfertasBI = ofertaNeg.listaOfertasBI(dpFechaInicio.SelectedDate, dpFechaTermino.SelectedDate);
-                        }
-
-                        if (listaOfertasBI != null)
-                        {
-                            if (!Directory.Exists(rutaDirectorioOferta))
-                                Directory.CreateDirectory(rutaDirectorioOferta);
-                            string csv = String.Join("", listaOfertasBI.Select(x => x.ToString()).ToArray());
-                            File.WriteAllText(rutaArchivo, csv);
-                            Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
-                            MessageBox.Show("Archivo generado correctamente en la ruta:\n" + rutaArchivo, "Generacion archivo BI");
-                        }
+                        MessageBox.Show("La fecha de inicio debe ser menor a la de termino\n Ingrese nuevamente", "Generacion archivo BI");
+                        dpFechaInicio.Focus();
                     }
-                    catch (Exception err)
+                    else
                     {
-                        MessageBox.Show("Se ha presentado un inconveniente al generar el archivo csv\n Intente nuevamente", "Generacion archivo BI");
-                        File.Delete(rutaArchivo);
+                        String rutaDirectorioOferta = "D:/MisOfertas/BI";
+                        DateTime fechaCreacionArchivo = DateTime.Now;
+                        String rutaArchivo = rutaDirectorioOferta + "/ArchivoBI" + fechaCreacionArchivo.ToString("ddMMyyyyHHmm") + ".csv";
+
+                        try
+                        {
+                            Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+                            List<OfertaBI> listaOfertasBI;
+
+                            if (dpFechaInicio.SelectedDate == null && dpFechaTermino.SelectedDate == null)
+                            {
+                                listaOfertasBI = ofertaNeg.listaOfertasBI(null, null);
+                            }
+                            else
+                            {
+                                listaOfertasBI = ofertaNeg.listaOfertasBI(dpFechaInicio.SelectedDate, dpFechaTermino.SelectedDate);
+                            }
+
+                            if (listaOfertasBI != null)
+                            {
+                                if (!Directory.Exists(rutaDirectorioOferta))
+                                    Directory.CreateDirectory(rutaDirectorioOferta);
+                                string csv = String.Join("", listaOfertasBI.Select(x => x.ToString()).ToArray());
+                                File.WriteAllText(rutaArchivo, csv);
+                                Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+                                MessageBox.Show("Archivo generado correctamente en la ruta:\n" + rutaArchivo, "Generacion archivo BI");
+
+                                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                                Uri uriPdf = new Uri(rutaArchivo);
+                                process.StartInfo.FileName = rutaArchivo;
+                                process.Start();
+                                process.WaitForExit();
+                            }
+                        }
+                        catch (Exception err)
+                        {
+                            MessageBox.Show("Se ha presentado un inconveniente al generar el archivo csv\n Intente nuevamente", "Generacion archivo BI");
+                            File.Delete(rutaArchivo);
+                        }
                     }
                 }
             }

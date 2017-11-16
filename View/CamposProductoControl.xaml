@@ -39,15 +39,15 @@
         <TextBox
             Controls:TextBoxHelper.Watermark="Zapatillas Nike Hombre"
             Controls:TextBoxHelper.ClearTextButton="True"
-            x:Name="txtNombreProducto" Grid.Column="1" Margin="10,5,22,5" TextWrapping="Wrap" Text="" Grid.Row="2" MaxLength="50"/>
+            x:Name="txtNombreProducto" Grid.Column="1" Margin="10,5,22,5" TextWrapping="Wrap" Text="" Grid.Row="2" MaxLength="100"/>
         <TextBox
             Controls:TextBoxHelper.Watermark="25000"
             Controls:TextBoxHelper.ClearTextButton="True"
-            x:Name="txtPrecioNormal" Grid.Column="1" Margin="10,5,22,5" TextWrapping="Wrap" Text="" Grid.Row="3" KeyDown="txtPrecioNormal_KeyDown"/>
+            x:Name="txtPrecioNormal" Grid.Column="1" Margin="10,5,22,5" TextWrapping="Wrap" Text="" MaxLength="25" Grid.Row="3" KeyDown="txtPrecioNormal_KeyDown"/>
         <TextBox
             Controls:TextBoxHelper.Watermark="18000"
             Controls:TextBoxHelper.ClearTextButton="True"
-            x:Name="txtPrecioOferta" Grid.Column="1" Margin="10,5,22,5" TextWrapping="Wrap" Text="" Grid.Row="4" KeyDown="txtPrecioOferta_KeyDown"/>
+            x:Name="txtPrecioOferta" Grid.Column="1" Margin="10,5,22,5" TextWrapping="Wrap" Text="" MaxLength="25" Grid.Row="4" KeyDown="txtPrecioOferta_KeyDown"/>
         <DatePicker x:Name="dpFechaCaducidad" Grid.Column="1" Margin="10,5,22,5" Grid.Row="5"/>
         <ComboBox x:Name="spLocal" Grid.Column="1" Margin="10,5,22,5" Controls:TextBoxHelper.Watermark="Selecciona local"/>
         <Label Content="Estado:" Margin="10,7

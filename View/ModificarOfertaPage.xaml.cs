@@ -200,6 +200,28 @@ namespace View
             }
         }
 
+        private void DpFechaPublicacion_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime publicacion = (DateTime)camposOfertas.dpFechaPublicacion.SelectedDate;
+            camposOfertas.dpFechaFinalizacion.SelectedDate = publicacion.AddDays(1);
+            camposOfertas.dpFechaFinalizacion.DisplayDateStart = publicacion;
+
+            if (camposOfertas.dpFechaPublicacion.SelectedDate == DateTime.Now.Date)
+            {
+                rbSi.IsEnabled = true;
+                rbSi.IsChecked = true;
+                rbNo.IsChecked = false;
+                rbNo.IsEnabled = false;
+            }
+            else
+            {
+                rbSi.IsEnabled = false;
+                rbSi.IsChecked = false;
+                rbNo.IsChecked = true;
+                rbNo.IsEnabled = true;
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (validarDiponibilidad()) //validarDiponibilidad()
@@ -448,5 +470,9 @@ namespace View
             }
         }
 
+        private void camposOfertas_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
