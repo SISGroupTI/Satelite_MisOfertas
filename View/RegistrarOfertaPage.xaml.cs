@@ -168,7 +168,11 @@ namespace View
                     int codigoOferta = int.Parse(camposOfertas.txtCodigoOferta.Text.Trim());
                     int precio = int.Parse(camposOfertas.txtPrecio.Text.Trim());
                     int isVisible = 1;
-                    int isDisponible = rbSi.IsChecked == true ? 1 : 0;
+                    int isDisponible = 0;
+                    if (rbSi.IsChecked==true)
+                    {
+                        isDisponible = 1;
+                    }
                     Oferta ofertaOut = ofertaNeg.RegistrarOferta(descripcion, condiciones,
                         rubro, local, estado, fechaFinalizacion, fechaPublicacion, titulo, codigoOferta, precio,
                         isVisible, isDisponible);
@@ -201,6 +205,8 @@ namespace View
 
 
                         if (res) {
+                            camposOfertas.txtCodigoOferta.Text = "";
+                            camposOfertas.txtPrecio.Text = "";
                             tbxDescripcion.Text="";
                             tbxCondiciones.Text="";
                             camposOfertas.cbxRubro.SelectedIndex=0;
@@ -286,7 +292,7 @@ namespace View
                 return false;
             }
             else {
-                if (Int32.Parse(txtCantidadMinima.Text.ToString()) >= Int32.Parse(txtCantidadMaxima.Text.ToString()) )
+                if (Int32.Parse(txtCantidadMinima.Text.ToString()) > Int32.Parse(txtCantidadMaxima.Text.ToString()) )
                 {
                     return false;
                 }

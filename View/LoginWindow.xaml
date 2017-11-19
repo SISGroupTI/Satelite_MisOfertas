@@ -18,13 +18,13 @@
                     Controls:TextBoxHelper.ClearTextButton="True"
                     Controls:TextBoxHelper.Watermark="Nombre Usuario"
                     MaxLength="25"
-                    x:Name="txtUsuario" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Margin="60,20,60,0" VerticalContentAlignment="Stretch" TextChanged="txtUsuario_TextChanged">
+                    x:Name="txtUsuario" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Margin="60,20,60,0" VerticalContentAlignment="Stretch" KeyDown="txtUsuario_KeyDown">
  
                 </TextBox>
                 <PasswordBox x:Name="txtContrasena"
                              MaxLength="25"
                              VerticalAlignment="Center" Margin="60,20,60,0"
-                             Controls:TextBoxHelper.ClearTextButton="True"/>
+                             Controls:TextBoxHelper.ClearTextButton="True" KeyDown="txtContrasena_KeyDown"/>
                 <Button x:Name="btnIngresar" Content="Ingresar" Margin="219,20,60,0" Height="28" Click="btnIngresar_Click"/>
 
             </StackPanel>

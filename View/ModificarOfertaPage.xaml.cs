@@ -192,7 +192,7 @@ namespace View
                 return false;
             }
             else {
-                if (Int32.Parse(txtCantidadMinima.Text.ToString()) >= Int32.Parse(txtCantidadMaxima.Text.ToString()) )
+                if (Int32.Parse(txtCantidadMinima.Text.ToString()) > Int32.Parse(txtCantidadMaxima.Text.ToString()) )
                 {
                     return false;
                 }
@@ -252,7 +252,11 @@ namespace View
                         String titulo = txtTitulo.Text.Trim();
                         int codigoOferta = int.Parse(camposOfertas.txtCodigoOferta.Text.Trim());
                         int precio = int.Parse(camposOfertas.txtPrecio.Text.Trim());
-                        int isDisponible = rbSi.IsChecked == true ? 1 : 0;
+                        int isDisponible = 0;
+                        if (rbSi.IsChecked == true)
+                        {
+                            isDisponible = 1;
+                        }
 
                         Oferta ofertaOut = ofertaNeg.ModificarOferta(descripcion, condiciones,
                             rubro, local, estado, fechaFinalizacion, fechaPublicacion, titulo, codigoOferta, precio, isDisponible);

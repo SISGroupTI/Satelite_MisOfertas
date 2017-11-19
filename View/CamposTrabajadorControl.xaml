@@ -54,7 +54,7 @@
             Controls:TextBoxHelper.Watermark="Ej: Juan"
             Controls:TextBoxHelper.ClearTextButton="True"
             Grid.Column="1" Margin="10,7" TextWrapping="Wrap" Text="" MaxLength="100" KeyDown="txtNombre_KeyDown"/>
-        <PasswordBox x:Name="txtContrasena" Grid.Column="1" Margin="10,7" MaxLength="50" Grid.Row="5"/>
+        <PasswordBox x:Name="txtContrasena" Grid.Column="1" Margin="10,7" MaxLength="50" Grid.Row="5" LostFocus="txtContrasena_LostFocus" LostKeyboardFocus="txtContrasena_LostKeyboardFocus"/>
         <TextBox x:Name="etIdTrabajador" HorizontalAlignment="Left" Height="23" Margin="55,28,0,0" Grid.Row="6" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.RowSpan="2" Visibility="Collapsed"/>
 
     </Grid>

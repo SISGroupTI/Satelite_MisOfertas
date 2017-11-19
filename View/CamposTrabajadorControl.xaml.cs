@@ -37,7 +37,9 @@ namespace View
         }
         private void soloLetras(object sender, KeyEventArgs e)
         {
-            if ((e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.K || e.Key == Key.Subtract))
+            if ((e.Key >= Key.D0 && e.Key <= Key.D9
+                || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9
+                || e.Key == Key.Subtract))
             {
                 e.Handled = true;
             }
@@ -94,6 +96,18 @@ namespace View
             }
         }
 
+        private void txtContrasena_LostFocus(object sender, RoutedEventArgs e)
+        {
+           
+        }
 
+        private void txtContrasena_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (txtContrasena.Password.Length < 6)
+            {
+                MessageBox.Show("La contraseña debe ser de minimo 6 caracteres", "MisOfertas");
+                txtContrasena.Focus();
+            }
+        }
     }
 }

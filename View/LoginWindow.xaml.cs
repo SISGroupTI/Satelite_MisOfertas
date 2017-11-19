@@ -145,9 +145,30 @@ namespace View
             
         }
 
-        private void txtUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
+            if ((e.Key >= Key.D0 && e.Key <= Key.D9 || 
+                e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
 
+        private void txtContrasena_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.Key >= Key.D0 && e.Key <= Key.D9 ||
+                e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
     }
 }

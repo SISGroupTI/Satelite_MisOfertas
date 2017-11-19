@@ -35,7 +35,7 @@ namespace NegLibrary
             oferta.TituloOferta = titulo;
             oferta.Precio = precio;
             oferta.IsVisible = isVisible;
-            oferta.IsDisponible = isVisible;
+            oferta.IsDisponible = isDiponible;
             return daoOferta.RegistrarOferta(oferta);
         }
         public Oferta BuscarOferta(String descripcion,String condiciones,Rubro rubro,Local local,Estado estado,DateTime fechaFinalizacion,DateTime fechaPublicacion,String titulo,int codigoOferta,int precio,int isVisible,int isDiponible)
