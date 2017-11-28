@@ -29,8 +29,6 @@ namespace View
         public LoginWindow()
         {
             InitializeComponent();
-            txtUsuario.Text = "desarrollador";
-            txtContrasena.Password = "root";
         }
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
